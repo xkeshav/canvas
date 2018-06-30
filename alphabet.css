@@ -1,0 +1,16 @@
+.content {
+    display: grid;
+    grid-template: auto/ repeat(2, 1fr);
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    color: white;
+    grid-gap: 10px;
+    font-weight: 700;
+    font-family: "Open Sans";
+    text-transform: uppercase;
+    background-color: transparent;
+}
+.alphabet {
+    font-size: 25em;
+}
