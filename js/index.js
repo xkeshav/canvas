@@ -1,23 +1,50 @@
 import { colorBox } from "./color.js";
-import { fetchImage } from "./alphabet.js";
+import { setBackgroundImage } from "./alphabet.js";
 
 let i = 0;
 const len = Object.keys(colorBox).length;
+const boardDiv = document.querySelector(".board");
+const shapeDiv = document.getElementById("shape");
+const charDiv = document.getElementById("char");
+
+const clearShapeDiv = () => {
+    while (shapeDiv.hasChildNodes()) {
+        shapeDiv.removeChild(shapeDiv.lastChild);
+    }
+};
 
 document.addEventListener(
     "keydown",
     e => {
         // console.warn("e", e);
         // const which = e.which;
-        const key = e.key;
+        // console.log("which", which);
+        document.querySelector("h2").style.display = "none";
         i++;
-        i = i % len == 0 ? 1 : i;
-        let qs = document.querySelector(".alphabet");
-        // console.log("colorcode", Object.values(colorBox));
-        document.body.style.backgroundColor = Object.values(colorBox)[i];
-        let str = key.toUpperCase();
-        qs.innerHTML = str;
-        fetchImage(key);
+        let key = e.key;
+        const isNumber = !isNaN(Number(key));
+
+        if (isNumber) {
+            console.log("%c else is number", "color:green", key);
+            i = i % len == 0 ? 1 : i;
+            boardDiv.style.backgroundColor = Object.values(colorBox)[i];
+            boardDiv.style.backgroundImage = null;
+            let circle = shapeDiv.querySelectorAll(".circle");
+            clearShapeDiv();
+            charDiv.innerHTML = key;
+            for (i = 0; i < Number(key); i++) {
+                const div = document.createElement("div");
+                div.classList = "circle";
+                shapeDiv.appendChild(div);
+            }
+        } else {
+            console.log("%c if not a number", "color:red", key);
+            const char = key.toUpperCase();
+            boardDiv.style.backgroundColor = "transparent";
+            clearShapeDiv();
+            charDiv.innerHTML = char;
+            setBackgroundImage(key);
+        }
     },
     false
 );
