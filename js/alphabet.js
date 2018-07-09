@@ -1,36 +1,35 @@
-import { bgBox } from "./bg.js";
+const BASE_URL = `http://localhost:3000`; // run `json-server --watch db.json` before this
+const IMAGE_DIR = `/images/background`;
 
-const headers = new Headers({ "Content-Type": "image/jpeg" });
+const headers = new Headers({
+  Accept: "application/json",
+  "Content-Type": "application/json"
+});
+
 const myInit = {
   method: "GET",
   headers: headers,
-  mode: "same-origin"
+  cache: "default",
+  mode: "cors"
 };
 
 export const setBackgroundImage = letter => {
-  const image = bgBox[letter] || "apricot";
-  let bg = `/images/background/${image}.jpg`;
-
-  const request = new Request(bg, myInit);
+  const url = `${BASE_URL}/bg?key=${letter}`;
+  const request = new Request(url, myInit);
   fetch(request)
     .then(response => {
-      if (response.ok) return response.blob();
+      if (response.ok) return response.json();
       else throw Error;
     })
-
-    .then(blob => {
-      console.log("blob", blob);
-      const objectURL = URL.createObjectURL(blob);
-      let img = new Image();
-      img.src = objectURL;
-      console.log({ img });
-      document.body.querySelector(
-        "header"
-      ).style.backgroundImage = `url(${bg})`;
+    .then(result => {
+      const poster = result.length > 0 ? result.pop().value : "apricot";
+      return poster;
+    })
+    .then(poster => {
+      const bgURL = `url(${IMAGE_DIR}/${poster}.jpg)`; // css way
+      document.body.querySelector("header").style.backgroundImage = bgURL;
     })
     .catch(e => {
-      console.log("Error", e);
-      const alternative = `/images/background/apricot.jpg`;
-      document.body.style.backgroundImage = `url(${alternative})`;
+      document.body.style.background = `color`;
     });
 };

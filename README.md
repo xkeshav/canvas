@@ -2,14 +2,11 @@
 
 Simple kids learning web app which change the background image/color on the key pressed.
 
-for eg.
 all images are placed on `images/background` folder
 
-_bg.js_ has mapping of those images and keys
+_bg.json_ has mapping of those images and keys which fetched using mock API
 
-Note: all images are in _.jpg_ format only.
-
-#How it works
+# How it works
 
 user press any key
 
@@ -23,12 +20,15 @@ on right side that key name will be appeared in white color with big font size
 
 # How to run
 
-*   git clone this repo
-*   navigate to the new folder which have the repo from terminal
-*   `cd canvas`
-*   run `npm install`
-*   run `npm start webpack`
+*   clone this repo or download the zip
+    `git clone https://github.com/zymr-keshav/canvas.git`
+*   navigate to the folder which have the repo (in my case it is canvas folder) through terminal
+    `cd canvas`
 
-a blank white page will appears
+-   run `npm install`
+-   run `npm start webpack`
+-   run `json-server --watch bg.json` in another tab to work with API
 
-now press any Key to start
+Now open `http://localhost:8080` in browser
+
+Note: all images are in _.jpg_ format only.

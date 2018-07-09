@@ -29,7 +29,6 @@ document.addEventListener(
             i = i % len == 0 ? 1 : i;
             boardDiv.style.backgroundColor = Object.values(colorBox)[i];
             boardDiv.style.backgroundImage = null;
-            let circle = shapeDiv.querySelectorAll(".circle");
             clearShapeDiv();
             charDiv.innerHTML = key;
             for (i = 0; i < Number(key); i++) {

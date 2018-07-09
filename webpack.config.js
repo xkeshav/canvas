@@ -1,11 +1,17 @@
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 module.exports = {
   context: __dirname,
-  entry: "./js/index.js",
+  entry: __dirname + "/js/index.js",
   mode: "development",
   output: {
     path: __dirname + "/build",
     filename: "bundle.js"
   },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: "index.html"
+    })
+  ],
   module: {
     rules: [
       {
@@ -17,7 +23,8 @@ module.exports = {
             presets: ["@babel/preset-env"]
           }
         }
-      }
+      },
+      { test: /\.html$/i, loader: "html-loader" }
     ]
   },
   devtool: "source-map",
