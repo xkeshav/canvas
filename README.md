@@ -6,28 +6,26 @@ all images are placed on `images/background` folder
 
 _bg.json_ has mapping of those images and keys which fetched using mock API
 
-# How it works
+## How it works
 
 user press any key
 
 on right side that key name will be appeared in white color with big font size
 
-*   if this key is a number than background-color will change and that number of circle appears which key is pressed.
-    for eg. if 3 is pressed than 3 circle will appears.
+- if this key is a number than background-color will change and that number of circle appears which key is pressed.
+  for eg. if 3 is pressed than 3 circle will appears.
 
-*   if this key is any alphabet than background Image will be changed to that background.
-    for eg if user press A than background image will be changes to Apple.
+- if this key is any alphabet than background Image will be changed to that background.
+  for eg if user press A than background image will be changes to Apple.
 
-# How to run
+## How to run
 
-*   clone this repo or download the zip
-    `git clone https://github.com/zymr-keshav/canvas.git`
-*   navigate to the folder which have the repo (in my case it is canvas folder) through terminal
-    `cd canvas`
-
--   run `npm install`
--   run `npm start webpack`
--   run `json-server --watch bg.json` in another tab to work with API
+- clone this repo or download the zip
+  `git clone https://github.com/xkeshav/canvas.git`
+- navigate to the folder `cd canvas`
+- run `npm install`
+- run `npm start webpack`
+- run `json-server --watch bg.json` in another tab to work with API
 
 Now open `http://localhost:8080` in browser
 
