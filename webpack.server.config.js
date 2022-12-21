@@ -6,7 +6,7 @@ const config = (_, argv) => {
   const SERVER_PATH = argv.mode === 'production' ? './src/server/server-prod.js' : './src/server/server-dev.js';
   return {
     entry: {
-      server: path.join(__dirname, 'src', '/server/server-dev.js'),
+      server: path.join(__dirname, SERVER_PATH),
     },
     output: {
       path: path.join(__dirname, 'dist'),

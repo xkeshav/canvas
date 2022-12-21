@@ -3,10 +3,9 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ESLintPlugin = require('eslint-webpack-plugin');
 
-const APP_DIR = path.join(__dirname, 'src');
 const BUILD_DIR = path.join(__dirname, 'dist');
 
-const options = {
+const esLintOptions = {
   extensions: [`js`],
   exclude: [`/node_modules/`],
   emitWarning: true,
@@ -54,8 +53,8 @@ const config = {
       filename: 'index.html',
       excludeChunks: ['server'],
     }),
-    //new webpack.HotModuleReplacementPlugin(),
-    new ESLintPlugin(options),
+    new webpack.HotModuleReplacementPlugin(),
+    new ESLintPlugin(esLintOptions),
     new webpack.NoEmitOnErrorsPlugin(),
   ],
 };

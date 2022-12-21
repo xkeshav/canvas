@@ -18,6 +18,7 @@
 # production
 /build/*
 /archive/*
+/dist/*
 
 # misc
 .DS_Store
