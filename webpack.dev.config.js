@@ -15,16 +15,16 @@ const options = {
 
 const config = {
   entry: {
-    index: path.join(__dirname, '/src/index.js'),
+    index: './src/index.js',
   },
   output: {
     path: BUILD_DIR,
-    publicPath: '.',
+    publicPath: '/',
     filename: '[name].js',
   },
   mode: 'development',
   target: 'web',
-  //devtool: 'eval-source-map',
+  devtool: 'eval-source-map',
   resolve: {
     extensions: ['.html', '.js', '.json', '.css'],
   },
@@ -35,9 +35,6 @@ const config = {
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
-          options: {
-            presets: ['@babel/preset-env'],
-          },
         },
       },
       { test: /\.html$/i, loader: 'html-loader' },
@@ -53,8 +50,8 @@ const config = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './src/html/index.html',
-      filename: './index.html',
+      template: 'src/html/index.html',
+      filename: 'index.html',
       excludeChunks: ['server'],
     }),
     //new webpack.HotModuleReplacementPlugin(),
