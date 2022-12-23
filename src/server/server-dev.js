@@ -10,10 +10,9 @@ const app = express();
 
 const router = express.Router();
 
-//app.use(express.static(__dirname + 'src', '/images'));
-
 const DIST_DIR = __dirname;
-const HTML_FILE = path.join(DIST_DIR, 'index.html');
+const HTML_DIR = path.join(DIST_DIR, 'html');
+const HTML_FILE = path.join(HTML_DIR, 'index.html');
 const compiler = webpack(config);
 
 app.use(
@@ -24,27 +23,27 @@ app.use(
 
 app.use(webpackHotMiddleware(compiler));
 
-app.use(express.static(DIST_DIR));
+app.use(express.static(HTML_DIR));
 
-app.get('/home', (req, res) => {
+app.get('/home', (_, res) => {
   res.sendFile(HTML_FILE);
 });
 
-app.get('/draw', (req, res) => {
-  res.sendFile(path.join(DIST_DIR, 'draw.html'));
+app.get('/draw', (_, res) => {
+  res.sendFile(path.join(HTML_DIR, 'draw.html'));
 });
 
-app.get('/varnmala', (req, res) => {
-  res.sendFile(path.join(DIST_DIR, 'varnmala.html'));
+app.get('/varnmala', (_, res) => {
+  res.sendFile(path.join(HTML_DIR, 'varnmala.html'));
 });
 
-app.get('/canvas', (req, res) => {
-  res.sendFile(path.join(DIST_DIR, 'canvas.html'));
+app.get('/canvas', (_, res) => {
+  res.sendFile(path.join(HTML_DIR, 'canvas.html'));
 });
 
 app.use('/', router);
 
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 3003;
 
 app.listen(PORT, () => {
   console.log(`App listening to ${PORT}....`);
