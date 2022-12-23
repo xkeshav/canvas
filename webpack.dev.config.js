@@ -5,7 +5,7 @@ const ESLintPlugin = require('eslint-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 
-let htmlPageNames = ['canvas', 'draw'];
+let htmlPageNames = ['canvas', 'draw', 'varnmala'];
 
 let multipleHtmlPlugins = htmlPageNames.map((name) => {
   return new HtmlPlugin({
@@ -28,11 +28,14 @@ const config = {
   entry: {
     index: './src/index.js',
     draw: ['./src/scripts/draw.js', './src/styles/draw.css'],
+    varnmala: ['./src/scripts/varnmala.js', './src/styles/varnmala.css'],
+    canvas: ['./src/scripts/canvas.js', './src/styles/canvas.css'],
   },
   output: {
     path: BUILD_DIR,
     publicPath: '/',
     filename: '[name].js',
+    assetModuleFilename: 'asset/[hash][ext][query]',
   },
   mode: 'development',
   target: 'web',
@@ -57,8 +60,8 @@ const config = {
     new CopyPlugin({
       patterns: [
         {
-          from: './src/assets',
-          to: './assets',
+          from: './src/asset/images',
+          to: './asset/images',
         },
       ],
     }),
@@ -88,11 +91,15 @@ const config = {
       },
       {
         test: /\.(png|svg|jpg|gif)$/,
-        use: ['file-loader'],
+        type: 'asset/resource',
       },
       {
         test: /\.(ttf|otf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
-        use: 'file-loader?name=assets/fonts/[name].[ext]',
+        type: 'asset/resource',
+        dependency: { not: ['url'] },
+        generator: {
+          filename: 'static/[hash][ext][query]',
+        },
       },
     ],
   },

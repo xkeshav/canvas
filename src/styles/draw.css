@@ -1,3 +1,5 @@
+@import url(./base.css);
+
 .instruction {
   text-align: center;
   line-height: 1.8em;
@@ -35,7 +37,7 @@ header {
   -webkit-background-clip: text;
   background-clip: text;
   color: white;
-  font: 900 85vmin/80vh Open-Sans;
+  font: 900 85vmin/80vh sportropregular;
   text-align: center;
   mix-blend-mode: unset;
   line-height: 1;

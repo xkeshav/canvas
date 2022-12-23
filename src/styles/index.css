@@ -1,3 +1,6 @@
+body {
+  font-family: 'sportropregular';
+}
 .container {
   display: grid;
   grid-auto-flow: row;
@@ -86,13 +89,13 @@ a:local-link {
 .link--base {
   color: #f0e5f0;
   font-size: 6rem;
-  transition: all 0.5s ease-in-out;
-  padding: 1rem;
+  transition: transform 120ms ease-in-out;
+  padding: 0.5rem;
+  will-change: transform;
 }
 
 .link--base:hover {
-  color: #23424d;
-  animation: moving 2s;
+  animation: moving 2s linear 0s infinite normal;
 }
 
 @keyframes moving {
@@ -103,7 +106,7 @@ a:local-link {
   }
 
   30% {
-    transform: translateX(20px);
+    transform: translateX(1.5rem);
     color: #5b3333;
   }
 }

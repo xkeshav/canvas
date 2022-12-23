@@ -34,8 +34,12 @@ app.get('/draw', (req, res) => {
   res.sendFile(path.join(DIST_DIR, 'draw.html'));
 });
 
-app.get('/hello', (req, res) => {
-  res.send('Hello from server-dev to World');
+app.get('/varnmala', (req, res) => {
+  res.sendFile(path.join(DIST_DIR, 'varnmala.html'));
+});
+
+app.get('/canvas', (req, res) => {
+  res.sendFile(path.join(DIST_DIR, 'canvas.html'));
 });
 
 app.use('/', router);

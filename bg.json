@@ -65,6 +65,10 @@
       "value": "pineapple"
     },
     {
+      "key": "q",
+      "value": "queen"
+    },
+    {
       "key": "r",
       "value": "rose"
     },
@@ -86,7 +90,15 @@
     },
     {
       "key": "w",
-      "value": "watch"
+      "value": "watermelon"
+    },
+    {
+      "key": "x",
+      "value": "xmas"
+    },
+    {
+      "key": "y",
+      "value": "yacht"
     },
     {
       "key": "z",

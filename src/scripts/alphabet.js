@@ -1,5 +1,7 @@
 const BASE_URL = `http://localhost:3000`; // run `json-server --watch db.json` before this
-const IMAGE_DIR = `../assets/images/background`;
+const IMAGE_DIR = `../asset/images/background`;
+
+const headerElement = document.body.querySelector('header');
 
 const headers = new Headers({
   Accept: 'application/json',
@@ -22,12 +24,13 @@ export const setBackgroundImage = (letter) => {
       else throw Error;
     })
     .then((result) => {
-      const poster = result.length > 0 ? result.pop().value : 'apricot';
+      const poster = result.length > 0 ? result.pop().value : 'blank';
       return poster;
     })
     .then((poster) => {
       const bgURL = `url(${IMAGE_DIR}/${poster}.jpg)`; // css way
-      document.body.querySelector('header').style.backgroundImage = bgURL;
+      // @ts-ignore
+      headerElement.style.backgroundImage = bgURL;
     })
     .catch(() => {
       document.body.style.background = `color`;

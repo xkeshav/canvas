@@ -14,7 +14,7 @@ export const varnmalaHandler = () => {
   };
 
   const highlightText = (w) => {
-    for (const child of main.childNodes) {
+    for (let child of main.childNodes) {
       if (child.textContent === w.toUpperCase()) {
         const classes = child.classList;
         classes.toggle('show');
@@ -36,3 +36,5 @@ export const varnmalaHandler = () => {
   };
   loadGrid();
 };
+
+varnmalaHandler();
