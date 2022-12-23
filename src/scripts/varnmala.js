@@ -1,6 +1,7 @@
+import { varnmala } from './utils';
+
 export const varnmalaHandler = () => {
   const main = document.getElementById('main');
-  const varnmala = Array.from({ length: 26 }, (_, i) => String.fromCodePoint(65 + i));
   const createVarnmalaDiv = () => {
     let fragment = document.createDocumentFragment();
     varnmala.forEach((varn) => {
@@ -13,9 +14,9 @@ export const varnmalaHandler = () => {
   };
 
   const highlightText = (w) => {
-    for (let child of main.childNodes) {
+    for (const child of main.childNodes) {
       if (child.textContent === w.toUpperCase()) {
-        let classes = child.classList;
+        const classes = child.classList;
         classes.toggle('show');
         break;
       }
@@ -23,7 +24,7 @@ export const varnmalaHandler = () => {
   };
 
   document.addEventListener('keydown', (e) => {
-    const key = e.key;
+    const { key } = e;
     const isAlphabet = isNaN(Number(key));
     if (isAlphabet) {
       highlightText(key);

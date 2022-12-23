@@ -7,11 +7,14 @@ import webpackHotMiddleware from 'webpack-hot-middleware';
 import config from '../../webpack.dev.config.js';
 
 const app = express();
+
+const router = express.Router();
+
+//app.use(express.static(__dirname + 'src', '/images'));
+
 const DIST_DIR = __dirname;
 const HTML_FILE = path.join(DIST_DIR, 'index.html');
 const compiler = webpack(config);
-
-//console.log(HTML_FILE);
 
 app.use(
   webpackDevMiddleware(compiler, {
@@ -23,9 +26,19 @@ app.use(webpackHotMiddleware(compiler));
 
 app.use(express.static(DIST_DIR));
 
-app.get('*', (req, res) => {
+app.get('/home', (req, res) => {
   res.sendFile(HTML_FILE);
 });
+
+app.get('/draw', (req, res) => {
+  res.sendFile(path.join(DIST_DIR, 'draw.html'));
+});
+
+app.get('/hello', (req, res) => {
+  res.send('Hello from server-dev to World');
+});
+
+app.use('/', router);
 
 const PORT = process.env.PORT || 8080;
 

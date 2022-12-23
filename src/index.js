@@ -1,8 +1,8 @@
 // @ts-nocheck
-import logMessage from './js/logger';
+import './styles/canvas.css';
+import './styles/index.css';
 import './styles/style.css';
-// Log message to console
-logMessage('Welcome to My won Server trying!');
+import './styles/varnmala.css';
 
 if (module.hot) {
   module.hot.accept();

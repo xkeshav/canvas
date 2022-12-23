@@ -1,7 +1,19 @@
 const path = require('path');
 const webpack = require('webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlPlugin = require('html-webpack-plugin');
 const ESLintPlugin = require('eslint-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
+
+let htmlPageNames = ['canvas', 'draw'];
+
+let multipleHtmlPlugins = htmlPageNames.map((name) => {
+  return new HtmlPlugin({
+    template: `./src/html/${name}.html`, // relative path to the HTML files
+    filename: `${name}.html`, // output HTML files
+    chunks: [`${name}`], // respective JS files
+  });
+});
 
 const BUILD_DIR = path.join(__dirname, 'dist');
 
@@ -15,6 +27,7 @@ const esLintOptions = {
 const config = {
   entry: {
     index: './src/index.js',
+    draw: ['./src/scripts/draw.js', './src/styles/draw.css'],
   },
   output: {
     path: BUILD_DIR,
@@ -27,6 +40,29 @@ const config = {
   resolve: {
     extensions: ['.html', '.js', '.json', '.css'],
   },
+
+  plugins: [
+    new HtmlPlugin({
+      template: 'src/html/index.html',
+      filename: 'index.html',
+      chunks: ['index'],
+      excludeChunks: ['server'],
+    }),
+    new MiniCssExtractPlugin({
+      filename: '[name].css',
+    }),
+    new webpack.HotModuleReplacementPlugin(),
+    new ESLintPlugin(esLintOptions),
+    new webpack.NoEmitOnErrorsPlugin(),
+    new CopyPlugin({
+      patterns: [
+        {
+          from: './src/assets',
+          to: './assets',
+        },
+      ],
+    }),
+  ].concat(multipleHtmlPlugins),
   module: {
     rules: [
       {
@@ -39,24 +75,27 @@ const config = {
       { test: /\.html$/i, loader: 'html-loader' },
       {
         test: /\.css$/,
-        use: ['style-loader', 'css-loader'],
+        use: [
+          MiniCssExtractPlugin.loader,
+          {
+            loader: 'css-loader',
+            options: {
+              importLoaders: 2,
+              sourceMap: true,
+            },
+          },
+        ],
       },
       {
         test: /\.(png|svg|jpg|gif)$/,
         use: ['file-loader'],
       },
+      {
+        test: /\.(ttf|otf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
+        use: 'file-loader?name=assets/fonts/[name].[ext]',
+      },
     ],
   },
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: 'src/html/index.html',
-      filename: 'index.html',
-      excludeChunks: ['server'],
-    }),
-    new webpack.HotModuleReplacementPlugin(),
-    new ESLintPlugin(esLintOptions),
-    new webpack.NoEmitOnErrorsPlugin(),
-  ],
 };
 
 module.exports = config;
