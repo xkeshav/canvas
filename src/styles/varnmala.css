@@ -25,15 +25,16 @@
 }
 
 .word:hover {
-  background: #eaebf9;
+  background-color: #eaebf9;
   color: #eaebf9;
+  border: 1px solid red;
 }
 
 .show {
-  background: #bd4595;
+  background-color: #bd4595;
   color: white;
 }
 .show:hover {
-  background: #483d8b;
+  background-color: #483d8b;
   color: #fd3636;
 }

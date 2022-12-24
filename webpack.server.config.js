@@ -1,21 +1,21 @@
-const path = require('path');
-const webpack = require('webpack');
-const nodeExternals = require('webpack-node-externals');
+const path = require("path");
+const webpack = require("webpack");
+const nodeExternals = require("webpack-node-externals");
 
 const config = (_, argv) => {
-  const SERVER_PATH = argv.mode === 'production' ? './src/server/server-prod.js' : './src/server/server-dev.js';
+  const SERVER_PATH = argv.mode === "production" ? "./src/server/server-prod.js" : "./src/server/server-dev.js";
   return {
     entry: {
       server: path.join(__dirname, SERVER_PATH),
     },
     output: {
-      path: path.join(__dirname, 'dist'),
-      publicPath: '/',
-      filename: '[name].js',
+      path: path.join(__dirname, "dist"),
+      publicPath: "/",
+      filename: "[name].js",
       clean: true,
     },
     mode: argv.mode,
-    target: 'node',
+    target: "node",
     node: {
       // Need this when working with express, otherwise the build fails
       __dirname: false, // if you don't put this is, __dirname
@@ -29,7 +29,7 @@ const config = (_, argv) => {
           test: /\.js$/,
           exclude: /node_modules/,
           use: {
-            loader: 'babel-loader',
+            loader: "babel-loader",
           },
         },
       ],

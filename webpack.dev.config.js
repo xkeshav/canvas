@@ -27,7 +27,7 @@ const esLintOptions = {
 
 const config = {
   entry: {
-    index: "./src/index.js",
+    index: ["webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000", "./src/index.js"],
     draw: ["./src/scripts/draw.js", "./src/styles/draw.css"],
     varnmala: ["./src/scripts/varnmala.js", "./src/styles/varnmala.css"],
     canvas: ["./src/scripts/canvas.js", "./src/styles/canvas.css"],

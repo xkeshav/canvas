@@ -8,13 +8,23 @@ _bg.json_ has mapping of those images and keys which fetched using mock API
 
 ## How to run
 
-- clone this repo
-- run `npm install`
-- run `npm run buildDev` to build client and server using webpack
-- run `npm run start` to start the app
-- run `json-server --watch bg.json` in another tab to work with API
+- clone this repo and navigate to folder and run
 
-open `http://localhost:8080` in browser
+  `npm install`
+
+- build client and server using webpack by running
+
+  `npm run buildDev`
+
+- start the app
+
+  `npm run start`
+
+- run below in another terminal instance
+
+  `npm run mock-server`
+
+now open **<http://localhost:3003>** in browser
 
 ## How it works
 
