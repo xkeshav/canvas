@@ -20,7 +20,6 @@ const multipleHtmlPlugins = htmlPageNames.map(
     })
 );
 
-console.log({ multipleHtmlPlugins });
 const esLintOptions = {
   extensions: [`js`],
   exclude: [`/node_modules/`],
