@@ -36,6 +36,7 @@ const config = {
     path: BUILD_DIR,
     publicPath: "/",
     filename: "[name].js",
+    chunkFilename: "[name].js",
     assetModuleFilename: "asset/[hash][ext][query]",
   },
   mode: "development",
@@ -52,7 +53,7 @@ const config = {
       excludeChunks: ["server"],
     }),
     new MiniCssExtractPlugin({
-      filename: "[name].css",
+      filename: "styles/[name].css",
     }),
     new webpack.HotModuleReplacementPlugin(),
     new ESLintPlugin(esLintOptions),
@@ -84,7 +85,6 @@ const config = {
             loader: "css-loader",
             options: {
               importLoaders: 2,
-              sourceMap: true,
             },
           },
         ],
