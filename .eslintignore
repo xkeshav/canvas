@@ -1,3 +1,4 @@
 webpack.*
 .eslintrc.js
 dist/**
+node_mdoules/**

@@ -1,4 +1,3 @@
-// @ts-nocheck
 import { setBackgroundImage } from "./alphabet.js";
 import { colorBox } from "./utils.js";
 

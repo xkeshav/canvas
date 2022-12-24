@@ -1,5 +1,5 @@
-const BASE_URL = `http://localhost:3000`; // run `json-server --watch db.json` before this
-const IMAGE_DIR = `../asset/images/background`;
+const BASE_URL = "http://localhost:3000"; // run `json-server --watch db.json` before this
+const IMAGE_DIR = "../asset/images/background";
 
 const headerElement = document.body.querySelector("header");
 
@@ -33,6 +33,6 @@ export const setBackgroundImage = (letter) => {
 			headerElement.style.backgroundImage = bgURL;
 		})
 		.catch(() => {
-			document.body.style.background = `color`;
+			document.body.style.background = "color";
 		});
 };

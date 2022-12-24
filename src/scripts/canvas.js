@@ -36,14 +36,15 @@ const drawImage = (first = "A", last = "Z", separator = " ") => {
 	context.textAlign = "center";
 	context.textBaseline = "middle";
 	// font color
-	context.fillStyle = `white`;
+	context.fillStyle = "white";
 	const text = `${first}${separator}${last}`.toUpperCase();
 	context.fillText(text, w / 2, h / 2, 200);
 	// draw border in a inner rectangle
 	context.strokeStyle = `#${color}`;
 	context.strokeRect(0, 0, w, h);
 	const dataURL = canvas.toDataURL();
-	return Promise.resolve(dataURL);
+	const image = new Promise.resolve(dataURL);
+	return image;
 };
 
 function loadImage(url) {
