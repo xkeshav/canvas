@@ -1,31 +1,12 @@
 const path = require("path");
 const webpack = require("webpack");
-const HtmlPlugin = require("html-webpack-plugin");
-const ESLintPlugin = require("eslint-webpack-plugin");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const CopyPlugin = require("copy-webpack-plugin");
+
+const plugins = require("./webpack.plugin.config");
+const modules = require("./webpack.modules.config");
 
 const BUILD_DIR = path.join(__dirname, "dist");
-const HTML_DIR = path.join(BUILD_DIR, "html");
 
-const htmlPageNames = ["canvas", "draw", "varnmala"];
-
-let multipleHtmlPlugins = htmlPageNames.map((name) => {
-  return new HtmlPlugin({
-    template: `./src/html/${name}.html`, // relative path to the HTML files
-    filename: `${HTML_DIR}/${name}.html`, // output HTML files
-    chunks: [`${name}`], // respective JS files
-  });
-});
-
-const esLintOptions = {
-  extensions: [`js`],
-  exclude: [`/node_modules/`],
-  emitWarning: true,
-  failOnError: false,
-};
-
-const config = {
+const baseConfig = {
   entry: {
     index: ["webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000", "./src/index.js"],
     draw: ["./src/scripts/draw.js", "./src/styles/draw.css"],
@@ -45,64 +26,8 @@ const config = {
   resolve: {
     extensions: [".html", ".js", ".json", ".css"],
   },
-  plugins: [
-    new HtmlPlugin({
-      template: "src/html/index.html",
-      filename: `${HTML_DIR}/index.html`,
-      chunks: ["index"],
-      excludeChunks: ["server"],
-    }),
-    new MiniCssExtractPlugin({
-      filename: "styles/[name].css",
-    }),
-    new webpack.HotModuleReplacementPlugin(),
-    new ESLintPlugin(esLintOptions),
-    new webpack.NoEmitOnErrorsPlugin(),
-    new CopyPlugin({
-      patterns: [
-        {
-          from: "./src/asset/images",
-          to: "./asset/images",
-        },
-      ],
-    }),
-  ].concat(multipleHtmlPlugins),
-  module: {
-    rules: [
-      {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        use: {
-          loader: "babel-loader",
-        },
-      },
-      { test: /\.html$/i, loader: "html-loader" },
-      {
-        test: /\.css$/,
-        use: [
-          MiniCssExtractPlugin.loader,
-          {
-            loader: "css-loader",
-            options: {
-              importLoaders: 2,
-            },
-          },
-        ],
-      },
-      {
-        test: /\.(png|svg|jpg|gif)$/,
-        type: "asset/resource",
-      },
-      {
-        test: /\.(ttf|otf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
-        type: "asset/resource",
-        dependency: { not: ["url"] },
-        generator: {
-          filename: "static/[hash][ext][query]",
-        },
-      },
-    ],
-  },
 };
+
+const config = Object.assign(baseConfig, { plugins, module: modules });
 
 module.exports = config;
