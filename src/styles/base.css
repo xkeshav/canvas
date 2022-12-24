@@ -1,16 +1,30 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
 }
 
 @font-face {
-  font-family: 'sportropregular';
-  src: url('../asset/fonts/sportrop-webfont.woff2') format('woff2'), url('../asset/fonts/sportrop-webfont.woff') format('woff');
+  font-family: "sportropregular";
+  src: url("../asset/fonts/sportrop-webfont.woff2") format("woff2"), url("../asset/fonts/sportrop-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "atkinson_hyperlegibleregular";
+  src: url("../asset/fonts/atkinson-hyperlegible-regular-102-webfont.woff2") format("woff2"),
+    url("../asset/fonts/atkinson-hyperlegible-regular-102-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
 
 body {
-  font-family: 'sportropregular';
-  height: 100%;
+  font-family: "sportropregular", "atkinson_hyperlegibleregular", "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 16px;
 }

@@ -19,10 +19,17 @@ module.exports = {
 		module: true,
 	},
 	rules: {
-		"no-unused-vars": ["error", { argsIgnorePattern: "^_" }],
+		"no-unused-vars": [
+			"error",
+			{
+				argsIgnorePattern: "^_",
+				args: "after-used",
+				ignoreRestSiblings: true,
+			},
+		],
 		semi: ["error", "always"],
 		quotes: ["error", "double"],
 		indent: [0, "tab"],
-		"linebreak-style": [0, "unix"],
+		"linebreak-style": ["off", "unix"],
 	},
 };

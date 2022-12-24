@@ -3,10 +3,10 @@ const input = document.getElementById("name");
 
 const getRandomColor = () => {
 	const randomNum = Math.floor(Math.random() * 16777216);
-	const hextest = randomNum.toString(16);
-	const hexcode = hextest.padEnd(6, 0);
-	// displayColorCode(hexcode);
-	return hexcode;
+	const hex_test = randomNum.toString(16);
+	const hex_code = hex_test.padEnd(6, 0);
+	// displayColorCode(hex_code);
+	return hex_code;
 };
 
 /* eslint no-unused-vars:0 */

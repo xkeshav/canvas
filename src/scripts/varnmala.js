@@ -14,14 +14,14 @@ export const varnmalaHandler = () => {
 	};
 
 	const highlightText = (w) => {
+		// eslint-disable-next-line  no-unused-vars
 		for (let child of main.childNodes) {
 			if (child.textContent === w.toUpperCase()) {
 				const classes = child.classList;
 				classes.toggle("show");
 				break;
 			}
-		
-    }
+		}
 	};
 
 	document.addEventListener("keydown", (e) => {

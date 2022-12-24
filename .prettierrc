@@ -4,7 +4,7 @@
   "printWidth": 150,
   "proseWrap": "preserve",
   "semi": true,
-  "singleQuote": true,
+  "singleQuote": false,
   "trailingComma": "es5",
   "useTabs": false,
   "tabWidth": 2
