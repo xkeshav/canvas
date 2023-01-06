@@ -24,7 +24,7 @@ _bg.json_ has mapping of those images and keys which fetched using mock API
 
   `npm run mock-server`
 
-now open **<http://localhost:3003>** in browser
+> open [localhost:3003](http://localhost:3003) to see the main page in browser
 
 ## screenshot
 
