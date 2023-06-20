@@ -13,21 +13,21 @@ const compiler = webpack(config);
 console.log(HTML_FILE);
 
 app.use(
-	webpackDevMiddleware(compiler, {
-		publicPath: config.output.publicPath,
-	})
+  webpackDevMiddleware(compiler, {
+    publicPath: config.output.publicPath,
+  })
 );
 
 //app.use(webpackHotMiddleware(compiler));
 
 app.use(express.static(DIST_DIR));
-app.get("*", (req, res) => {
-	res.sendFile(HTML_FILE);
+app.get("*", (_, res) => {
+  res.sendFile(HTML_FILE);
 });
 
 const PORT = process.env.PORT || 8070;
 
 app.listen(PORT, () => {
-	console.log(`App123 listening to ${PORT}....`);
-	console.log("Press Ctrl+C to quit.");
+  console.log(`App listening to ${PORT}....`);
+  console.log("Press Ctrl+C to quit.");
 });

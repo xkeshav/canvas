@@ -9,19 +9,21 @@ body {
   height: 100%;
 }
 
-@font-face {
-  font-family: "sportropregular";
-  src: url("../asset/fonts/sportrop-webfont.woff2") format("woff2"), url("../asset/fonts/sportrop-webfont.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
+@supports font-format(woff2) {
+  @font-face {
+    font-family: "sportropregular";
+    src: url("../asset/fonts/sportrop-webfont.woff2") format("woff2"), url("../asset/fonts/sportrop-webfont.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+  }
 
-@font-face {
-  font-family: "atkinson_hyperlegibleregular";
-  src: url("../asset/fonts/atkinson-hyperlegible-regular-102-webfont.woff2") format("woff2"),
-    url("../asset/fonts/atkinson-hyperlegible-regular-102-webfont.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
+  @font-face {
+    font-family: "atkinson_hyperlegibleregular";
+    src: url("../asset/fonts/atkinson-hyperlegible-regular-102-webfont.woff2") format("woff2"),
+      url("../asset/fonts/atkinson-hyperlegible-regular-102-webfont.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+  }
 }
 
 body {
