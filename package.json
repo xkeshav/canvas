@@ -1,7 +1,7 @@
 {
   "name": "canvas",
   "version": "1.0.0",
-  "description": "This is simple Page which generate image based on initials of the text provided with different background color every time. if click on time button it will print image of \"hour:minute\" in 12 hours format.",
+  "description": "few canvas tips",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack --mode development --config webpack.dev.config.js",
@@ -9,7 +9,8 @@
     "mock-server": "node ./src/server/json-server.js",
     "clean": "rd /s /q dist >nul 2>&1|echo.>null",
     "start": "node ./dist/server.js",
-    "buildDev": "npm run server && npm run dev"
+    "build:dev": "npm run server && npm run dev",
+    "build": "webpack --config webpack.prod.config.js"
   },
   "main": "main.js",
   "repository": {
@@ -43,7 +44,7 @@
     "mini-css-extract-plugin": "^2.7.2",
     "style-loader": "^3.3.1",
     "webpack": "^5.75.0",
-    "webpack-cli": "^5.0.1",
+    "webpack-cli": "^5.1.4",
     "webpack-dev-middleware": "^6.0.1",
     "webpack-hot-middleware": "^2.25.3",
     "webpack-node-externals": "^3.0.0"
