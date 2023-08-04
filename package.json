@@ -10,7 +10,7 @@
     "clean": "rd /s /q dist >nul 2>&1|echo.>null",
     "start": "node ./dist/server.js",
     "build:dev": "npm run server && npm run dev",
-    "build": "webpack --mode production --config webpack.dev.config.js"
+    "build": "webpack --mode development --config webpack.dev.config.js"
   },
   "main": "main.js",
   "repository": {
