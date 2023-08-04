@@ -13,6 +13,9 @@ const baseConfig = {
     varnmala: ["./src/scripts/varnmala.js", "./src/styles/varnmala.css"],
     canvas: ["./src/scripts/canvas.js", "./src/styles/canvas.css"],
   },
+  performance: {
+    hints: false,
+  },
   output: {
     path: BUILD_DIR,
     publicPath: "/",

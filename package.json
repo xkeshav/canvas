@@ -6,11 +6,11 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack --mode development --config webpack.dev.config.js",
     "server": "webpack --mode development --config webpack.server.config.js",
-    "mock-server": "node ./src/server/json-server.js",
+    "mock": "node ./src/server/json-server.js",
     "clean": "rd /s /q dist >nul 2>&1|echo.>null",
     "start": "node ./dist/server.js",
     "build:dev": "npm run server && npm run dev",
-    "build": "webpack --mode development --config webpack.dev.config.js"
+    "build": "webpack --mode production --config webpack.dev.config.js"
   },
   "main": "main.js",
   "repository": {
