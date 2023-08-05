@@ -9,7 +9,7 @@ const CopyPlugin = require("copy-webpack-plugin");
 const BUILD_DIR = path.join(__dirname, "dist");
 const HTML_DIR = path.join(BUILD_DIR, "html");
 
-const htmlPageNames = ["canvas", "draw", "varnmala"];
+const htmlPageNames = ["about", "canvas", "draw", "varnmala"];
 
 const multipleHtmlPlugins = htmlPageNames.map(
   (name) =>

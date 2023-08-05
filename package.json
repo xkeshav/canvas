@@ -10,7 +10,7 @@
     "clean": "rd /s /q dist >nul 2>&1|echo.>null",
     "start": "node ./dist/server.js",
     "build:dev": "npm run server && npm run dev",
-    "build": "webpack --mode production --config webpack.dev.config.js"
+    "build": "webpack --mode=production --config webpack.dev.config.js"
   },
   "main": "main.js",
   "repository": {
@@ -30,8 +30,8 @@
   "homepage": "https://github.com/xkeshav/canvas#readme",
   "devDependencies": {
     "@babel/core": "^7.20.7",
+    "@babel/eslint-parser": "^7.22.9",
     "@babel/register": "^7.0.0",
-    "babel-eslint": "^9.0.0",
     "babel-loader": "^9.1.0",
     "copy-webpack-plugin": "^11.0.0",
     "css-loader": "^6.7.3",

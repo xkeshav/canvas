@@ -10,7 +10,17 @@ const app = express();
 
 const router = express.Router();
 
-const DIST_DIR = __dirname;
+const currentDirectory = process.cwd(); // current directory
+
+//console.log({ currentDirectory });
+
+app.use(express.static("dist"));
+
+const DIST_DIR = path.join(path.resolve(currentDirectory, "dist"));
+
+//app.use(express.static(__dirname + "/dist"));
+
+//const DIST_DIR = process.cwd();
 const HTML_DIR = path.join(DIST_DIR, "html");
 const HTML_FILE = path.join(HTML_DIR, "index.html");
 const compiler = webpack(config);
@@ -27,6 +37,10 @@ app.use(express.static(HTML_DIR));
 
 app.get("/home", (_, res) => {
   res.sendFile(HTML_FILE);
+});
+
+app.get("/about", (_, res) => {
+  res.sendFile(path.join(HTML_DIR, "about.html"));
 });
 
 app.get("/draw", (_, res) => {
