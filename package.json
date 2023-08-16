@@ -9,10 +9,9 @@
     "mock": "node ./src/server/json-server.js",
     "clean": "rd /s /q dist >nul 2>&1|echo.>null",
     "start": "node ./dist/server.js",
-    "build:dev": "npm run server && npm run dev",
-    "build": "webpack --mode=production --config webpack.dev.config.js"
+    "build": "npm run server && npm run dev",
+    "build:dev": "webpack --mode=production --config webpack.dev.config.js"
   },
-  "main": "main.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/xkeshav/canvas.git"
@@ -51,7 +50,9 @@
   },
   "dependencies": {
     "@babel/preset-env": "^7.20.2",
+    "cors": "^2.8.5",
     "express": "^4.18.2",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "request": "^2.88.2"
   }
 }

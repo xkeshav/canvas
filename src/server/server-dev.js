@@ -1,5 +1,6 @@
 // @ts-nocheck
 import express from "express";
+import fs from "fs";
 import path from "path";
 import { webpack } from "webpack";
 import webpackDevMiddleware from "webpack-dev-middleware";
@@ -14,13 +15,8 @@ const currentDirectory = process.cwd(); // current directory
 
 //console.log({ currentDirectory });
 
-app.use(express.static("dist"));
-
 const DIST_DIR = path.join(path.resolve(currentDirectory, "dist"));
 
-//app.use(express.static(__dirname + "/dist"));
-
-//const DIST_DIR = process.cwd();
 const HTML_DIR = path.join(DIST_DIR, "html");
 const HTML_FILE = path.join(HTML_DIR, "index.html");
 const compiler = webpack(config);
@@ -55,12 +51,30 @@ app.get("/canvas", (_, res) => {
   res.sendFile(path.join(HTML_DIR, "canvas.html"));
 });
 
+const readJson = (fileName) => {
+  let jsonObjData = [];
+  try {
+    const jsonStringData = fs.readFileSync(path.join(DIST_DIR, "json", fileName));
+    jsonObjData = JSON.parse(jsonStringData);
+  } catch (err) {
+    console.log(err);
+  }
+  return jsonObjData;
+};
+
+app.get("/bg/:key", (req, res) => {
+  //console.log("params", req.params.key);
+  const fileData = readJson("bg.json");
+  const output = fileData.filter((f) => f.key === req.params.key.toLowerCase());
+  //console.log({ output });
+  res.status(200).send(output);
+});
+
 app.use("/", router);
 
 const PORT = process.env.PORT || 3003;
 
 app.listen(PORT, () => {
   console.log(`App listening to ${PORT}....`);
-  console.log("make sure to run mock server using `npm run mock-server`");
   console.log("Press Ctrl+C to quit.");
 });

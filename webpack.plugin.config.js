@@ -43,8 +43,12 @@ const plugins = [
   new CopyPlugin({
     patterns: [
       {
-        from: "./src/asset/images",
-        to: "./asset/images",
+        from: "./src/assets/images",
+        to: "./assets/images",
+      },
+      {
+        from: "./src/json",
+        to: "./json",
       },
     ],
   }),

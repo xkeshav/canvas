@@ -1,39 +1,40 @@
 const path = require("path");
 const webpack = require("webpack");
 const nodeExternals = require("webpack-node-externals");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 
-const config = (_, argv) => {
-  const SERVER_PATH = argv.mode === "production" ? "./src/server/server-prod.js" : "./src/server/server-dev.js";
-  return {
-    entry: {
-      server: path.join(__dirname, SERVER_PATH),
-    },
-    output: {
-      path: path.join(__dirname, "dist"),
-      publicPath: "/",
-      filename: "[name].js",
-      clean: true,
-    },
-    mode: argv.mode,
-    target: "node",
-    node: {
-      // Need this when working with express, otherwise the build fails
-      __dirname: false, // if you don't put this is, __dirname and __filename return blank or /
-      __filename: false,
-    },
-    externals: [nodeExternals()], // Need this to avoid error when working with Express
-    module: {
-      rules: [
-        {
-          // Transpile ES6-8 into ES5
-          test: /\.js$/,
-          exclude: /node_modules/,
-          use: {
-            loader: "babel-loader",
-          },
+const SERVER_PATH = "./src/server/server-dev.js";
+const config = {
+  //return {
+  entry: {
+    server: SERVER_PATH,
+  },
+  output: {
+    path: path.resolve(__dirname, "dist"),
+    publicPath: "/",
+    filename: "[name].js",
+  },
+  devServer: {
+    hot: true,
+    historyApiFallback: true,
+  },
+  resolve: {
+    extensions: [".js"],
+  },
+  mode: "production",
+  target: "node",
+  externals: [nodeExternals()], // Need this to avoid error when working with Express
+  module: {
+    rules: [
+      {
+        // Transpile ES6-8 into ES5
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: "babel-loader",
         },
-      ],
-    },
-  };
+      },
+    ],
+  },
 };
 module.exports = config;

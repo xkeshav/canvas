@@ -2,10 +2,6 @@
 
 Simple kids learning web app which change the background image/color on the key pressed.
 
-all images are placed on `images/background` folder
-
-_bg.json_ has mapping of those images and keys which fetched using mock API
-
 ## How to run
 
 - clone this repo and navigate to folder and run
@@ -14,15 +10,11 @@ _bg.json_ has mapping of those images and keys which fetched using mock API
 
 - build client and server using webpack by running
 
-  `npm run buildDev`
+  `npm run build`
 
 - start the app
 
   `npm run start`
-
-- run below in another terminal instance
-
-  `npm run mock-server`
 
 > open [localhost:3003](http://localhost:3003) to see the main page in browser
 
@@ -30,19 +22,19 @@ _bg.json_ has mapping of those images and keys which fetched using mock API
 
 ### landing page
 
-![Landing Page](src/asset/screenshots/Index.png)
+![Landing Page](src/assets/screenshots/Index.png)
 
 ### Canvas
 
-![Canvas](src/asset/screenshots/Canvas.png)
+![Canvas](src/assets/screenshots/Canvas.png)
 
-### Varnmala
+### Hide N Seek
 
-![Varnmala](src/asset/screenshots/Varnmala.png)
+![Varnmala](src/assets/screenshots/Varnmala.png)
 
 ### Draw
 
-![Draw](src/asset/screenshots/Draw.png)
+![Draw](src/assets/screenshots/Draw.png)
 
 ## How it works
 
@@ -59,7 +51,7 @@ on right side that key name will be appeared in white color with big font size
   for eg if user press A than background image will be changes to Apple.
   Note: all images are in _.jpg_ format only.
 
-### Varnmala Page
+### Hide N Seek Page
 
 there is grid of green blocks of 26 letters
 
