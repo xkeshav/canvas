@@ -9,6 +9,8 @@ See the License for the specific language governing permissions and limitations 
 const express = require("express");
 const bodyParser = require("body-parser");
 const awsServerlessExpressMiddleware = require("aws-serverless-express/middleware");
+const fs = require("fs");
+const path = requires("path");
 
 // declare a new express app
 const app = express();
@@ -29,7 +31,7 @@ app.use(function (req, res, next) {
 const readJson = (fileName) => {
   let jsonObjData = [];
   try {
-    const jsonStringData = fs.readFileSync(fileName);
+    const jsonStringData = fs.readFileSync(path.resolve(__dirname, fileName));
     jsonObjData = JSON.parse(jsonStringData);
   } catch (err) {
     console.log(err);
