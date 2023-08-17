@@ -12,7 +12,7 @@ const SERVER_DIR = path.join(process.cwd(), SERVER_PATH);
 
 const baseConfig = {
   entry: {
-    index: ["webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000", "./src/index.js"],
+    index: ["./src/index.js"],
     draw: ["./src/scripts/draw.js", "./src/scripts/alphabet.js", "./src/styles/draw.css"],
     varnmala: ["./src/scripts/varnmala.js", "./src/styles/varnmala.css"],
     canvas: ["./src/scripts/canvas.js", "./src/styles/canvas.css"],
