@@ -26,14 +26,27 @@ app.use(function (req, res, next) {
  * Example get method *
  **********************/
 
+const readJson = (fileName) => {
+  let jsonObjData = [];
+  try {
+    const jsonStringData = fs.readFileSync(fileName);
+    jsonObjData = JSON.parse(jsonStringData);
+  } catch (err) {
+    console.log(err);
+  }
+  return jsonObjData;
+};
+
 app.get("/canvas", function (req, res) {
   // Add your code here
   res.json({ success: "get call succeed!", url: req.url });
 });
 
-app.get("/canvas/bg", function (req, res) {
+app.get("/canvas/bg/:key", function (req, res) {
   // Add your code here
-  res.json({ success: "canvas bg called", url: req.url });
+  const fileData = readJson("bg.json");
+  const output = fileData.filter((f) => f.key === req.params.key.toLowerCase());
+  res.json({ success: "canvas bg called", url: req.url, output });
 });
 
 /****************************
