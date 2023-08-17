@@ -1,0 +1,26 @@
+{
+  "master": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-canvas-master-191242-authRole",
+      "UnauthRoleArn": "arn:aws:iam::073532590105:role/amplify-canvas-master-191242-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::073532590105:role/amplify-canvas-master-191242-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-canvas-master-191242-deployment",
+      "UnauthRoleName": "amplify-canvas-master-191242-unauthRole",
+      "StackName": "amplify-canvas-master-191242",
+      "StackId": "arn:aws:cloudformation:us-east-1:073532590105:stack/amplify-canvas-master-191242/0d9ddc40-33c4-11ee-957d-12390a332661",
+      "AmplifyAppId": "d1v0nmn943cmur"
+    },
+    "categories": {
+      "function": {
+        "canvaslambda": {
+          "deploymentBucketName": "amplify-canvas-master-191242-deployment",
+          "s3Key": "amplify-builds/canvaslambda-45637133585851553241-build.zip"
+        }
+      },
+      "api": {
+        "canvasapi": {}
+      }
+    }
+  }
+}

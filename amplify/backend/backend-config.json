@@ -1,0 +1,43 @@
+{
+  "api": {
+    "canvasapi": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "canvaslambda"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "API Gateway"
+    }
+  },
+  "function": {
+    "canvaslambda": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  },
+  "parameters": {
+    "AMPLIFY_function_canvaslambda_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "canvaslambda"
+        }
+      ]
+    },
+    "AMPLIFY_function_canvaslambda_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "canvaslambda"
+        }
+      ]
+    }
+  }
+}

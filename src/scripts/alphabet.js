@@ -1,4 +1,4 @@
-const BASE_URL = "http://localhost:3003"; // run `json-server --watch db.json` before this
+const BASE_URL = "https://bnm1w7hj00.execute-api.us-east-1.amazonaws.com/master/canvas"; // run `json-server --watch db.json` before this
 const IMAGE_DIR = "../assets/images/background";
 
 const headerElement = document.body.querySelector("header");
