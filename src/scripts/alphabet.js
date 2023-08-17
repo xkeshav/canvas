@@ -24,7 +24,7 @@ export const setBackgroundImage = (letter) => {
       else throw Error;
     })
     .then((result) => {
-      const poster = result.length > 0 ? result.pop().value : "blank";
+      const poster = result.output.length > 0 ? result.output.pop().value : "blank";
       return poster;
     })
     .then((poster) => {
