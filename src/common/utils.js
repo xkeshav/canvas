@@ -16,4 +16,4 @@ export const numberBox = {
 
 export const varnmala = Array.from({ length: 26 }, (_, i) => String.fromCodePoint(65 + i));
 
-export const getRandomValue = (arr = []) => Math.floor(Math.random() * arr.length);
+export const getRandomValue = (arr = []) => arr.at(Math.floor(Math.random() * arr.length));

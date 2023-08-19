@@ -1,5 +1,5 @@
-import { fetchKeyMetadata } from "../common/helper.js";
-import { colorBox, getRandomValue, numberBox } from "./utils.js";
+import { fetchKeyMetadata } from "../common/helper";
+import { colorBox, getRandomValue, numberBox } from "../common/utils";
 
 const main = document.querySelector("main");
 const boardDiv = document.querySelector(".board");
@@ -16,6 +16,7 @@ toggleButton.addEventListener("change", (e) => {
 const drawNumber = (key = 0) => {
   //console.log("%c else is number", "color:green", key);
   const randomColor = getRandomValue(colorBox);
+  console.log({ randomColor });
   boardDiv.style.backgroundColor = randomColor;
   charDiv.textContent = key;
   info.textContent = numberBox[key];
@@ -29,7 +30,7 @@ const drawLetter = (key = "A") => {
 
 const drawShape = () => {
   document.addEventListener("keydown", async (e) => {
-    header.style.display = "none";
+    header.classList.add("hide");
     const inputKey = e.key;
     const isNumber = !isNaN(Number(inputKey));
     if (isNumber) {
