@@ -1,25 +1,19 @@
 const path = require("path");
-const webpack = require("webpack");
 const nodeExternals = require("webpack-node-externals");
-const CopyWebpackPlugin = require("copy-webpack-plugin");
 
 const SERVER_PATH = "./src/server/server-dev.js";
 const config = {
   //return {
   entry: {
-    server: SERVER_PATH,
+    server: SERVER_PATH
   },
   output: {
     path: path.resolve(__dirname, "dist"),
     publicPath: "/",
-    filename: "[name].js",
-  },
-  devServer: {
-    hot: true,
-    historyApiFallback: true,
+    filename: "[name].js"
   },
   resolve: {
-    extensions: [".js"],
+    extensions: [".js"]
   },
   mode: "production",
   target: "node",
@@ -31,10 +25,10 @@ const config = {
         test: /\.js$/,
         exclude: /node_modules/,
         use: {
-          loader: "babel-loader",
-        },
-      },
-    ],
-  },
+          loader: "babel-loader"
+        }
+      }
+    ]
+  }
 };
 module.exports = config;

@@ -16,7 +16,7 @@ const multipleHtmlPlugins = htmlPageNames.map(
     new HtmlPlugin({
       template: `./src/html/${name}.html`, // relative path to the HTML files
       filename: `${HTML_DIR}/${name}.html`, // output HTML files
-      chunks: [`${name}`], // respective JS files
+      chunks: [`${name}`] // respective JS files
     })
 );
 
@@ -24,7 +24,7 @@ const esLintOptions = {
   extensions: [`js`],
   exclude: [`/node_modules/`],
   emitWarning: true,
-  failOnError: false,
+  failOnError: false
 };
 
 const plugins = [
@@ -32,10 +32,10 @@ const plugins = [
     template: "src/html/index.html",
     filename: `${HTML_DIR}/index.html`,
     chunks: ["index"],
-    excludeChunks: ["server"],
+    excludeChunks: ["server"]
   }),
   new MiniCssExtractPlugin({
-    filename: "styles/[name].css",
+    filename: "styles/[name].css"
   }),
   new webpack.HotModuleReplacementPlugin(),
   new ESLintPlugin(esLintOptions),
@@ -44,14 +44,14 @@ const plugins = [
     patterns: [
       {
         from: "./src/assets/images",
-        to: "./assets/images",
+        to: "./assets/images"
       },
       {
         from: "./src/json",
-        to: "./json",
-      },
-    ],
-  }),
+        to: "./json"
+      }
+    ]
+  })
 ].concat(multipleHtmlPlugins);
 
 module.exports = plugins;

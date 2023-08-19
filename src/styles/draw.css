@@ -1,25 +1,31 @@
 @import url(./base.css);
 
-.instruction {
-  text-align: center;
-  line-height: 1.8em;
-  color: black;
-  background-image: linear-gradient(to right, #3f87a6, #ebf8e1 30%, #f69d3c);
+:root {
+  --radius: 10%;
+}
+
+.container {
+  display: grid;
+  grid-auto-flow: row;
+  grid-template-rows: 3rem 1fr auto;
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
+  grid-gap: 0.25rem;
 }
 
 header {
-  overflow: hidden;
-  height: 100vh;
-  background-color: white;
-  background-size: cover;
-  background-attachment: scroll;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-blend-mode: multiply;
+  grid-area: header;
+  justify-self: stretch;
 }
 
-.action {
-  padding-inline-start: 1rem;
+main {
+  grid-area: main;
+}
+
+footer {
+  grid-area: footer;
 }
 
 input[type="checkbox"] {
@@ -30,56 +36,60 @@ label {
   cursor: pointer;
 }
 
+.instruction {
+  text-align: center;
+  line-height: 1.8em;
+  color: black;
+  background-image: linear-gradient(to right, #3f87a6, #ebf8e1 30%, #f69d3c);
+}
+
 .board {
   display: grid;
-  grid-template: auto / repeat(2, 1fr);
-  grid-template-areas: "char shape";
-  grid-gap: 2em;
-  justify-content: center;
+  place-items: center;
+  color: black;
+  grid-template-areas:
+    "char"
+    "info";
+  grid-auto-flow: row;
+  grid-gap: 0.5rem;
+  grid-template-rows: 1fr minmax(1rem, auto);
   height: 100%;
 }
 
 .char {
-  display: grid;
   grid-area: char;
-  align-items: center;
-  justify-content: center;
-  height: inherit;
-  background: inherit;
   -webkit-background-clip: text;
   background-clip: text;
   color: white;
   font-weight: 900;
-  font-size: 85vmin;
-  line-height: 80vh;
+  font-size: 85ch;
   font-variant: common-ligatures tabular-nums;
   font-family: "Mudra_Mohta"; /* "atkinson_hyperlegibleregular"; */
-  text-align: center;
   mix-blend-mode: unset;
-  line-height: 1;
   filter: opacity(0.9);
   text-transform: uppercase;
 }
 
-.shape {
-  display: grid;
-  grid-area: shape;
-  grid-template: auto / repeat(3, 1fr);
-  grid-template-areas: "circle circle circle";
-  grid-gap: 2em;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
+.info {
+  grid-area: info;
+  justify-self: stretch;
+  font-size: 2rem;
+  text-align: center;
+  opacity: 0.75;
+  text-overflow: ellipsis;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: blanchedalmond;
 }
 
-.circle {
-  height: 8em;
-  width: 8em;
-  border-radius: 50%;
-  background-color: yellow;
-  padding: 10px;
-  align-self: center;
-  justify-self: center;
-  display: grid;
-  border: 1px solid #fff;
+.bg {
+  background-size: cover;
+  background-attachment: scroll;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-blend-mode: multiply;
+  overflow: hidden;
+}
+
+.action {
+  padding-inline-start: 1rem;
 }

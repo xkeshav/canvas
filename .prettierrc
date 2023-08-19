@@ -1,11 +1,12 @@
 {
   "allowParens": "always",
   "bracketSpacing": true,
+  "bracketSameLine": true,
   "printWidth": 150,
   "proseWrap": "preserve",
   "semi": true,
   "singleQuote": false,
-  "trailingComma": "es5",
+  "trailingComma": "none",
   "useTabs": false,
   "tabWidth": 2
 }

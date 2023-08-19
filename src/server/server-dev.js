@@ -23,7 +23,7 @@ const compiler = webpack(config);
 
 app.use(
   webpackDevMiddleware(compiler, {
-    publicPath: config.output.publicPath,
+    publicPath: config.output.publicPath
   })
 );
 
@@ -67,7 +67,7 @@ app.get("/bg/:key", (req, res) => {
   const fileData = readJson("bg.json");
   const output = fileData.filter((f) => f.key === req.params.key.toLowerCase());
   //console.log({ output });
-  res.status(200).send(output);
+  res.status(200).send({ output });
 });
 
 app.use("/", router);

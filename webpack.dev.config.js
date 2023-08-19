@@ -1,5 +1,4 @@
 const path = require("path");
-const webpack = require("webpack");
 const nodeExternals = require("webpack-node-externals");
 
 const plugins = require("./webpack.plugin.config");
@@ -13,17 +12,19 @@ const SERVER_DIR = path.join(process.cwd(), SERVER_PATH);
 const baseConfig = {
   entry: {
     index: ["./src/index.js"],
-    draw: ["./src/scripts/draw.js", "./src/scripts/alphabet.js", "./src/styles/draw.css"],
+    draw: ["./src/scripts/draw.js", "./src/styles/draw.css"],
     varnmala: ["./src/scripts/varnmala.js", "./src/styles/varnmala.css"],
     canvas: ["./src/scripts/canvas.js", "./src/styles/canvas.css"],
-    server: [SERVER_DIR],
+    server: [SERVER_DIR]
   },
   performance: {
-    hints: false,
+    hints: false
   },
   devServer: {
-    hot: true,
-    contentBase: path.join(__dirname, "dist"),
+    watchFiles: ["./dist/*"], // string [string] object [object]
+    port: 3000,
+    open: true,
+    hot: true
   },
   output: {
     path: BUILD_DIR,
@@ -32,20 +33,20 @@ const baseConfig = {
     chunkFilename: "[name].js",
     assetModuleFilename: "assets/[hash][ext][query]",
     globalObject: `typeof self !== 'undefined' ? self : this`,
-    clean: true,
+    clean: true
   },
   mode: "production",
   target: "node", // "web"
   node: {
     // Need this when working with express, otherwise the build fails
     __dirname: false, // if you don't put this is, __dirname and __filename return blank or /
-    __filename: false,
+    __filename: false
   },
   externals: [nodeExternals()],
   devtool: "eval-source-map",
   resolve: {
-    extensions: [".html", ".js", ".json", ".css"],
-  },
+    extensions: [".html", ".js", ".json", ".css"]
+  }
 };
 
 const config = Object.assign(baseConfig, { plugins, module: modules });

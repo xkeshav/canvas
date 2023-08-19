@@ -1,55 +1,46 @@
-import { setBackgroundImage } from "./alphabet.js";
-import { colorBox } from "./utils.js";
+import { fetchKeyMetadata } from "../common/helper.js";
+import { colorBox, getRandomValue, numberBox } from "./utils.js";
 
-let i = 0;
-const len = Object.keys(colorBox).length;
+const main = document.querySelector("main");
 const boardDiv = document.querySelector(".board");
-const shapeDiv = document.getElementById("shape");
 const charDiv = document.getElementById("char");
 const toggleButton = document.getElementById("toggleCase");
+const header = document.querySelector("header");
+const info = document.querySelector(".info");
 
-const clearShapeDiv = () => {
-  while (shapeDiv.hasChildNodes()) {
-    shapeDiv.removeChild(shapeDiv.lastChild);
-  }
-};
 // change case of character
 toggleButton.addEventListener("change", (e) => {
-  charDiv.style.textTransform = e.target.checked ? "uppercase" : "lowercase";
+  charDiv.style.textTransform = !e.target.checked ? "uppercase" : "lowercase";
 });
 
-const drawShape = () => {
-  document.addEventListener(
-    "keydown",
-    (e) => {
-      document.querySelector("h2").style.display = "none";
-      i++;
-      let key = e.key;
-      const isNumber = !isNaN(Number(key));
+const drawNumber = (key = 0) => {
+  //console.log("%c else is number", "color:green", key);
+  const randomColor = getRandomValue(colorBox);
+  boardDiv.style.backgroundColor = randomColor;
+  charDiv.textContent = key;
+  info.textContent = numberBox[key];
+};
 
-      if (isNumber) {
-        console.log("%c else is number", "color:green", key);
-        i = i % len == 0 ? 1 : i;
-        boardDiv.style.backgroundColor = Object.values(colorBox)[i];
-        boardDiv.style.backgroundImage = null;
-        clearShapeDiv();
-        charDiv.innerHTML = key;
-        for (i = 0; i < Number(key); i++) {
-          const div = document.createElement("div");
-          div.classList = "circle";
-          shapeDiv.appendChild(div);
-        }
-      } else {
-        console.log("%c if not a number", "color:red", key);
-        const char = key.toUpperCase();
-        boardDiv.style.backgroundColor = "transparent";
-        clearShapeDiv();
-        charDiv.innerHTML = char;
-        setBackgroundImage(key);
-      }
-    },
-    false
-  );
+const drawLetter = (key = "A") => {
+  const char = key;
+  boardDiv.style.backgroundColor = "transparent";
+  charDiv.textContent = char;
+};
+
+const drawShape = () => {
+  document.addEventListener("keydown", async (e) => {
+    header.style.display = "none";
+    const inputKey = e.key;
+    const isNumber = !isNaN(Number(inputKey));
+    if (isNumber) {
+      drawNumber(inputKey);
+    } else {
+      drawLetter(inputKey);
+      const { value, imagePath } = await fetchKeyMetadata(inputKey);
+      info.textContent = value;
+      main.style.backgroundImage = `url(${imagePath})`;
+    }
+  });
 };
 
 drawShape();

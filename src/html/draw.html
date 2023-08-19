@@ -6,18 +6,22 @@
 	<title>Draw</title>
 </head>
 
-<body>
-	<h2 class="instruction">Press any key</h2>
+<body class="container">
 	<header>
+		<h1 class="instruction">Press any key</h1>
+	</header>
+	<main class="bg">
+		<section class="board">
+			<div class="board__item char" id="char"></div>
+			<div class="board__item info" id="info">Apple</div>
+		</section>
+	</main>
+	<footer>
 		<div class="action">
 			<input type="checkbox" name="change_case" id="toggleCase">
-			<label for="toggleCase">Change case</label>
+			<label for="toggleCase">Toggle Case</label>
 		</div>
-		<section class="board">
-			<div class="char" id="char"></div>
-			<div class="shape" id="shape"></div>
-		</section>
-	</header>
+	</footer>
 </body>
 
 </html>

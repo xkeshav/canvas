@@ -5,18 +5,18 @@ module.exports = {
   env: {
     browser: true,
     node: true,
-    es2022: true,
+    es2022: true
   },
   overrides: [],
   parserOptions: {
     sourceType: "module",
     ecmaFeatures: {
       modules: true,
-      jsx: true,
-    },
+      jsx: true
+    }
   },
   globals: {
-    module: true,
+    module: true
   },
   rules: {
     "no-unused-vars": [
@@ -24,12 +24,22 @@ module.exports = {
       {
         argsIgnorePattern: "^_",
         args: "after-used",
-        ignoreRestSiblings: true,
-      },
+        ignoreRestSiblings: true
+      }
     ],
     semi: ["error", "always"],
     quotes: ["error", "double"],
     indent: [0, "tab"],
     "linebreak-style": ["off", "unix"],
-  },
+    "comma-dangle": [
+      "error",
+      {
+        arrays: "never",
+        objects: "never",
+        imports: "never",
+        exports: "never",
+        functions: "never"
+      }
+    ]
+  }
 };
