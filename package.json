@@ -1,15 +1,15 @@
 {
   "name": "canvas",
-  "version": "1.0.0",
-  "description": "trying with basic html css",
+  "version": "1.1.0",
+  "description": "An interactive HTML, CSS, and JavaScript-based alphabet learning website designed to engage and educate young children who are beginning their journey of learning the alphabet",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "webpack --mode development --config webpack.dev.config.js",
-    "server": "webpack --mode development --config webpack.server.config.js",
+    "client": "webpack --mode production --config webpack.client.config.js",
+    "server": "webpack --mode production --config webpack.server.config.js",
     "clean": "rd /s /q dist >nul 2>&1|echo.>null",
     "start": "node ./dist/server.js",
-    "build": "npm run server && npm run dev",
-    "build:dev": "webpack --mode=production --config webpack.dev.config.js"
+    "build": "npm run client && npm run server",
+    "local:client": "webpack --mode development --config webpack.client.config.js",
+    "local:server": "webpack --mode development --config webpack.server.config.js"
   },
   "repository": {
     "type": "git",
@@ -18,14 +18,14 @@
   "keywords": [
     "canvas",
     "varnmala",
-    "kids learn"
+    "kid learn"
   ],
   "author": "Keshav Mohta",
-  "license": "ISC",
+  "license": "see LICENSE in LICENSE",
   "bugs": {
     "url": "https://github.com/xkeshav/canvas/issues"
   },
-  "homepage": "https://github.com/xkeshav/canvas#readme",
+  "homepage": "https://abcdkbd.com",
   "devDependencies": {
     "@babel/core": "^7.20.7",
     "@babel/eslint-parser": "^7.22.9",

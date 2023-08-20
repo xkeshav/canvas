@@ -5,7 +5,8 @@ import path from "path";
 import { webpack } from "webpack";
 import webpackDevMiddleware from "webpack-dev-middleware";
 import webpackHotMiddleware from "webpack-hot-middleware";
-import config from "../../webpack.dev.config.js";
+import config from "../../webpack.client.config.js";
+
 
 const app = express();
 

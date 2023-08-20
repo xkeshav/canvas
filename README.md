@@ -1,6 +1,8 @@
-# What is this
+# Canvas
 
-Simple kids learning web app which change the background image/color on the key pressed.
+A learning website for kids who started their journey to learn alphabets, you can play on on desktop/laptop on the
+
+## [abcdkbd.com](https://abcdkbd.com)
 
 ## How to run
 

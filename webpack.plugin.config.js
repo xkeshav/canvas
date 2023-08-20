@@ -1,7 +1,7 @@
 const webpack = require("webpack");
 const path = require("path");
 
-const HtmlPlugin = require("html-webpack-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 const ESLintPlugin = require("eslint-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
@@ -13,7 +13,7 @@ const htmlPageNames = ["about", "canvas", "draw", "varnmala"];
 
 const multipleHtmlPlugins = htmlPageNames.map(
   (name) =>
-    new HtmlPlugin({
+    new HtmlWebpackPlugin({
       template: `./src/html/${name}.html`, // relative path to the HTML files
       filename: `${HTML_DIR}/${name}.html`, // output HTML files
       chunks: [`${name}`] // respective JS files
@@ -28,11 +28,12 @@ const esLintOptions = {
 };
 
 const plugins = [
-  new HtmlPlugin({
+  new HtmlWebpackPlugin({
     template: "src/html/index.html",
     filename: `${HTML_DIR}/index.html`,
     chunks: ["index"],
-    excludeChunks: ["server"]
+    excludeChunks: ["server"],
+    title: "HMR for index.html"
   }),
   new MiniCssExtractPlugin({
     filename: "styles/[name].css"
@@ -45,6 +46,10 @@ const plugins = [
       {
         from: "./src/assets/images",
         to: "./assets/images"
+      },
+      {
+        from: "./src/assets/fonts",
+        to: "./assets/fonts"
       },
       {
         from: "./src/json",
