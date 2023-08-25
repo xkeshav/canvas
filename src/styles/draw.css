@@ -3,7 +3,7 @@
 .container {
   display: grid;
   grid-auto-flow: row;
-  grid-template-rows: auto 1fr auto;
+  grid-template-rows: 5% 1fr auto;
   grid-template-areas:
     "header"
     "main"
@@ -11,16 +11,45 @@
   grid-gap: 0.25rem;
 }
 
+.font__mudra {
+  font-family: "MudraMohta";
+}
+
+.font__boisu {
+  font-family: "boisu";
+}
+
+.font__sportrop {
+  font-family: "sportrop";
+}
+
+.font__atkinson {
+  font-family: "atkinson";
+}
+
 header {
   grid-area: header;
   justify-self: stretch;
   opacity: 1;
   transition: height 0ms 400ms, opacity 400ms 0ms;
+  display: grid;
+  background-image: linear-gradient(90deg, #779dad, #ebf8e1 30%, #cfb3ae);
+  grid-auto-flow: column;
+  grid-template-columns: 1fr 10rem;
+  align-items: center;
 }
 
-header:hover {
-  height: 0;
-  opacity: 0;
+.info {
+  justify-self: stretch;
+  font-size: 2rem;
+  opacity: 0.75;
+  text-overflow: ellipsis;
+  color: black;
+  text-align: center;
+}
+
+.option {
+  border: 1px solid red;
 }
 
 .hide {
@@ -34,26 +63,44 @@ main {
 
 footer {
   grid-area: footer;
+  justify-self: center;
 }
 
 label {
   cursor: pointer;
+  width: auto;
 }
 
-.instruction {
+#kbd {
+  opacity: 0;
+  visibility: hidden;
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+.switch {
+  border-radius: 36px;
+  box-shadow: 17px 17px 40px #bababa, -17px -17px 40px #ffffff;
+}
+
+.switch::after {
+  content: var(--content);
+  height: 1.5rem;
+  position: relative;
+  display: inline-block;
   text-align: center;
-  line-height: 1.8em;
-  color: black;
-  background-image: linear-gradient(to right, #3f87a6, #ebf8e1 30%, #f69d3c);
+  width: 1.5rem;
+  background-color: cornsilk;
+  border-radius: 4px;
 }
 
 .board {
   display: grid;
   place-items: center;
   color: black;
-  grid-template-areas:
-    "char"
-    "info";
+  grid-template-areas: "char";
   grid-auto-flow: row;
   grid-gap: 0.5rem;
   grid-template-rows: 1fr minmax(1rem, auto);
@@ -68,21 +115,10 @@ label {
   font-weight: 900;
   font-size: 85ch;
   font-variant: common-ligatures tabular-nums;
-  font-family: "Mudra_Mohta"; /* "atkinson_hyperlegibleregular"; */
+  font-family: "MudraMohta";
   mix-blend-mode: unset;
   filter: opacity(0.9);
   text-transform: uppercase;
-}
-
-.info {
-  grid-area: info;
-  justify-self: stretch;
-  font-size: 2rem;
-  text-align: center;
-  opacity: 0.75;
-  text-overflow: ellipsis;
-  background-color: rgba(0, 0, 0, 0.5);
-  color: blanchedalmond;
 }
 
 .bg {

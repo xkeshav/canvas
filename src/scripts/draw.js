@@ -1,16 +1,39 @@
-import { fetchKeyMetadata } from "../common/helper";
-import { colorBox, getRandomValue, numberBox } from "../common/utils";
+//import { fetchKeyMetadata } from "../common/helper";
+import { getRandomValue } from "../common/utils";
+import { IMAGE_DIR, colorBox, fontBox, numberBox } from "../common/constants";
+import { alphabetMapper } from "../mappers/alphabet";
 
 const main = document.querySelector("main");
 const boardDiv = document.querySelector(".board");
 const charDiv = document.getElementById("char");
-const toggleButton = document.getElementById("toggleCase");
-const header = document.querySelector("header");
+const toggleCaseSwitch = document.getElementById("toggleCase");
+const toggleFontSwitch = document.getElementById("toggleFont");
 const info = document.querySelector(".info");
+const textSpan = document.getElementById("text");
+const input = document.getElementById("kbd");
+
+document.addEventListener("DOMContentLoaded", () => {
+  console.log("DOM fully loaded and parsed");
+  input.focus();
+});
 
 // change case of character
-toggleButton.addEventListener("change", (e) => {
+toggleCaseSwitch.addEventListener("change", (e) => {
   charDiv.style.textTransform = !e.target.checked ? "uppercase" : "lowercase";
+  const after = window.getComputedStyle(textSpan, "::after");
+  const { content } = after;
+  textSpan.style.setProperty("--content", e.target.checked ? `${content.toLowerCase()}` : `${content.toUpperCase()}`);
+});
+
+let c = 0;
+
+toggleFontSwitch.addEventListener("change", (e) => {
+  console.log(e.target.checked);
+  c++;
+  const num = c % fontBox.length;
+  const fontFamily = fontBox[num];
+  console.log({ fontFamily });
+  charDiv.style.fontFamily = fontFamily;
 });
 
 const drawNumber = (key = 0) => {
@@ -26,20 +49,27 @@ const drawLetter = (key = "A") => {
   const char = key;
   boardDiv.style.backgroundColor = "transparent";
   charDiv.textContent = char;
+  textSpan.style.setProperty("--content", toggleCaseSwitch.checked ? `'${char.toLowerCase()}'` : `'${char.toUpperCase()}'`);
 };
 
 const drawShape = () => {
   document.addEventListener("keydown", async (e) => {
-    header.classList.add("hide");
-    const inputKey = e.key;
-    const isNumber = !isNaN(Number(inputKey));
+    const { key } = e;
+    const isNumber = !isNaN(Number(key));
     if (isNumber) {
-      drawNumber(inputKey);
+      drawNumber(key);
     } else {
-      drawLetter(inputKey);
-      const { value, imagePath } = await fetchKeyMetadata(inputKey);
-      info.textContent = value;
-      main.style.backgroundImage = `url(${imagePath})`;
+      drawLetter(key);
+      const found = alphabetMapper.filter((alpha) => alpha.key === key);
+      //console.log({ found });
+      //const metadata = await fetchKeyMetadata(key); // LEARN: see how API being called using amplify
+      //console.log({ metadata });
+      if (found.length === 0) {
+        drawLetter(key);
+      } else {
+        info.textContent = found[0].value;
+        main.style.backgroundImage = `url(${IMAGE_DIR}/${found[0].value}.jpg)`;
+      }
     }
   });
 };

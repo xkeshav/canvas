@@ -47,7 +47,7 @@ app.get("/canvas", function (req, res) {
 app.get("/canvas/bg/:key", function (req, res) {
   // Add your code here
   const fileData = readJson("bg.json");
-  const output = fileData.filter((f) => f.key === req.params.key.toLowerCase());
+  const output = fileData.find((f) => f.key === req.params.key.toLowerCase());
   res.json({ success: "canvas bg called", url: req.url, output });
 });
 

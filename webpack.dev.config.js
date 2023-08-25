@@ -1,54 +1,51 @@
+require("dotenv").config();
 const path = require("path");
 const nodeExternals = require("webpack-node-externals");
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 
 const plugins = require("./webpack.plugin.config");
 const modules = require("./webpack.modules.config");
 
-//console.log(process.argv.mode);
-const BUILD_DIR = path.join(__dirname, "dist");
-const SERVER_PATH = process.argv.mode === "production" ? "src/server/server-prod.js" : "/src/server/server-dev.js";
-const SERVER_DIR = path.join(process.cwd(), SERVER_PATH);
+const DIST_DIR = path.join(__dirname, "dist");
 
-const baseConfig = {
+module.exports = {
   entry: {
     index: ["./src/index.js"],
     draw: ["./src/scripts/draw.js", "./src/styles/draw.css"],
     varnmala: ["./src/scripts/varnmala.js", "./src/styles/varnmala.css"],
     canvas: ["./src/scripts/canvas.js", "./src/styles/canvas.css"],
-    server: [SERVER_DIR]
-  },
-  performance: {
-    hints: false
+    server: ["/src/server/server.js"]
   },
   devServer: {
-    watchFiles: ["./dist/*"], // string [string] object [object]
+    static: DIST_DIR,
+    compress: true,
     port: 3000,
+    historyApiFallback: true,
     open: true,
     hot: true
   },
   output: {
-    path: BUILD_DIR,
+    path: DIST_DIR,
     publicPath: "/",
-    filename: "[name].js",
-    chunkFilename: "[name].js",
-    assetModuleFilename: "assets/[hash][ext][query]",
-    globalObject: `typeof self !== 'undefined' ? self : this`,
+    filename: "scripts/[name].js",
+    //chunkFilename: "scripts/[name].js",
+    //assetModuleFilename: "assets/[hash][ext][query]",
     clean: true
   },
-  mode: "production",
-  target: "node", // "web"
+  mode: "development",
+  target: "node",
   node: {
-    // Need this when working with express, otherwise the build fails
-    __dirname: false, // if you don't put this is, __dirname and __filename return blank or /
+    __dirname: false,
     __filename: false
   },
   externals: [nodeExternals()],
   devtool: "eval-source-map",
+  plugins,
+  module: modules,
   resolve: {
     extensions: [".html", ".js", ".json", ".css"]
+  },
+  optimization: {
+    runtimeChunk: "single"
   }
 };
-
-const config = Object.assign(baseConfig, { plugins, module: modules });
-
-module.exports = config;

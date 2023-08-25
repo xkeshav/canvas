@@ -1,3 +1,5 @@
+require("dotenv").config();
+
 const webpack = require("webpack");
 const path = require("path");
 
@@ -35,28 +37,23 @@ const plugins = [
     excludeChunks: ["server"],
     title: "HMR for index.html"
   }),
-  new MiniCssExtractPlugin({
-    filename: "styles/[name].css"
-  }),
+
   new webpack.HotModuleReplacementPlugin(),
   new ESLintPlugin(esLintOptions),
   new webpack.NoEmitOnErrorsPlugin(),
-  new CopyPlugin({
-    patterns: [
-      {
-        from: "./src/assets/images",
-        to: "./assets/images"
-      },
-      {
-        from: "./src/assets/fonts",
-        to: "./assets/fonts"
-      },
-      {
-        from: "./src/json",
-        to: "./json"
-      }
-    ]
+  new MiniCssExtractPlugin({
+    filename: "styles/[name].css"
   })
+  //new CopyPlugin({
+  //  patterns: [
+  //    {
+  //      from: "./public/images",
+  //      to: "./assets/images"
+  //    }
+  //  ]
+  //})
 ].concat(multipleHtmlPlugins);
+
+//console.log(process.env.MODE);
 
 module.exports = plugins;

@@ -6,8 +6,8 @@ const modules = {
       test: /\.js$/,
       exclude: /node_modules/,
       use: {
-        loader: "babel-loader",
-      },
+        loader: "babel-loader"
+      }
     },
     { test: /\.html$/i, loader: "html-loader" },
     {
@@ -18,24 +18,28 @@ const modules = {
           loader: "css-loader",
           options: {
             importLoaders: 2,
-            esModule: false,
-          },
-        },
-      ],
+            esModule: false
+          }
+        }
+      ]
     },
     {
       test: /\.(png|svg|jpg|gif)$/,
-      type: "asset/resource",
+      type: "asset/resource"
+      //generator: {
+      //  publicPath: "./src",
+      //  outputPath: "./src/assets"
+      //}
     },
     {
       test: /\.(ttf|otf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
       type: "asset/resource",
       dependency: { not: ["url"] },
       generator: {
-        filename: "static/[hash][ext][query]",
-      },
-    },
-  ],
+        filename: "assets/fonts/[hash][ext][query]"
+      }
+    }
+  ]
 };
 
 module.exports = modules;

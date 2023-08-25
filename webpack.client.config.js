@@ -1,60 +1,58 @@
+require("dotenv").config();
 const path = require("path");
 const nodeExternals = require("webpack-node-externals");
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 
 const plugins = require("./webpack.plugin.config");
 const modules = require("./webpack.modules.config");
 
-const BUILD_DIR = path.join(__dirname, "dist");
-//const SERVER_PATH = process.argv.mode === "production" ? "src/server/server-prod.js" : "/src/server/server-dev.js";
-const SERVER_FILE = path.join(process.cwd(), "/src/server/server-dev.js");
+const DIST_DIR = path.join(__dirname, "dist");
 
-let coreConfig = {
+const isProd = process.env.MODE === "production";
+
+module.exports = {
   entry: {
     index: ["./src/index.js"],
     draw: ["./src/scripts/draw.js", "./src/styles/draw.css"],
     varnmala: ["./src/scripts/varnmala.js", "./src/styles/varnmala.css"],
     canvas: ["./src/scripts/canvas.js", "./src/styles/canvas.css"],
-    server: [SERVER_FILE]
+    server: ["/src/server/server.js"]
   },
   performance: {
-    hints: false
+    hints: "warning"
   },
   devServer: {
-    static: "./dist", // string [string] object [object]
-    open: true,
-    hot: true
+    port: 8080,
+    hot: "only",
+    static: {
+      directory: path.join(__dirname, "./"),
+      serveIndex: true
+    }
   },
   output: {
-    path: BUILD_DIR,
+    path: DIST_DIR,
     publicPath: "/",
-    filename: "[name].js",
-    chunkFilename: "[name].js",
+    filename: "scripts/[name].js",
+    chunkFilename: "scripts/[name].js",
     assetModuleFilename: "assets/[hash][ext][query]",
     clean: true
   },
-  mode: "production",
-  target: "node", // "web"
+  mode: process.env.MODE || "none",
+  target: "node",
   node: {
-    // Need this when working with express, otherwise the build fails
-    __dirname: false, // if you don't put this is, __dirname and __filename return blank or /
+    __dirname: false,
     __filename: false
   },
   externals: [nodeExternals()],
-  devtool: "eval-source-map",
+  devtool: isProd ? "source-map" : "eval-source-map",
+  plugins,
+  module: modules,
   resolve: {
     extensions: [".html", ".js", ".json", ".css"]
-  }
+  },
+  ...(isProd && {
+    optimization: {
+      minimizer: [new CssMinimizerPlugin()]
+    }
+  })
 };
-
-coreConfig["plugins"] = plugins;
-coreConfig["module"] = modules;
-
-module.exports = coreConfig;
-
-//module.exports = (env, args) => {
-//  console.log(env, args);
-//  coreConfig.mode = args.mode;
-//  coreConfig["plugins"] = plugins;
-//  coreConfig["module"] = modules;
-//  return coreConfig;
-//};

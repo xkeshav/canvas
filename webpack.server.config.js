@@ -1,11 +1,9 @@
 const path = require("path");
 const nodeExternals = require("webpack-node-externals");
 
-const SERVER_PATH = "./src/server/server-dev.js";
-
 const config = {
   entry: {
-    server: "./src/server/server-dev.js"
+    server: "./src/server/server.js"
   },
   output: {
     path: path.resolve(__dirname, "dist"),
