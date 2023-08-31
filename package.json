@@ -4,13 +4,12 @@
   "description": "An interactive HTML, CSS, and JavaScript-based alphabet learning website designed to engage and educate young children who are beginning their journey of learning the alphabet",
   "scripts": {
     "client": "webpack --mode production --config webpack.client.config.js",
-    "server": "webpack --mode production --config webpack.server.config.js",
     "clean": "rd /s /q dist >nul 2>&1|echo.>null",
     "start": "node ./dist/scripts/server.js",
-    "dev": "webpack-dev-server --config webpack.dev.config.js --mode development",
-    "build": "npm run client && npm run server",
-    "client:local": "webpack --mode development --config webpack.dev.config.js",
-    "server:local": "webpack --mode development --config webpack.server.config.js"
+    "dev": "webpack-dev-server --mode development --config webpack.dev.config.js",
+    "server": "node src/server/dev-server.js",
+    "cx": "webpack-dev-server --port 3000",
+    "sx": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -37,11 +36,13 @@
     "css-minimizer-webpack-plugin": "^5.0.1",
     "eslint": "^8.30.0",
     "eslint-webpack-plugin": "^3.2.0",
+    "file-loader": "^6.2.0",
     "html-loader": "^4.2.0",
     "html-webpack-plugin": "^5.5.0",
     "http-proxy-middleware": "^2.0.6",
     "mini-css-extract-plugin": "^2.7.6",
     "style-loader": "^3.3.1",
+    "url-loader": "^4.1.1",
     "webpack": "^5.88.2",
     "webpack-cli": "^5.1.4",
     "webpack-dev-middleware": "^6.0.1",

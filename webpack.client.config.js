@@ -8,7 +8,9 @@ const modules = require("./webpack.modules.config");
 
 const DIST_DIR = path.join(__dirname, "dist");
 
-const isProd = process.env.MODE === "production";
+const isProd = process.env.mode === "production";
+
+console.log(process.env.mode);
 
 module.exports = {
   entry: {
@@ -24,9 +26,17 @@ module.exports = {
   devServer: {
     port: 8080,
     hot: "only",
+    bonjour: true,
+    historyApiFallback: true,
     static: {
-      directory: path.join(__dirname, "./"),
+      directory: path.join(__dirname, "dist"),
       serveIndex: true
+    },
+    proxy: {
+      "^/api/*": {
+        target: "http://localhost:3003/api/",
+        secure: false
+      }
     }
   },
   output: {
@@ -37,7 +47,7 @@ module.exports = {
     assetModuleFilename: "assets/[hash][ext][query]",
     clean: true
   },
-  mode: process.env.MODE || "none",
+  mode: process.env.mode || "none",
   target: "node",
   node: {
     __dirname: false,
@@ -48,7 +58,10 @@ module.exports = {
   plugins,
   module: modules,
   resolve: {
-    extensions: [".html", ".js", ".json", ".css"]
+    extensions: [".html", ".js", ".json", ".css"],
+    alias: {
+      assets: path.resolve("src", "assets")
+    }
   },
   ...(isProd && {
     optimization: {

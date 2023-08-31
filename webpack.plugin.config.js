@@ -10,6 +10,7 @@ const CopyPlugin = require("copy-webpack-plugin");
 
 const BUILD_DIR = path.join(__dirname, "dist");
 const HTML_DIR = path.join(BUILD_DIR, "html");
+const SRC_DIR = path.join(__dirname, "src");
 
 const htmlPageNames = ["about", "canvas", "draw", "varnmala"];
 
@@ -31,7 +32,7 @@ const esLintOptions = {
 
 const plugins = [
   new HtmlWebpackPlugin({
-    template: "src/html/index.html",
+    template: "./src/html/index.html",
     filename: `${HTML_DIR}/index.html`,
     chunks: ["index"],
     excludeChunks: ["server"],

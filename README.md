@@ -10,9 +10,9 @@ A learning website for kids who started their journey to learn alphabets, you ca
 
   `npm install`
 
-- build client and server using webpack by running
+- build using webpack by running
 
-  `npm run build`
+  `npm run client`
 
 - start the app
 

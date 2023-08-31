@@ -1,5 +1,5 @@
 let BASE_URL = "http://localhost:3003";
-let IMAGE_DIR = "/images/background";
+let IMAGE_DIR = "assets/images/background";
 console.log("inside production");
 
 if (process.env.NODE_ENV === "production") {

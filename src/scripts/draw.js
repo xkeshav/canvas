@@ -68,7 +68,7 @@ const drawShape = () => {
         drawLetter(key);
       } else {
         info.textContent = found[0].value;
-        main.style.backgroundImage = `url(${IMAGE_DIR}/${found[0].value}.jpg)`;
+        main.style.backgroundImage = `url('images/background/${found[0].value}.jpg')`;
       }
     }
   });
