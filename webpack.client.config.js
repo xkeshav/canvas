@@ -3,7 +3,7 @@ const path = require("path");
 const nodeExternals = require("webpack-node-externals");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 
-const plugins = require("./webpack.plugin.config");
+const plugins = require("./webpack.plugins.config");
 const modules = require("./webpack.modules.config");
 
 const DIST_DIR = path.join(__dirname, "dist");

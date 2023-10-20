@@ -26,10 +26,6 @@ const modules = {
     {
       test: /\.(png|svg|jpg|gif)$/,
       type: "asset/resource"
-      //generator: {
-      //  publicPath: "./src",
-      //  outputPath: "./src/assets"
-      //}
     },
     {
       test: /\.(ttf|otf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,

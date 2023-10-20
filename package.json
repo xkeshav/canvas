@@ -4,13 +4,9 @@
   "description": "An interactive HTML, CSS, and JavaScript-based alphabet learning website designed to engage and educate young children who are beginning their journey of learning the alphabet",
   "scripts": {
     "client": "webpack --mode production --config webpack.client.config.js",
-    "server": "webpack --mode production --config webpack.server.config.js",
     "clean": "rd /s /q dist >nul 2>&1|echo.>null",
     "start": "node ./dist/scripts/server.js",
-    "dev": "webpack-dev-server --config webpack.dev.config.js --mode development",
-    "build": "npm run client && npm run server",
-    "client:local": "webpack --mode development --config webpack.dev.config.js",
-    "server:local": "webpack --mode development --config webpack.server.config.js"
+    "dev": "webpack-dev-server --config webpack.dev.config.js --mode development"
   },
   "repository": {
     "type": "git",
