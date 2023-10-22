@@ -3,7 +3,6 @@ let IMAGE_DIR = "/images/background";
 console.log("inside production");
 
 if (process.env.NODE_ENV === "production") {
-  console.log("inside production");
   BASE_URL = "https://bnm1w7hj00.execute-api.us-east-1.amazonaws.com/master/canvas";
   IMAGE_DIR = "https://d2fcibdfky04dz.cloudfront.net/background";
 }
@@ -11,6 +10,8 @@ if (process.env.NODE_ENV === "production") {
 console.log("environment==>", process.env.NODE_ENV);
 
 export const colorBox = ["#f00000", "#38c138", "#0a6de8", "#e69110", "#1b1818", "#632363", "#f1e904", "#102923", "#000000", "#d4d4d4"];
+
+export const htmlPageNames = ["about", "canvas", "draw", "varnmala"];
 
 export const numberBox = {
   1: "one",

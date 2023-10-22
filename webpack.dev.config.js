@@ -3,10 +3,10 @@ const path = require("path");
 const nodeExternals = require("webpack-node-externals");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 
-const plugins = require("./webpack.plugin.config");
+const plugins = require("./webpack.plugins.config");
 const modules = require("./webpack.modules.config");
 
-const DIST_DIR = path.join(__dirname, "dist");
+const BUILD_DIR = path.join(__dirname, "build");
 
 module.exports = {
   entry: {
@@ -14,8 +14,9 @@ module.exports = {
     draw: ["./src/scripts/draw.js", "./src/styles/draw.css"],
     varnmala: ["./src/scripts/varnmala.js", "./src/styles/varnmala.css"],
     canvas: ["./src/scripts/canvas.js", "./src/styles/canvas.css"],
-    server: ["/src/server/server.js"]
+    server: ["./src/server/server.js"]
   },
+
   devServer: {
     static: DIST_DIR,
     compress: true,
@@ -24,12 +25,13 @@ module.exports = {
     open: true,
     hot: true
   },
+
   output: {
-    path: DIST_DIR,
-    publicPath: "/",
+    path: BUILD_DIR,
+    publicPath: BUILD_DIR,
     filename: "scripts/[name].js",
-    //chunkFilename: "scripts/[name].js",
-    //assetModuleFilename: "assets/[hash][ext][query]",
+    chunkFilename: "scripts/[name].js",
+    assetModuleFilename: "assets/[hash][ext][query]",
     clean: true
   },
   mode: "development",

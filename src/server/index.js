@@ -1,12 +1,8 @@
 // @ts-nocheck
 import express from "express";
 import path from "path";
-import { webpack } from "webpack";
 
-import webpackDevMiddleware from "webpack-dev-middleware";
-import webpackHotMiddleware from "webpack-hot-middleware";
 import { alphabetMapper } from "../mappers/alphabet.js";
-const config = require("../../webpack.prod.config.js");
 
 const app = express();
 
@@ -14,22 +10,12 @@ const router = express.Router();
 
 const currentDirectory = process.cwd(); // current directory
 
-const DIST_DIR = path.join(path.resolve(currentDirectory, "dist"));
+const DIST_DIR = path.join(path.resolve(currentDirectory, "src"));
 
 const HTML_DIR = path.join(DIST_DIR, "html");
 const HTML_FILE = path.join(HTML_DIR, "index.html");
 
 app.use(express.static(HTML_DIR));
-
-const compiler = webpack(config);
-
-app.use(
-  webpackDevMiddleware(compiler, {
-    publicPath: config.output.publicPath
-  })
-);
-
-app.use(webpackHotMiddleware(compiler));
 
 app.get("/home", (_, res) => {
   res.sendFile(HTML_FILE);
