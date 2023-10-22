@@ -1,6 +1,19 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.back {
+  margin-inline: 0.5rem;
+  font-size: medium;
+  cursor: pointer;
+}
+
 main {
   background-color: #391849;
   color: #d2d2b2;
-  height: 100vh;
+  height: 90vh;
   padding: 1rem;
+  background-image: linear-gradient(to bottom, purple, pink);
 }

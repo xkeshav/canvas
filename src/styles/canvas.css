@@ -3,6 +3,18 @@
   --small: 200px;
 }
 
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.back {
+  margin-inline: 0.5rem;
+  font-size: medium;
+  cursor: pointer;
+}
+
 .canvas__header {
   height: 2rem;
   padding: 1rem;

@@ -8,8 +8,7 @@ const modules = require("./webpack.modules.config");
 
 const DIST_DIR = path.join(__dirname, "dist");
 
-const isProd = process.env.MODE === "production";
-
+/* all pages entry */
 pages = ["draw", "varnmala", "canvas", "about"];
 
 const entryObject = pages.reduce((p, n) => Object.assign(p, { [n]: [`./src/scripts/${n}.js`, `./src/styles/${n}.css`] }), {});
@@ -22,14 +21,6 @@ module.exports = {
   },
   performance: {
     hints: "warning"
-  },
-  devServer: {
-    port: 8080,
-    hot: "only",
-    static: {
-      directory: path.join(__dirname, "src"),
-      serveIndex: true
-    }
   },
   output: {
     path: DIST_DIR,
@@ -46,15 +37,13 @@ module.exports = {
     __filename: false
   },
   externals: [nodeExternals()],
-  devtool: isProd ? "source-map" : "eval-source-map",
+  devtool: "source-map",
   plugins,
   module: modules,
   resolve: {
     extensions: [".html", ".js", ".json", ".css"]
   },
-  ...(isProd && {
-    optimization: {
-      minimizer: [new CssMinimizerPlugin()]
-    }
-  })
+  optimization: {
+    minimizer: [new CssMinimizerPlugin()]
+  }
 };

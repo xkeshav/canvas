@@ -32,11 +32,11 @@ header {
   justify-self: stretch;
   opacity: 1;
   transition: height 0ms 400ms, opacity 400ms 0ms;
-  display: grid;
+  display: flex;
   background-image: linear-gradient(90deg, #779dad, #ebf8e1 30%, #cfb3ae);
-  grid-auto-flow: column;
-  grid-template-columns: 1fr 10rem;
   align-items: center;
+  justify-content: space-between;
+  padding-inline: 1.5rem;
 }
 
 .info {
