@@ -10,24 +10,25 @@ const BUILD_DIR = path.join(__dirname, "build");
 
 module.exports = {
   entry: {
-    index: ["./src/server/server.js"],
+    index: ["./src/index.js"],
     draw: ["./src/scripts/draw.js", "./src/styles/draw.css"],
     varnmala: ["./src/scripts/varnmala.js", "./src/styles/varnmala.css"],
     canvas: ["./src/scripts/canvas.js", "./src/styles/canvas.css"],
     server: ["./src/server/server.js"]
   },
-  //devServer: {
-  //  static: DIST_DIR,
-  //  compress: true,
-  //  port: 3000,
-  //  historyApiFallback: true,
-  //  open: true,
-  //  hot: true
-  //},
+
+  devServer: {
+    static: DIST_DIR,
+    compress: true,
+    port: 3000,
+    historyApiFallback: true,
+    open: true,
+    hot: true
+  },
 
   output: {
     path: BUILD_DIR,
-    publicPath: "/",
+    publicPath: BUILD_DIR,
     filename: "scripts/[name].js",
     chunkFilename: "scripts/[name].js",
     assetModuleFilename: "assets/[hash][ext][query]",

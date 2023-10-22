@@ -6,7 +6,7 @@ import { webpack } from "webpack";
 import webpackDevMiddleware from "webpack-dev-middleware";
 import webpackHotMiddleware from "webpack-hot-middleware";
 import { alphabetMapper } from "../mappers/alphabet.js";
-const config = require("../../webpack.client.config.js");
+const config = require("../../webpack.prod.config.js");
 
 const app = express();
 
@@ -18,6 +18,9 @@ const DIST_DIR = path.join(path.resolve(currentDirectory, "dist"));
 
 const HTML_DIR = path.join(DIST_DIR, "html");
 const HTML_FILE = path.join(HTML_DIR, "index.html");
+
+app.use(express.static(HTML_DIR));
+
 const compiler = webpack(config);
 
 app.use(
@@ -27,8 +30,6 @@ app.use(
 );
 
 app.use(webpackHotMiddleware(compiler));
-
-app.use(express.static(HTML_DIR));
 
 app.get("/home", (_, res) => {
   res.sendFile(HTML_FILE);

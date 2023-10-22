@@ -10,13 +10,15 @@ const DIST_DIR = path.join(__dirname, "dist");
 
 const isProd = process.env.MODE === "production";
 
+pages = ["draw", "varnmala", "canvas", "about"];
+
+const entryObject = pages.reduce((p, n) => Object.assign(p, { [n]: [`./src/scripts/${n}.js`, `./src/styles/${n}.css`] }), {});
+
 module.exports = {
   entry: {
     index: ["./src/index.js"],
-    draw: ["./src/scripts/draw.js", "./src/styles/draw.css"],
-    varnmala: ["./src/scripts/varnmala.js", "./src/styles/varnmala.css"],
-    canvas: ["./src/scripts/canvas.js", "./src/styles/canvas.css"],
-    server: ["/src/server/server.js"]
+    server: ["./src/server/server.js"],
+    ...entryObject
   },
   performance: {
     hints: "warning"
@@ -25,7 +27,7 @@ module.exports = {
     port: 8080,
     hot: "only",
     static: {
-      directory: path.join(__dirname, "./"),
+      directory: path.join(__dirname, "src"),
       serveIndex: true
     }
   },

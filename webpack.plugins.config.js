@@ -8,8 +8,8 @@ const ESLintPlugin = require("eslint-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
 
-const BUILD_DIR = path.join(__dirname, "dist");
-const HTML_DIR = path.join(BUILD_DIR, "html");
+const DIST_DIR = path.join(__dirname, "dist");
+const HTML_DIR = path.join(DIST_DIR, "html");
 
 const htmlPageNames = ["about", "canvas", "draw", "varnmala"];
 
@@ -54,6 +54,6 @@ const plugins = [
   //})
 ].concat(multipleHtmlPlugins);
 
-//console.log(process.env.MODE);
+console.log("mode", process.env.MODE);
 
 module.exports = plugins;
