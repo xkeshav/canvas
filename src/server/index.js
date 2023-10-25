@@ -2,6 +2,15 @@
 import express from "express";
 import path from "path";
 
+import styles from "../styles/index.css";
+console.log({ styles });
+
+import { webpack } from "webpack";
+import webpackDevMiddleware from "webpack-dev-middleware";
+import webpackHotMiddleware from "webpack-hot-middleware";
+
+const config = require("../../webpack.config.js");
+
 import { alphabetMapper } from "../mappers/alphabet.js";
 
 const app = express();
@@ -16,6 +25,18 @@ const HTML_DIR = path.join(DIST_DIR, "html");
 const HTML_FILE = path.join(HTML_DIR, "index.html");
 
 app.use(express.static(HTML_DIR));
+
+app.use(express.static(HTML_DIR));
+
+const compiler = webpack(config);
+
+app.use(
+  webpackDevMiddleware(compiler, {
+    publicPath: config.output.publicPath
+  })
+);
+
+app.use(webpackHotMiddleware(compiler));
 
 app.get("/home", (_, res) => {
   res.sendFile(HTML_FILE);

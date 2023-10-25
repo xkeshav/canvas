@@ -14,16 +14,25 @@ module.exports = {
     draw: ["./src/scripts/draw.js", "./src/styles/draw.css"],
     varnmala: ["./src/scripts/varnmala.js", "./src/styles/varnmala.css"],
     canvas: ["./src/scripts/canvas.js", "./src/styles/canvas.css"],
-    server: ["./src/server/server.js"]
+    server: ["./src/server/index.js"]
   },
 
+  //devServer: {
+  //  static: BUILD_DIR,
+  //  compress: true,
+  //  port: 3000,
+  //  historyApiFallback: true,
+  //  open: true,
+  //  hot: true
+  //},
+
   devServer: {
-    static: DIST_DIR,
-    compress: true,
-    port: 3000,
-    historyApiFallback: true,
-    open: true,
-    hot: true
+    port: 8080,
+    hot: "only",
+    static: {
+      directory: path.join(__dirname, "public"),
+      serveIndex: true
+    }
   },
 
   output: {

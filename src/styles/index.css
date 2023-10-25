@@ -1,9 +1,16 @@
+@import url("./base.css");
+
+body {
+  background-color: #f8f8f8;
+}
+
 .container {
   display: grid;
   grid-auto-flow: row;
   grid-template-rows: 3rem 1fr 3rem;
   grid-template-areas: "header" "main" "footer";
   grid-gap: 4px;
+  height: 100vh;
 }
 
 header {

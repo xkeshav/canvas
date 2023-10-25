@@ -6,7 +6,10 @@
     "build": "webpack --config webpack.prod.config.js --mode production",
     "clean": "rd /s /q dist build >nul 2>&1|echo.>null",
     "start": "nodemon ./dist/scripts/server.js",
-    "dev": "webpack --config webpack.dev.config.js --mode development --watch"
+    "//": "below scrips are experimental",
+    "dev": "webpack --config webpack.dev.config.js --mode development --watch",
+    "start:dev": "nodemon ./build/main.js",
+    "client:dev": "webpack --config webpack.config.js"
   },
   "repository": {
     "type": "git",
