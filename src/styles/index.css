@@ -138,3 +138,153 @@ footer {
   text-align: center;
   align-self: center;
 }
+
+/* following :root block added by css color collector */
+:root {
+	--logo__txt--1: firebrick;
+	--switch__bg--2: black;
+	--main__bg--3: #e7dcd5;
+	--a__txt--4: green;
+	--list__bg__img--5: #c352a2;
+	--list__bg__img--6: #d41f56;
+	--list__bg__img--7: #acb9ba;
+	--list__bg__img--8: #a57657;
+	--list__bg__img--9: #ca4f2a;
+	--list__bg__img--10: #5d8374;
+	--list__bg__img--11: #8c8d71;
+	--list__bg__img--12: #a2a99a;
+	--list__bg__img--13: #c3a529;
+	--list__bg__img--14: #cdd0ad;
+	--list__bg__img--15: #755f6b;
+	--list__bg__img--16: #b6bc9f;
+	--list__bg__img--17: #7c814f;
+	--list__bg__img--18: #96bac8b3;
+	--list__bg__img--19: #50568f;
+	--list__bg__img--20: #465971;
+	--list__bg__img--21: #a1ab8de8;
+	--list__box__shadow--22: rgba(0, 0, 0, 0.1);
+	--li__bg__img--23: #402d2d;
+	--li__bg__img--24: #7c727b;
+	--link__txt--25: #f0e5f0;
+	--link__txt--26: #23424d;
+	--from__txt--27: aliceblue;
+	--unicodeSelector__txt--28: #5b3333;
+}
+.container {
+  display: grid;
+  grid-auto-flow: row;
+  grid-template-rows: 3rem 1fr 3rem;
+  grid-template-areas: 'header' 'main' 'footer';
+  grid-gap: 4px;
+  align-content: center;
+}
+
+.header {
+  font-size: 2rem;
+}
+
+.header--content {
+  display: flex;
+  flex-flow: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  color: var(--logo__txt--1);
+}
+
+.switch {
+  background-color: var(--switch__bg--2);
+  height: 2rem;
+  width: 2rem;
+  border-radius: 050%;
+  cursor: pointer;
+}
+
+.main {
+  font-family: system-ui, cursive;
+  background-color: var(--main__bg--3);
+}
+
+ul {
+  list-style-type: none;
+}
+
+.nav--list {
+  display: grid;
+  grid-auto-flow: row;
+  grid-gap: 0.5em;
+  margin: 1.5rem;
+  height: 100vh;
+}
+
+a:local-link {
+  color: var(--a__txt--4);
+}
+
+.list--item:nth-child(1) {
+  background-image: linear-gradient(45deg, var(--list__bg__img--5) 20%, var(--list__bg__img--6) 30%, var(--list__bg__img--7));
+}
+
+.list--item:nth-child(2) {
+  background-image: linear-gradient(45deg, var(--list__bg__img--8), var(--list__bg__img--9) 30%, var(--list__bg__img--10));
+}
+
+.list--item:nth-child(3) {
+  background-image: linear-gradient(to top, var(--list__bg__img--11), var(--list__bg__img--12) 10%, var(--list__bg__img--13));
+}
+
+.list--item:nth-child(4) {
+  background-image: linear-gradient(45deg, var(--list__bg__img--14), var(--list__bg__img--15) 30%, var(--list__bg__img--16));
+}
+
+.list--item:nth-child(5) {
+  background-image: linear-gradient(40deg, var(--list__bg__img--17) 50%, var(--list__bg__img--18) 30%, var(--list__bg__img--19));
+}
+
+.list--item:nth-child(6) {
+  background-image: radial-gradient(var(--list__bg__img--20), var(--list__bg__img--21));
+}
+
+.list--item {
+  place-content: center;
+  display: grid;
+  border-radius: 5px;
+  box-shadow: 0px 10px 15px -3px var(--list__box__shadow--22);
+}
+
+li.list--item:hover {
+  background-image: linear-gradient(45deg, var(--li__bg__img--23), var(--li__bg__img--24));
+}
+
+.link--base {
+  color: var(--link__txt--25);
+  font-size: 6rem;
+  transition: all 0.5s ease-in-out;
+  padding: 1rem;
+}
+
+.link--base:hover {
+  color: var(--link__txt--26);
+  animation: moving 2s;
+}
+
+@keyframes moving {
+  from,
+  to {
+    transform: translateX(0);
+    color: var(--from__txt--27);
+  }
+
+  30% {
+    transform: translateX(20px);
+    color: var(--unicodeSelector__txt--28);
+  }
+}
+
+footer {
+  text-align: center;
+  align-self: center;
+}

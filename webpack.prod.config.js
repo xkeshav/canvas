@@ -10,7 +10,7 @@ const DIST_DIR = path.join(__dirname, "dist");
 
 const isProd = process.env.MODE === "production";
 
-pages = ["draw", "varnmala", "canvas", "about"];
+pages = ["draw", "varnmala", "canvas", "about", "reader"];
 
 const entryObject = pages.reduce((p, n) => Object.assign(p, { [n]: [`./src/scripts/${n}.js`, `./src/styles/${n}.css`] }), {});
 
@@ -49,7 +49,7 @@ module.exports = {
   devtool: isProd ? "source-map" : "eval-source-map",
   plugins,
   module: modules,
-  resolve: {
+  resolve: {  
     extensions: [".html", ".js", ".json", ".css"]
   },
   ...(isProd && {

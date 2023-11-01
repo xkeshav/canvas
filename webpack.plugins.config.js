@@ -11,7 +11,7 @@ const CopyPlugin = require("copy-webpack-plugin");
 const DIST_DIR = path.join(__dirname, "dist");
 const HTML_DIR = path.join(DIST_DIR, "html");
 
-const htmlPageNames = ["about", "canvas", "draw", "varnmala"];
+const htmlPageNames = ["about", "canvas", "draw", "varnmala", "reader", "panel", "typing", "color", "hindi", "record"];
 
 const multipleHtmlPlugins = htmlPageNames.map(
   (name) =>
@@ -44,14 +44,6 @@ const plugins = [
   new MiniCssExtractPlugin({
     filename: "styles/[name].css"
   })
-  //new CopyPlugin({
-  //  patterns: [
-  //    {
-  //      from: "./public/images",
-  //      to: "./assets/images"
-  //    }
-  //  ]
-  //})
 ].concat(multipleHtmlPlugins);
 
 console.log("mode", process.env.MODE);

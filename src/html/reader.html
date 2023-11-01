@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Reader</title>
+	<link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon">
+</head>
+
+<body>
+	<header class="header">
+		<a href="/"> Back</a>
+		<h1>Spelling with Audio</h1>
+		<nav>
+			<div class="action">
+				<button type="button" title="click audio" id="mute" class="button button-audio"></button>
+			</div>
+			<div class="speaker" id="speaker">
+				<span data-name="mudra">Mudra</span>
+				<span data-name="rutvi">Rutvi</span>
+			</div>
+		</nav>
+	</header>
+	<main id="main"></main>
+	<section class="section--audio hide">
+		<audio id="audioPlayer" controlslist="nodownload" type="audio/ogg; codecs=opus" controls autoplay ></audio>
+	</section>
+</body>
+
+</html>

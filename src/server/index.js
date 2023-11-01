@@ -36,6 +36,30 @@ app.get("/varnmala", (_, res) => {
 app.get("/canvas", (_, res) => {
   res.sendFile(path.join(HTML_DIR, "canvas.html"));
 });
+app.get("/typing", (_, res) => {
+  res.sendFile(path.join(HTML_DIR, "typing.html"));
+});
+app.get("/reader", (_, res) => {
+  res.sendFile(path.join(HTML_DIR, "reader.html"));
+});
+app.get("/panel", (_, res) => {
+  res.sendFile(path.join(HTML_DIR, "panel.html"));
+});
+app.get("/tree", (_, res) => {
+  res.sendFile(path.join(HTML_DIR, "hindi.html"));
+});
+
+app.get("/hindi", (_, res) => {
+  res.sendFile(path.join(HTML_DIR, "tree.html"));
+});
+app.get("/record", (_, res) => {
+  res.sendFile(path.join(HTML_DIR, "record.html"));
+});
+app.get("/color", (_, res) => {
+  res.sendFile(path.join(HTML_DIR, "color.html"));
+});
+
+
 
 //const readJson = (fileName) => {
 //  let jsonObjData = [];

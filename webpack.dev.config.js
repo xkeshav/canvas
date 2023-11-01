@@ -12,9 +12,16 @@ module.exports = {
   entry: {
     index: ["./src/index.js"],
     draw: ["./src/scripts/draw.js", "./src/styles/draw.css"],
+    reader: ["./src/scripts/reader.js", "./src/styles/reader.css"],
+    panel: ["./src/scripts/panel.js", "./src/styles/panel.css"],
+    typing: ["./src/scripts/typing.js", "./src/styles/typing.css"],
+    record: ["./src/scripts/record.js", "./src/styles/record.css"],
+    hindi: ["./src/scripts/hindi.js", "./src/styles/hindi.css"],
+    color: ["./src/scripts/color.js", "./src/styles/color.css"],
     varnmala: ["./src/scripts/varnmala.js", "./src/styles/varnmala.css"],
     canvas: ["./src/scripts/canvas.js", "./src/styles/canvas.css"],
-    server: ["./src/server/server.js"]
+    server: ["./src/server/server.js"],
+    
   },
 
   devServer: {

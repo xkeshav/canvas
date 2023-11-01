@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Panel</title>
+</head>
+
+<body>
+	<header class="header">
+		<a href="/"> Back</a>
+		<h5>Alphabets carousel</h5>
+	</header>
+	<main class="main">
+		<section id="option-box" class="panel__options">
+			<label class="vertical" for="vertical">
+				<input type="radio" class="orientation" name="orientation" id="vertical" value="X">
+			</label>
+				<div class="range__option">
+					<span id="range-bullet" class="range__label">0</span>
+					<input type="range" name="range" id="range" class="range__slider" value="0" min="10" max="26">
+					<div class="range__minmax"><span>0</span><span>26</span></div>
+				</div>
+				<label class="horizontal" for="horizontal">
+					<input type="radio" class="orientation" name="orientation" id="horizontal" value="Y">
+				</label>
+		</section>
+
+		<section class="scene">
+			<div class="panel"></div>
+		</section>
+	</main>
+</body>
+
+</html>

@@ -1,12 +1,8 @@
 // @ts-nocheck
 import express from "express";
 import path from "path";
-import { webpack } from "webpack";
 
-import webpackDevMiddleware from "webpack-dev-middleware";
-import webpackHotMiddleware from "webpack-hot-middleware";
 import { alphabetMapper } from "../mappers/alphabet.js";
-const config = require("../../webpack.prod.config.js");
 
 const app = express();
 
@@ -14,22 +10,12 @@ const router = express.Router();
 
 const currentDirectory = process.cwd(); // current directory
 
-const DIST_DIR = path.join(path.resolve(currentDirectory, "dist"));
+const DIST_DIR = path.join(path.resolve(currentDirectory, "src"));
 
 const HTML_DIR = path.join(DIST_DIR, "html");
 const HTML_FILE = path.join(HTML_DIR, "index.html");
 
 app.use(express.static(HTML_DIR));
-
-const compiler = webpack(config);
-
-app.use(
-  webpackDevMiddleware(compiler, {
-    publicPath: config.output.publicPath
-  })
-);
-
-app.use(webpackHotMiddleware(compiler));
 
 app.get("/home", (_, res) => {
   res.sendFile(HTML_FILE);
@@ -50,6 +36,30 @@ app.get("/varnmala", (_, res) => {
 app.get("/canvas", (_, res) => {
   res.sendFile(path.join(HTML_DIR, "canvas.html"));
 });
+app.get("/typing", (_, res) => {
+  res.sendFile(path.join(HTML_DIR, "typing.html"));
+});
+app.get("/reader", (_, res) => {
+  res.sendFile(path.join(HTML_DIR, "reader.html"));
+});
+app.get("/panel", (_, res) => {
+  res.sendFile(path.join(HTML_DIR, "panel.html"));
+});
+app.get("/tree", (_, res) => {
+  res.sendFile(path.join(HTML_DIR, "hindi.html"));
+});
+
+app.get("/hindi", (_, res) => {
+  res.sendFile(path.join(HTML_DIR, "tree.html"));
+});
+app.get("/record", (_, res) => {
+  res.sendFile(path.join(HTML_DIR, "record.html"));
+});
+app.get("/color", (_, res) => {
+  res.sendFile(path.join(HTML_DIR, "color.html"));
+});
+
+
 
 //const readJson = (fileName) => {
 //  let jsonObjData = [];

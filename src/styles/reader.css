@@ -1,0 +1,88 @@
+/* following :root block added by css color collector */
+:root {
+	--main__bg--1: #b8ff33;
+	--main__txt--2: #ff61d5;
+	--button__bg--3: hsl(60deg, 56%, 91%);
+}
+main {
+  font-size: 30vw;
+  display: grid;
+  place-content: center;
+  background-color: var(--main__bg--1);
+  color: var(--main__txt--2);
+  height: 100vh;
+  outline: none;
+  text-transform: uppercase;
+  transform: rotate(0deg);
+  transition-delay: 2ms;
+  transition-duration: 0ms;
+  transition-timing-function: ease-in-out;
+  transition-property: all;
+  will-change: contents;
+}
+
+.center {
+  display: grid;
+  place-items: center;
+}
+
+.hide {
+  display: none;
+}
+
+.scroll {
+  margin-top: 10px;
+  scroll-behavior: smooth;
+}
+
+.header {
+  display: grid;
+  grid-auto-flow: column;
+  align-items: center;
+  grid-template-columns: 4rem minmax(60vw, 1fr) min-content;
+  grid-gap: 8px;
+}
+
+.button {
+  font-size: 1.5rem;
+  border: none;
+  background-color: var(--button__bg--3);
+  cursor: pointer;
+  width: 2em;
+}
+
+.button-audio::before {
+  content: '\1F508';
+}
+
+.button-audio.mute::before {
+  content: '\1F507';
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.speaker {
+  padding-inline: 1rem;
+  display: flex;
+  flex-basis: fit-content;
+  flex-grow: 1;
+  margin: auto;
+  justify-content: space-between;
+  gap: 4px;
+  cursor: pointer;
+}
+
+.speaker > span {
+  padding: 0.5rem;
+  border: 1px solid grey;
+}
+
+span:hover, span:active, span.active {
+  background-color: aliceblue;
+  color: #6767d3;
+}
+
