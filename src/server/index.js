@@ -2,9 +2,6 @@
 import express from "express";
 import path from "path";
 
-import styles from "../styles/index.css";
-console.log({ styles });
-
 import { webpack } from "webpack";
 import webpackDevMiddleware from "webpack-dev-middleware";
 import webpackHotMiddleware from "webpack-hot-middleware";

@@ -8,6 +8,10 @@ header {
   margin-inline: 0.5rem;
   font-size: medium;
   cursor: pointer;
+  flex-grow: 1;
+}
+h1 {
+  flex-grow: 1;
 }
 
 main {
