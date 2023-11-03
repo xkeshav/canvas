@@ -90,6 +90,12 @@ nav {
   --c3: #50568f;
 }
 
+.item--6 {
+  --c1: #7a803f;
+  --c2: #073d52b3;
+  --c3: #e4c812;
+}
+
 .list--item {
   place-content: center;
   display: grid;

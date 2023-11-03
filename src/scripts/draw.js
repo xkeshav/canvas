@@ -10,12 +10,18 @@ const toggleCaseSwitch = document.getElementById("toggleCase");
 const toggleFontSwitch = document.getElementById("toggleFont");
 const info = document.querySelector(".info");
 const textSpan = document.getElementById("text");
-const input = document.getElementById("kbd");
 
-document.addEventListener("DOMContentLoaded", () => {
-  console.log("DOM fully loaded and parsed");
-  input.focus();
-});
+const init = () => {
+  const target = document.getElementById("kbd");
+  target.focus();
+  target.click();
+};
+
+if (document.readyState !== "loading") {
+  init();
+} else {
+  document.addEventListener("DOMContentLoaded", init);
+}
 
 // change case of character
 toggleCaseSwitch.addEventListener("change", (e) => {
@@ -53,24 +59,27 @@ const drawLetter = (key = "A") => {
 };
 
 const drawShape = () => {
-  document.addEventListener("keydown", async (e) => {
-    const { key } = e;
-    const isNumber = !isNaN(Number(key));
-    if (isNumber) {
-      drawNumber(key);
-    } else {
-      drawLetter(key);
-      const found = alphabetMapper.filter((alpha) => alpha.key === key);
-      //console.log({ found });
-      //const metadata = await fetchKeyMetadata(key); // LEARN: see how API being called using amplify
-      //console.log({ metadata });
-      if (found.length === 0) {
-        drawLetter(key);
+  ["keydown", "touchstart"].forEach((type) => {
+    console.log("type", { type });
+    document.addEventListener(type, async (e) => {
+      const { key } = e;
+      const isNumber = !isNaN(Number(key));
+      if (isNumber) {
+        drawNumber(key);
       } else {
-        info.textContent = found[0].value;
-        main.style.backgroundImage = `url(${IMAGE_DIR}/${found[0].value}.jpg)`;
+        drawLetter(key);
+        const found = alphabetMapper.filter((alpha) => alpha.key === key);
+        //console.log({ found });
+        //const metadata = await fetchKeyMetadata(key); // LEARN: see how API being called using amplify
+        //console.log({ metadata });
+        if (found.length === 0) {
+          drawLetter(key);
+        } else {
+          info.textContent = found[0].value;
+          main.style.backgroundImage = `url(${IMAGE_DIR}/${found[0].value}.jpg)`;
+        }
       }
-    }
+    });
   });
 };
 

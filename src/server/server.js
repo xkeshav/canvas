@@ -51,6 +51,10 @@ app.get("/canvas", (_, res) => {
   res.sendFile(path.join(HTML_DIR, "canvas.html"));
 });
 
+app.get("/math", (_, res) => {
+  res.sendFile(path.join(HTML_DIR, "math.html"));
+});
+
 //const readJson = (fileName) => {
 //  let jsonObjData = [];
 //  try {
