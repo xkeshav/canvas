@@ -1,0 +1,2 @@
+:root{--large:600px;--small:200px}.canvas__header{align-items:center;background-color:#e6e6fa;border:1px solid grey;border-radius:4px;color:#000;display:flex;flex-direction:row;height:2rem;justify-content:start;padding:1rem}.canvas__div{grid-gap:1rem;display:grid;grid-auto-columns:fit-content(700px) fit-content(700px) 1fr;grid-template-columns:repeat(4,minmax(200px,1fr))}.canvas__container{padding:.5rem}input{margin-inline-end:4px}input[type=text]{font-size:1rem;padding-inline:10px}
+/*# sourceMappingURL=canvas.css.map*/

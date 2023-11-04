@@ -18,7 +18,6 @@
 # production
 /build/*
 /archive/*
-/dist/*
 
 # misc
 .DS_Store
@@ -51,7 +50,6 @@ amplify/mock-api-resources
 amplify/backend/amplify-meta.json
 amplify/backend/.temp
 build/
-dist/
 node_modules/
 aws-exports.js
 awsconfiguration.json

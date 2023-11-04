@@ -1,0 +1,92 @@
+/* following :root block added by css color collector */
+:root {
+	--container__bg--1: #4f5b6f;
+	--unicodeSelector__box__shadow--2: rgba(0, 0, 0, 0.25);
+	--unicodeSelector__box__shadow--3: rgba(0, 0, 0, 0.12);
+	--unicodeSelector__box__shadow--4: rgba(0, 0, 0, 0.17);
+	--unicodeSelector__box__shadow--5: rgba(0, 0, 0, 0.09);
+	--modal__border--6: grey;
+	--dialog__txt--7: white;
+	--modal__box__shadow--8: rgba(0, 0, 0, 0.2);
+	--btn__bg--9: #fff1f1d1;
+  --deep: #00ff7f ;
+}
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: content-box;
+}
+
+.container {
+  display: grid;
+  justify-content: center;
+  align-items: start;
+  height: 100vh;
+  background-color: var(--container__bg--1);
+}
+
+input[type='color' i] {
+  height: 4rem;
+  width: 4rem;
+  padding: 2px;
+  box-shadow: var(--unicodeSelector__box__shadow--2) 0px 54px 55px, var(--unicodeSelector__box__shadow--3) 0px -12px 30px, var(--unicodeSelector__box__shadow--3) 0px 4px 6px,
+    var(--unicodeSelector__box__shadow--4) 0px 12px 13px, var(--unicodeSelector__box__shadow--5) 0px -3px 5px;
+}
+
+/* modal css */
+
+.modal--block {
+  height: 2rem;
+  width: 10rem;
+  display: grid;
+  place-content: center;
+  border: 2px solid var(--modal__border--6);
+  cursor: pointer;
+  backdrop-filter: brightness(0.5);
+}
+
+.dialog--opener {
+  font-family: Arial, Helvetica;
+  font-size: 1rem;
+  mix-blend-mode: difference;
+  color: var(--dialog__txt--7);
+}
+
+.modal--window {
+  height: 6rem;
+  width: 20rem;
+  overflow: auto;
+  transition: all 200ms;
+  box-shadow: 0px 12px 24px var(--modal__box__shadow--8);
+  border-style: none;
+}
+
+.modal--window:target {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal--body {
+  display: grid;
+  grid-auto-flow: row;
+  gap: 4px;
+}
+
+.color--picker {
+  justify-self: center;
+}
+
+.btn--close {
+  background-color: var(--btn__bg--9);
+  justify-self: end;
+  height: auto;
+  border-style: none;
+  opacity: 1;
+  transition: opacity 500ms;
+  cursor: pointer;
+}
+
+.btn--close:hover {
+  opacity: 0.5;
+}

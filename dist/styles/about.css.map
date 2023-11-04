@@ -1,0 +1,1 @@
+{"version":3,"file":"styles/about.css","mappings":"AAAA,KACE,wBAAyB,CACzB,aAAc,CACd,YAAa,CACb,YACF","sources":["webpack://canvas/./src/styles/about.css"],"sourcesContent":["main {\n  background-color: #391849;\n  color: #d2d2b2;\n  height: 100vh;\n  padding: 1rem;\n}\n"],"names":[],"sourceRoot":""}
