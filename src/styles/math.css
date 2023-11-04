@@ -18,8 +18,7 @@ form {
 }
 
 .operator {
-  font-size: 25rem;
-  vertical-align: super;
+  font-size: 30dvmin;
 }
 
 input::-webkit-outer-spin-button,
@@ -34,10 +33,10 @@ input[type="number"] {
 }
 
 .number {
-  font-size: 25rem;
+  font-size: clamp(20ex, -0.75rem + 20dvw, 60ex);
   color: #25280d;
   padding: 0.5rem;
-  width: 30rem;
+  width: max(30dvh, 30dvw);
   margin-block: 0.5rem;
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
   text-align: center;
@@ -59,26 +58,21 @@ input[type="number"] {
 
 ::placeholder,
 ::-webkit-input-placeholder {
-  font-size: 10rem;
-  text-align: center;
-  top: -5rem;
-  position: relative;
+  color: #c9b7e4;
 }
 
 input:invalid + span::before {
   content: "✖";
   color: red;
-  font-size: 6rem;
-  top: -5rem;
-  position: relative;
+  font-size: 10dvh;
+  position: inherit;
 }
 
 input:focus-within:is(:valid) + span::before {
   content: "✓";
   color: green;
-  font-size: 6rem;
-  top: -5rem;
-  position: relative;
+  font-size: 10dvh;
+  position: inherit;
 }
 
 .result {
@@ -91,5 +85,5 @@ input:focus-within:is(:valid) + span::before {
   caret-shape: underscore;
   text-align: center;
   background-color: aliceblue;
-  color: #1b5370;
+  color: #9c32d2;
 }
