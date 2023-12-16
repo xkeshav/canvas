@@ -20,6 +20,7 @@ header {
   color: #2db34a;
   cursor: crosshair;
   display: inline-grid;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-size: 9rem;
   font-weight: 600;
   height: 100%;

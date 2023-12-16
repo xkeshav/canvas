@@ -40,6 +40,7 @@ export const varnmalaHandler = () => {
 
 varnmalaHandler();
 
+/* dialog box handling */
 const dialog = document.querySelector("dialog");
 const showButton = document.querySelector("#showDialog");
 const closeButton = document.querySelector("#closeDialog");

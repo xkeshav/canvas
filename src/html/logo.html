@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Logo</title>
+</head>
+
+<body style="background-color: yellow; padding: 2rem">
+	Logo
+	<script>
+
+		const EMPTY_STRING = " ";
+
+		let CANVAS_DIMENSION = { width: 300, height: 230 };
+
+		const isLargeImage = true;
+
+		if (isLargeImage) {
+			CANVAS_DIMENSION = { width: 1012, height: 506 }; // standard; can be change
+		}
+
+		const CUSTOM_FONT = "Boisu-Stroke.otf";
+
+		const bg_color = "white";
+		const text_color = "black";
+
+		const createCanvas = () => {
+			const canvas = createElement("canvas");
+			const { width: w, height: h } = CANVAS_DIMENSION;
+			canvas.width = w;
+			canvas.height = h;
+			canvas.style.height = `${h}px`;
+			canvas.style.width = `${w}px`;
+			const context = canvas.getContext("2d");
+			context.scale(1, 1);
+			context.save();
+			//================
+			// outer rectangle ( background color)
+			context.fillStyle = bg_color;
+			context.fillRect(10, 0, w, h);
+			const text = "Recursive Zero";
+			// shadow
+			context.shadowBlur = 1;
+			context.shadowOffsetX = 3;
+			context.shadowOffsetY = 3;
+			context.shadowColor = "pink";
+			context.strokeStyle = "grey";
+			context.lineWidth = 2;
+			context.roundRect(60, 90, 60, 60, [40]);
+			context.stroke();
+			context.fillText('', w / 2, h / 2);
+
+
+			//font style
+			context.font = "normal 6rem customFont";
+			context.textAlign = "center";
+			context.textBaseline = "middle";
+			// font color and size
+			context.fillStyle = text_color;
+			context.fillText(text, w / 2, h / 2);
+			// when needed stroked text; comment fillStyle and fillText and uncomment strokeStyle and strokeText
+			//context.strokeStyle = "white";
+			//context.strokeText(text, 510, 170);
+
+
+
+			//context.translate(w / 3, h / 4);
+			// draw border in a inner rectangle
+			//context.strokeStyle = "#675";
+			//context.strokeRect(10, 0, w - 10, h);
+			const dataURL = canvas.toDataURL();
+			const image = Promise.resolve(dataURL);
+			return image;
+		};
+
+		const loadCustomFont = async (fontName) => {
+			const myCustomFont = new FontFace("customFont", `url('../assets/fonts/${fontName}'`);
+			const font = await myCustomFont.load().catch((e) => console.log(e));
+			if (font) {
+				document.fonts.add(font);
+			}
+		};
+
+		const drawImage = async (inputText = EMPTY_STRING) => {
+			await loadCustomFont(CUSTOM_FONT);
+			const image = createCanvas(inputText);
+			return image;
+		};
+
+		function loadImage(url) {
+			const canvasDiv = document.getElementById("canvasDiv");
+			const drawDiv = createElement("div", "", "draw");
+			const image = createElement("img");
+			image.src = url;
+			drawDiv.appendChild(image);
+			canvasDiv.appendChild(drawDiv);
+		}
+
+		const createMainPanel = () => {
+			console.log("cccc");
+			const mainPanelDiv = createElement("div", "canvasDiv", "canvas__div");
+			document.body.appendChild(mainPanelDiv);
+			drawImage("Recursive Zero").then(loadImage);
+		};
+
+		const createElement = (type, idName, className) => {
+			const elem = document.createElement(type);
+			if (idName) elem.id = idName;
+			if (className) elem.className = className;
+			return elem;
+		};
+
+		createMainPanel();
+
+	</script>
+</body>
+
+</html>
