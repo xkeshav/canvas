@@ -8,8 +8,9 @@ const modules = require("./webpack.modules.config");
 
 const DIST_DIR = path.join(__dirname, "dist");
 
-/* all pages entry */
-pages = ["index", "draw", "varnmala", "canvas", "about"];
+const isProd = process.env.MODE === "production";
+
+pages = ["draw", "varnmala", "canvas", "about", "math"];
 
 const entryObject = pages.reduce((p, n) => Object.assign(p, { [n]: [`./src/scripts/${n}.js`, `./src/styles/${n}.css`] }), {});
 

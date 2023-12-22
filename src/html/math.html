@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Maths</title>
+</head>
+
+<body>
+	<main>
+		<div class="action--block">
+			<button class="action--btn" id="refresh" type="button"><span>↻</span></button>
+			<button class="action--btn" id="add" type="button"><span>+</span></button>
+			<button class="action--btn" id="subtract" type="button"><span>-</span></button>
+			<button class="action--btn" id="multiply" type="button"><span>x</span></button>
+		</div>
+		<form>
+			<input readonly type="number" id="first" name="b" class="number one" value="0" size="20" />
+			<samp id="operator" class="operator">+</samp>
+			<input readonly type="number" id="second" name="a" class="number two" value="0" size="20" />
+			<samp class="operator">=</samp>
+			<input type="number" id="output" name="c" class="number output three" placeholder="?" autofocus
+				onKeyPress="if(this.value.length==4) return false;" /><span></span>
+			<output class="result" id="result" name="result" for="a b"></output>
+		</form>
+	</main>
+</body>
+
+</html>

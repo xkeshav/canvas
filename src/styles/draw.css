@@ -75,8 +75,7 @@ label {
 }
 
 #kbd {
-  opacity: 0;
-  visibility: hidden;
+  opacity: 0.25;
 }
 
 input[type="checkbox"] {
@@ -135,4 +134,8 @@ input[type="checkbox"] {
 
 .action {
   padding-inline: 1rem;
+}
+
+input[type="text"]:focus {
+  background-color: red;
 }

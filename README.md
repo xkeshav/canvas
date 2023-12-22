@@ -2,7 +2,6 @@
 
 A learning website for kids who started their journey to learn alphabets, you can play on on desktop/laptop on the
 
-## [abcdkbd.com](https://abcdkbd.com)
 
 ## How to run
 
