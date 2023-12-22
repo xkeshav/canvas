@@ -1,7 +1,6 @@
-# Canvas
+# Kid game
 
-A learning website for kids who started their journey to learn alphabets, you can play on on desktop/laptop on the
-
+A learning website for kids who started their journey to learn alphabets, you can play on on desktop/laptop
 
 ## How to run
 

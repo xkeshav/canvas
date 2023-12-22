@@ -8,14 +8,13 @@ const modules = require("./webpack.modules.config");
 
 const DIST_DIR = path.join(__dirname, "dist");
 
-const isProd = process.env.MODE === "production";
-
-pages = ["draw", "varnmala", "canvas", "about", "math"];
+const pages = ["draw", "varnmala", "canvas", "about", "math"];
 
 const entryObject = pages.reduce((p, n) => Object.assign(p, { [n]: [`./src/scripts/${n}.js`, `./src/styles/${n}.css`] }), {});
 
 module.exports = {
   entry: {
+    index: ["./src/index.js"],
     server: ["./src/server/server.js"],
     ...entryObject
   },

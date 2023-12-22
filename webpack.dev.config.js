@@ -1,20 +1,23 @@
 require("dotenv").config();
 const path = require("path");
 const nodeExternals = require("webpack-node-externals");
-const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
+//const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 
 const plugins = require("./webpack.plugins.config");
 const modules = require("./webpack.modules.config");
 
 const BUILD_DIR = path.join(__dirname, "build");
 
+const pages = ["draw", "varnmala", "canvas", "about", "math"];
+
+const entryObject = pages.reduce((p, n) => Object.assign(p, { [n]: [`./src/scripts/${n}.js`, `./src/styles/${n}.css`] }), {});
+
 module.exports = {
   entry: {
     index: ["./src/index.js"],
-    draw: ["./src/scripts/draw.js", "./src/styles/draw.css"],
-    varnmala: ["./src/scripts/varnmala.js", "./src/styles/varnmala.css"],
-    canvas: ["./src/scripts/canvas.js", "./src/styles/canvas.css"],
-    server: ["./src/server/index.js"]
+    server: ["./src/server/index.js"],
+    server: ["./src/server/server.js"],
+    ...entryObject
   },
 
   //devServer: {
