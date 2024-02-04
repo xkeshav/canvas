@@ -13,15 +13,15 @@
 
 		const EMPTY_STRING = " ";
 
-		let CANVAS_DIMENSION = { width: 300, height: 230 };
+		let CANVAS_DIMENSION = { width: 210, height: 210 };
 
 		const isLargeImage = true;
 
 		if (isLargeImage) {
-			CANVAS_DIMENSION = { width: 1012, height: 506 }; // standard; can be change
+			CANVAS_DIMENSION = { width: 1200, height: 630 }; // standard; can be change
 		}
 
-		const CUSTOM_FONT = "Boisu-Stroke.otf";
+		const CUSTOM_FONT = "Roboto-Bold.ttf";
 
 		const bg_color = "white";
 		const text_color = "black";
@@ -42,19 +42,19 @@
 			context.fillRect(10, 0, w, h);
 			const text = "Recursive Zero";
 			// shadow
-			context.shadowBlur = 1;
-			context.shadowOffsetX = 3;
-			context.shadowOffsetY = 3;
+			context.shadowBlur = 4;
+			context.shadowOffsetX = 2;
+			context.shadowOffsetY = 2;
 			context.shadowColor = "pink";
 			context.strokeStyle = "grey";
 			context.lineWidth = 2;
-			context.roundRect(60, 90, 60, 60, [40]);
+			context.roundRect(190, 190, 50, 50, [40]);
 			context.stroke();
 			context.fillText('', w / 2, h / 2);
 
 
 			//font style
-			context.font = "normal 6rem customFont";
+			context.font = "normal 7.5rem customFont";
 			context.textAlign = "center";
 			context.textBaseline = "middle";
 			// font color and size

@@ -24,17 +24,17 @@ const createCanvas = () => {
   context.save();
   //================
   // outer rectangle
-  context.fillStyle = "#11351E";
-  context.fillRect(20, 20, w - 20, h - 20);
-  const text = "Recursive Zero";
+  context.fillStyle = "#240101";
+  context.fillRect(0, 0, w, h);
+  const text = "Happy New";
 
   //font style
-  context.font = "bold 2rem customFont";
+  context.font = "bold 4rem customFont";
   context.textAlign = "center";
   context.textBaseline = "middle";
   // font color and size
-  context.fillStyle = "#CDCC38";
-  context.fillText(text, w / 2, h / 2);
+  //context.fillStyle = "#000";
+  //context.fillText(text, w / 2, h / 2);
   // when needed stroked text; comment fillStyle and fillText and uncomment strokeStyle and strokeText
   context.strokeStyle = "white";
   context.strokeText(text, 510, 270);
@@ -73,10 +73,9 @@ function loadImage(url) {
 }
 
 const createMainPanel = () => {
-  console.log("cccc");
   const mainPanelDiv = createElement("div", "canvasDiv", "canvas__div");
   document.body.appendChild(mainPanelDiv);
-  drawImage("Recursive Zero").then(loadImage);
+  drawImage("Happy New").then(loadImage);
 };
 
 const createElement = (type, idName, className) => {
