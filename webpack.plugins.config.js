@@ -11,13 +11,13 @@ const CopyPlugin = require("copy-webpack-plugin");
 const DIST_DIR = path.join(__dirname, "dist");
 const HTML_DIR = path.join(DIST_DIR, "html");
 
-const htmlPageNames = ["about", "canvas", "draw", "varnmala", "math"];
+const htmlPageNames = ["about", "canvas", "draw", "varnmala", "math", "kannada"];
 
 const multipleHtmlPlugins = htmlPageNames.map(
   (name) =>
     new HtmlWebpackPlugin({
       template: `./src/html/${name}.html`, // relative path to the HTML files
-      filename: `${HTML_DIR}/${name}.html`, // output HTML files
+      filename: `${name}.html`, // output HTML files
       chunks: [`${name}`] // respective JS files
     })
 );
@@ -32,7 +32,7 @@ const esLintOptions = {
 const plugins = [
   new HtmlWebpackPlugin({
     template: "src/html/index.html",
-    filename: `${HTML_DIR}/index.html`,
+    filename: `index.html`,
     chunks: ["index"],
     excludeChunks: ["server"],
     title: "HMR for index.html"
@@ -47,8 +47,8 @@ const plugins = [
   //new CopyPlugin({
   //  patterns: [
   //    {
-  //      from: "./public/images",
-  //      to: "./assets/images"
+  //      from: "/assets/images",
+  //      to: "/public/images"
   //    }
   //  ]
   //})

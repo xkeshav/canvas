@@ -7,6 +7,7 @@ const plugins = require("./webpack.plugins.config");
 const modules = require("./webpack.modules.config");
 
 const BUILD_DIR = path.join(__dirname, "build");
+const DIST_DIR = path.join(__dirname, "dist");
 
 const pages = ["draw", "varnmala", "canvas", "about", "math"];
 
@@ -16,38 +17,41 @@ module.exports = {
   entry: {
     index: ["./src/index.js"],
     server: ["./src/server/index.js"],
-    server: ["./src/server/server.js"],
     ...entryObject
   },
 
-  //devServer: {
-  //  static: BUILD_DIR,
-  //  compress: true,
-  //  port: 3000,
-  //  historyApiFallback: true,
-  //  open: true,
-  //  hot: true
-  //},
-
   devServer: {
-    port: 8080,
-    hot: "only",
     static: {
-      directory: path.join(__dirname, "public"),
+      directory: path.join(__dirname, "dist"),
       serveIndex: true
-    }
+    },
+    compress: true,
+    port: 3000,
+    //historyApiFallback: true,
+    open: true,
+    hot: true
   },
 
+  //devServer: {
+  //  port: 8080,
+  //  hot: "only",
+  //  open: true,
+  //  static: {
+  //    directory: path.join(__dirname, "public"),
+  //    serveIndex: true
+  //  }
+  //},
+
   output: {
-    path: BUILD_DIR,
-    publicPath: BUILD_DIR,
+    path: DIST_DIR,
+    publicPath: "/",
     filename: "scripts/[name].js",
     chunkFilename: "scripts/[name].js",
     assetModuleFilename: "assets/[hash][ext][query]",
     clean: true
   },
   mode: "development",
-  target: "node",
+  target: "web",
   node: {
     __dirname: false,
     __filename: false

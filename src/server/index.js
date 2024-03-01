@@ -6,7 +6,7 @@ import { webpack } from "webpack";
 import webpackDevMiddleware from "webpack-dev-middleware";
 import webpackHotMiddleware from "webpack-hot-middleware";
 
-const config = require("../../webpack.config.js");
+const config = require("../../webpack.prod.config.js");
 
 import { alphabetMapper } from "../mappers/alphabet.js";
 
@@ -16,12 +16,10 @@ const router = express.Router();
 
 const currentDirectory = process.cwd(); // current directory
 
-const DIST_DIR = path.join(path.resolve(currentDirectory, "src"));
+const DIST_DIR = path.join(path.resolve(currentDirectory, "dist"));
 
-const HTML_DIR = path.join(DIST_DIR, "html");
+const HTML_DIR = path.join(DIST_DIR);
 const HTML_FILE = path.join(HTML_DIR, "index.html");
-
-app.use(express.static(HTML_DIR));
 
 app.use(express.static(HTML_DIR));
 
@@ -53,6 +51,14 @@ app.get("/varnmala", (_, res) => {
 
 app.get("/canvas", (_, res) => {
   res.sendFile(path.join(HTML_DIR, "canvas.html"));
+});
+
+app.get("/math", (_, res) => {
+  res.sendFile(path.join(HTML_DIR, "math.html"));
+});
+
+app.get("/kannada", (_, res) => {
+  res.sendFile(path.join(HTML_DIR, "kannada.html"));
 });
 
 //const readJson = (fileName) => {

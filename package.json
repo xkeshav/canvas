@@ -7,7 +7,7 @@
     "clean": "rd /s /q dist build >nul 2>&1|echo.>null",
     "start": "nodemon ./dist/scripts/server.js",
     "//": "below scrips are experimental",
-    "dev": "webpack --config webpack.dev.config.js --mode development --watch",
+    "dev": "webpack serve --config webpack.dev.config.js --mode development",
     "start:dev": "nodemon ./build/main.js",
     "client:dev": "webpack --config webpack.config.js"
   },

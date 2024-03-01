@@ -8,14 +8,16 @@ const modules = require("./webpack.modules.config");
 
 const DIST_DIR = path.join(__dirname, "dist");
 
-const pages = ["draw", "varnmala", "canvas", "about", "math"];
+const PUBLIC_DIR = path.join(__dirname, "public");
+
+const pages = ["draw", "varnmala", "canvas", "about", "math", "kannada"];
 
 const entryObject = pages.reduce((p, n) => Object.assign(p, { [n]: [`./src/scripts/${n}.js`, `./src/styles/${n}.css`] }), {});
 
 module.exports = {
   entry: {
     index: ["./src/index.js"],
-    server: ["./src/server/server.js"],
+    server: ["./src/server/index.js"],
     ...entryObject
   },
   performance: {

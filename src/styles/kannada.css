@@ -1,0 +1,60 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.back {
+  margin-inline: 0.5rem;
+  font-size: medium;
+  cursor: pointer;
+  flex-grow: 1;
+}
+
+h1 {
+  color: grey;
+}
+
+main {
+  color: #d2d2b2;
+  height: 90vh;
+  padding: 1rem;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-auto-flow: row;
+  gap: 5px;
+
+  /* Gap between cells */
+  .block {
+    display: grid;
+    grid-template-columns: 80% 20%;
+    grid-template-areas: "kannada hindi";
+    height: 10rem;
+    border: 1px solid #333;
+    color: white;
+
+    .kannada {
+      grid-area: kannada;
+      place-self: center;
+      font-size: 5rem;
+    }
+
+    .hindi {
+      grid-area: hindi;
+      font-size: 2rem;
+      justify-self: center;
+      align-self: self-end;
+    }
+
+    &:nth-child(2n + 1) {
+      background-color: #1e3250;
+    }
+
+    &:nth-child(2n + 2) {
+      background-color: lightgreen;
+    }
+  }
+}
