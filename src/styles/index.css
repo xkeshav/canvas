@@ -57,7 +57,7 @@ nav {
   grid-gap: 0.5rem;
   margin: 0.75rem;
   grid-auto-rows: max-content;
-  grid-template-rows: repeat(auto-fit, minmax(20%, 1fr));
+  grid-template-rows: repeat(auto-fit, minmax(120px, 1fr));
 }
 
 .item--1 {

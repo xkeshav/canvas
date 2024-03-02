@@ -113,7 +113,7 @@ input[type="checkbox"] {
   grid-area: char;
   -webkit-background-clip: text;
   background-clip: text;
-  color: #ad6161;
+  color: #faf5f5;
   font-weight: 900;
   font-size: 85ch;
   font-variant: common-ligatures tabular-nums;

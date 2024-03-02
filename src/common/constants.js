@@ -26,6 +26,6 @@ export const numberBox = {
   0: "zero"
 };
 
-export const fontBox = ["MudraMohta", "boisuStroke", "atkinson", "sportrop", "Ananda", "boisuStroke", "Roboto"];
+export const fontBox = ["boisuStroke", "atkinson", "sportrop", "Ananda", "boisuStroke", "MudraMohta", "Roboto"];
 
 export { BASE_URL, IMAGE_DIR };

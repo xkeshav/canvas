@@ -55,6 +55,10 @@ app.get("/math", (_, res) => {
   res.sendFile(path.join(HTML_DIR, "math.html"));
 });
 
+app.get("/kannada", (_, res) => {
+  res.sendFile(path.join(HTML_DIR, "kannada.html"));
+});
+
 //const readJson = (fileName) => {
 //  let jsonObjData = [];
 //  try {
