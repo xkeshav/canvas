@@ -1,0 +1,141 @@
+@import url(./base.css);
+
+.container {
+  display: grid;
+  grid-auto-flow: row;
+  grid-template-rows: minmax(5%, auto) 1fr auto;
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
+  grid-gap: 0.25rem;
+}
+
+.font__mudra {
+  font-family: "MudraMohta";
+}
+
+.font__boisu {
+  font-family: "boisu";
+}
+
+.font__sportrop {
+  font-family: "sportrop";
+}
+
+.font__atkinson {
+  font-family: "atkinson";
+}
+
+header {
+  grid-area: header;
+  justify-self: stretch;
+  opacity: 1;
+  transition: height 0ms 400ms, opacity 400ms 0ms;
+  display: grid;
+  background-image: linear-gradient(90deg, #779dad, #ebf8e1 30%, #cfb3ae);
+  grid-auto-flow: column;
+  grid-template-columns: 1fr 10rem;
+  align-items: center;
+}
+
+.info {
+  justify-self: stretch;
+  font-size: 2rem;
+  opacity: 0.75;
+  text-overflow: ellipsis;
+  color: black;
+  text-align: center;
+}
+
+.option {
+  padding: 4px;
+}
+.option:hover {
+  border: 1px solid grey;
+}
+
+.hide {
+  height: 0;
+  opacity: 0;
+}
+
+main {
+  grid-area: main;
+}
+
+footer {
+  grid-area: footer;
+  justify-self: center;
+}
+
+label {
+  cursor: pointer;
+  width: auto;
+}
+
+#kbd {
+  opacity: 0.25;
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+.switch {
+  border-radius: 36px;
+  box-shadow: 17px 17px 40px #bababa, -17px -17px 40px #ffffff;
+}
+
+.switch::after {
+  content: var(--content);
+  height: 1.5rem;
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  width: 1.5rem;
+  background-color: cornsilk;
+  border-radius: 4px;
+}
+
+.board {
+  display: grid;
+  place-items: center;
+  color: black;
+  grid-template-areas: "char";
+  grid-auto-flow: row;
+  grid-gap: 0.5rem;
+  grid-template-rows: 1fr minmax(1rem, auto);
+  height: 100%;
+}
+
+.char {
+  grid-area: char;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: #faf5f5;
+  font-weight: 900;
+  font-size: 85ch;
+  font-variant: common-ligatures tabular-nums;
+  font-family: "MudraMohta";
+  mix-blend-mode: unset;
+  filter: opacity(0.9);
+  text-transform: uppercase;
+}
+
+.bg {
+  background-size: cover;
+  background-attachment: scroll;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-blend-mode: multiply;
+  overflow: hidden;
+}
+
+.action {
+  padding-inline: 1rem;
+}
+
+input[type="text"]:focus {
+  background-color: red;
+}

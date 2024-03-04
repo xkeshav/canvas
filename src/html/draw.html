@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Draw</title>
+</head>
+
+<body class="container">
+	<header class="header">
+		<h1 class="info">Press any key</h1>
+		<div class="option">
+			<label for="toggleCase">
+				<input type="checkbox" name="change_case" id="toggleCase">
+				<span id="text" class="switch" style="--content: 'A'" title="click to change case."></span>
+			</label>
+			<label for="toggleFont">
+				<input type="checkbox" name="change_font" id="toggleFont">
+				<span id="font" class="switch" style="--content: 'T'" title="click to change font."></span>
+			</label>
+		</div>
+	</header>
+	<main class="bg">
+		<section class="board">
+			<div class="board__item char" id="char"></div>
+		</section>
+	</main>
+	<footer>
+		<input type="text" id="kbd" size="1" maxlength="1" />
+	</footer>
+</body>
+
+</html>

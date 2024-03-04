@@ -1,0 +1,58 @@
+{
+  "name": "canvas",
+  "version": "0.0.1",
+  "description": "Minimal webpack reproduction",
+  "scripts": {
+    "build": "webpack --config webpack.prod.config.js --mode production",
+    "clean": "rd /s /q dist build >nul 2>&1|echo.>null",
+    "start": "nodemon ./dist/scripts/server.js",
+    "start:dev": "nodemon ./src/server/server.js",
+    "dev": "webpack serve --config webpack.dev.config.js --mode development --watch",
+    "dev2": "webpack-dev-server --config webpack.config.dev.js --open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xkeshav/canvas.git"
+  },
+  "keywords": [
+    "canvas",
+    "draw",
+    "abcd"
+  ],
+  "author": "Keshav Mohta<xkeshav@gmail.com>",
+  "license": "see LICENSE in LICENSE",
+  "bugs": {
+    "url": "https://github.com/xkeshav/canvas/issues"
+  },
+  "homepage": "https://www.abcdkbd.com",
+  "dependencies": {
+    "@babel/preset-env": "^7.20.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "path": "^0.12.7",
+    "request": "^2.88.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.20.7",
+    "@babel/eslint-parser": "^7.22.9",
+    "@babel/register": "^7.0.0",
+    "babel-loader": "^9.1.0",
+    "copy-webpack-plugin": "^11.0.0",
+    "css-loader": "^6.7.3",
+    "css-minimizer-webpack-plugin": "^5.0.1",
+    "eslint": "^8.30.0",
+    "eslint-webpack-plugin": "^3.2.0",
+    "html-loader": "^4.2.0",
+    "html-webpack-plugin": "^5.5.0",
+    "http-proxy-middleware": "^2.0.6",
+    "mini-css-extract-plugin": "^2.7.6",
+    "style-loader": "^3.3.1",
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-middleware": "^6.0.1",
+    "webpack-dev-server": "^4.15.1",
+    "webpack-hot-middleware": "^2.25.4",
+    "webpack-node-externals": "^3.0.0"
+  }
+}
