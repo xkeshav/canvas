@@ -7,13 +7,13 @@ const hindiVowelList = hindiVowels.filter((v) => !extraHindiVowelKey.includes(v.
 // 'त्र'  = त  + '् + र
 // 'ज्ञ'  = ज  + '् + ञ
 const additionalConsonants = [String.fromCharCode(2325, 2381, 2359), String.fromCharCode(2340, 2381, 2352), String.fromCharCode(2332, 2381, 2334)];
-const hindiConsonants = Array.from({ length: 36 }, (_, i) => String.fromCodePoint(2325 + i)).concat(additionalConsonants);
+const hindiConsonants = Array.from({ length: 37 }, (_, i) => String.fromCodePoint(2325 + i)).concat(additionalConsonants);
 
 // Generating arrays for Kannada vowels (ಸ್ವರಗಳು) and consonants (ವ್ಯಂಜನಗಳು)
 const kannadaVowels = Array.from({ length: 16 }, (_, i) => ({ key: 3205 + i, value: String.fromCodePoint(3205 + i) }));
 const extraKannadaVowelKey = [3213, 3217];
 const kannadaVowelList = kannadaVowels.filter((v) => !extraKannadaVowelKey.includes(v.key));
-const kannadaConsonants = Array.from({ length: 36 }, (_, i) => String.fromCodePoint(3221 + i));
+const kannadaConsonants = Array.from({ length: 37 }, (_, i) => String.fromCodePoint(3221 + i));
 //console.log({ kannadaVowelList, hindiVowelList });
 
 // Combining Hindi and Kannada letters into an array of objects
@@ -24,6 +24,8 @@ for (let i = 0; i < hindiVowelList.length; i++) {
     kannada: kannadaVowelList[i].value
   });
 }
+
+hindiKannadaPairs.push({hindi: "", kannada: ""});
 
 for (let i = 0; i < hindiConsonants.length; i++) {
   hindiKannadaPairs.push({
