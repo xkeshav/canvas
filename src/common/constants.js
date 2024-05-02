@@ -11,7 +11,7 @@ console.log("environment==>", process.env.NODE_ENV);
 
 export const colorBox = ["#f00000", "#38c138", "#0a6de8", "#e69110", "#1b1818", "#632363", "#f1e904", "#102923", "#000000", "#d4d4d4"];
 
-export const htmlPageNames = ["about", "canvas", "draw", "varnmala", "math"];
+export const htmlPageNames = ["about", "canvas", "draw", "hide-n-seek", "math"];
 
 export const numberBox = {
   1: "one",

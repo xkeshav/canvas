@@ -8,13 +8,19 @@
 </head>
 
 <body>
-	<main>
-		<div class="action--block">
-			<button class="action--btn" id="refresh" type="button"><span>↻</span></button>
-			<button class="action--btn" id="add" type="button"><span>+</span></button>
-			<button class="action--btn" id="subtract" type="button"><span>-</span></button>
-			<button class="action--btn" id="multiply" type="button"><span>x</span></button>
+	<header>
+		<div class="action"><a href="/" class="back">Back</a></div>
+		<div class="caption"><h2>Start the Arithmetic</h2></div>
+		<div class="option">
+			<div class="action--block">
+				<button class="action--btn" id="refresh" type="button"><span>↻</span></button>
+				<button class="action--btn" id="add" type="button"><span>+</span></button>
+				<button class="action--btn" id="subtract" type="button"><span>-</span></button>
+				<button class="action--btn" id="multiply" type="button"><span>x</span></button>
+			</div>
 		</div>
+	</header>
+	<main>
 		<form>
 			<input readonly type="number" id="first" name="b" class="number one" value="0" size="20" />
 			<samp id="operator" class="operator">+</samp>

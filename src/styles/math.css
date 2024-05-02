@@ -1,5 +1,27 @@
+header {
+  grid-area: header;
+  grid-template-columns: minmax(1%, 10%) auto 1fr;
+  padding:0.5rem;
+  display: grid;
+  align-content: center;
+  > .action {
+    display: flex;
+    align-items: center;
+  }
+  > .caption {
+    text-align: center;
+    font-size: large;
+  }
+}
+
 .action--block {
-  text-align: center;
+  align-content: center;
+  height: 100%;
+  align-items: center;
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: space-evenly;
+  background: cornsilk;
 }
 
 form {

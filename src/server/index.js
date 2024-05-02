@@ -29,8 +29,8 @@ app.get("/draw", (_, res) => {
   res.sendFile(path.join(HTML_DIR, "draw.html"));
 });
 
-app.get("/varnmala", (_, res) => {
-  res.sendFile(path.join(HTML_DIR, "varnmala.html"));
+app.get("/hide-n-seek", (_, res) => {
+  res.sendFile(path.join(HTML_DIR, "hide-n-seek.html"));
 });
 
 app.get("/canvas", (_, res) => {

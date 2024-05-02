@@ -2,7 +2,6 @@
 
 A learning website for kids who started their journey to learn alphabets, you can play on on desktop/laptop on the
 
-
 ## How to run
 
 - clone this repo and navigate to folder and run
@@ -31,7 +30,7 @@ A learning website for kids who started their journey to learn alphabets, you ca
 
 ### Hide N Seek
 
-![Varnmala](https://github.com/xkeshav/canvas/blob/c7f21a1b9782b5de7a4691d022cc0e9aa7397ab6/src/assets/screenshots/Varnmala.png)
+![Hide And Seek](https://github.com/xkeshav/canvas/blob/c7f21a1b9782b5de7a4691d022cc0e9aa7397ab6/src/assets/screenshots/Varnmala.png)
 
 ### Draw
 

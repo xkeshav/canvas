@@ -1,6 +1,6 @@
 //import { fetchKeyMetadata } from "../common/helper";
-import { getRandomValue } from "../common/utils";
 import { IMAGE_DIR, colorBox, fontBox, numberBox } from "../common/constants";
+import { getRandomValue } from "../common/utils";
 import { alphabetMapper } from "../mappers/alphabet";
 
 const main = document.querySelector("main");
@@ -12,9 +12,8 @@ const info = document.querySelector(".info");
 const textSpan = document.getElementById("text");
 
 const init = () => {
-  const target = document.getElementById("kbd");
-  target.focus();
-  target.click();
+  console.log("welcome to abcdkbd.com");
+  console.log({boardDiv, charDiv});
 };
 
 if (document.readyState !== "loading") {

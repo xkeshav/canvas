@@ -1,0 +1,67 @@
+.container {
+    display: grid;
+    grid-auto-flow: row;
+    grid-template-areas: "header" "main";
+    grid-template-rows: [header] 6% [main] 1fr;
+    color: black;
+  }
+  
+  header {
+    grid-area: header;
+    grid-template-columns: minmax(1%, 10%) 1fr 10rem;
+    padding:0.5rem;
+    display: grid;
+    align-content: center;
+
+    > .action {
+      display: flex;
+      align-items: center;
+    }
+    > .caption {
+      text-align: center;
+      font-size: large;
+    }
+}
+
+main {
+    grid-area: main;
+    display: grid;
+    grid-gap: 2px;
+    grid-template-columns: repeat(5, minmax(8rem, 1fr));
+    grid-template-rows: repeat(auto-fit, minmax(8rem, 1fr));
+    height: 100vh;
+
+
+  & .word {
+    align-items: center;
+    background: #2db34a;
+    border-radius: 4px;
+    color: #2db34a;
+    cursor: crosshair;
+    display: inline-grid;
+    font-size: 8vw;
+    font-weight: 600;
+    height: 100%;
+    justify-content: center;
+    position: relative;
+    transition-duration: 0.5s;
+    transition-property: background;
+    transition-timing-function: linear;
+    width: 100%;
+  }
+
+  & .word:hover {
+    background-color: #eaebf9;
+    color: #eaebf9;
+    border: 1px solid red;
+  }
+
+  & .show {
+    background-color: #bd4595;
+    color: white;
+  }
+  & show:hover {
+    background-color: #483d8b;
+    color: #fd3636;
+  }
+}

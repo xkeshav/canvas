@@ -7,12 +7,13 @@ const plugins = require("./webpack.plugins.config");
 const modules = require("./webpack.modules.config");
 
 const BUILD_DIR = path.join(__dirname, "build");
+const DIST_DIR = path.join(__dirname, "dist");
 
 module.exports = {
   entry: {
     index: ["./src/index.js"],
     draw: ["./src/scripts/draw.js", "./src/styles/draw.css"],
-    varnmala: ["./src/scripts/varnmala.js", "./src/styles/varnmala.css"],
+    'hide-n-seek': ["./src/scripts/hide-n-seek.js", "./src/styles/hide-n-seek.css"],
     canvas: ["./src/scripts/canvas.js", "./src/styles/canvas.css"],
     server: ["./src/server/server.js"]
   },

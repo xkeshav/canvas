@@ -8,7 +8,8 @@
 
 <body class="container">
 	<header class="header">
-		<h1 class="info">Press any key</h1>
+		<div class="action"> <a href="/" title="go back">Back</a></div>
+		<div class="caption">	<h1 class="info">Press any key</h1></div>
 		<div class="option">
 			<label for="toggleCase">
 				<input type="checkbox" name="change_case" id="toggleCase">
@@ -20,13 +21,12 @@
 			</label>
 		</div>
 	</header>
-	<main class="bg">
-		<section class="board">
+	<main class="main">
+		<section class="board" >
 			<div class="board__item char" id="char"></div>
 		</section>
 	</main>
 	<footer>
-		<input type="text" id="kbd" size="1" maxlength="1" />
 	</footer>
 </body>
 
