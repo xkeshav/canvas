@@ -1,0 +1,92 @@
+main {
+  width: auto;
+  border: 1px solid grey;
+  font-family: "Courier New", Courier, monospace;
+  letter-spacing: 1px;
+  container-type: inline-size;
+  container-name: main;
+}
+
+nav  {
+  border: 1px solid grey;
+  padding: 0;
+    display: grid;
+    width: 100%;
+    list-style-type: none;
+    place-items: center;
+    grid-template-columns: 8% 1fr 20%;
+    
+}
+
+section {
+  width: 100%;
+  padding: 0.5rem;
+  display: grid;
+  grid-auto-flow: row;
+  gap: 0.5rem;
+  grid-template-columns: repeat(4, 1fr);
+  
+
+  & article {
+    max-height: 10rem;
+    text-transform: capitalize;
+    font-variant: small-caps;
+    padding: 0.5rem;
+  }
+
+  details {
+    border-radius: 4px;
+    border-style: solid;
+    border-width: 1px 1px 1px 1rem;
+    border-color: #f16db9;
+    padding: 0.5rem 0.5rem 0;
+    margin-inline: 0.5rem;
+
+    &[open] {
+      border-width: 1px 1rem;
+      border-style: dotted solid;
+      border-inline-color: black;
+      padding: 0.5rem;
+
+      summary {
+        border-bottom: 1px solid #aaa;
+        margin-inline:-0.5rem;
+        font-size: x-large;
+
+        &::marker {
+          color: black;
+          margin-left: 8px;
+        }
+      }
+    }
+
+    & summary {
+      color: #cf3489;
+      font-size: large;
+      cursor: pointer;
+      font-weight: bold;
+      margin: -0.5em -0.5em 0;
+      padding: 0.5em;
+
+      &::marker {
+        font-size: 1.4rem;
+        color: green;
+        margin-left: 8px;
+      }
+    }
+
+    & p {
+      font-size: 1.5rem;
+      font-style: italic;
+      font-weight: bold;
+      padding: 0.25rem;
+    }
+  }
+}
+
+
+@container main (width < 700px) {
+  section {
+    grid-template-columns: 1fr;
+  }
+}

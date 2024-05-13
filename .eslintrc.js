@@ -32,7 +32,7 @@ module.exports = {
     indent: [0, "tab"],
     "linebreak-style": ["off", "unix"],
     "comma-dangle": [
-      "error",
+      "warn",
       {
         arrays: "never",
         objects: "never",

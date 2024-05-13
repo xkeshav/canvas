@@ -14,9 +14,9 @@ const secondOperand = document.getElementById("second");
 const userOutput = document.getElementById("output");
 const resultBox = document.getElementById("result");
 
-const add = (a, b) => parseInt(a, 10) + parseInt(b, 10);
-const subtract = (a, b) => parseInt(a, 10) - parseInt(b, 10);
-const multiply = (a, b) => a * b;
+export const add = (a, b) => parseInt(a, 10) + parseInt(b, 10);
+export const subtract = (a, b) => parseInt(a, 10) - parseInt(b, 10);
+export const multiply = (a, b) => a * b;
 
 const clearOutput = () => {
   userOutput.value = "";
