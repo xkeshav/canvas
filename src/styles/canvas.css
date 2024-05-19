@@ -1,7 +1,3 @@
-:root {
-  --large: 600px;
-  --small: 200px;
-}
 
 nav  {
   border: 1px solid grey;
@@ -28,9 +24,15 @@ nav  {
 
 .canvas__div {
   display: grid;
+  container-name: canvas;
   grid-template-columns: repeat(4, minmax(200px, 1fr));
-  grid-auto-columns: fit-content(700px) fit-content(700px) 1fr;
   grid-gap: 1rem;
+}
+
+@container canvas (width < 700px) {
+  .canvas__div {
+    grid-template-columns: repeat(2, 1rem);
+  }
 }
 
 .canvas__container {

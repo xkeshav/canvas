@@ -37,7 +37,7 @@ const ut_list = [
 	{ "name": "Chandigarh", "capital": "Chandigarh" , isState: false},
 	{ "name": "Dadra and Nagar Haveli and Daman and Diu", "capital": "Daman" , isState: false},
 	{ "name": "Jammu & Kashmir", "capital": "Srinagar" , isState: false},
-	{ "name": "Ladakhr", "capital": "Leh" , isState: false},
+	{ "name": "Ladakh", "capital": "Leh" , isState: false},
 	{ "name": "Lakshadweep", "capital": "Kavaratti" , isState: false},
 	{ "name": "Delhi", "capital": "New Delhi" , isState: false},
 	{ "name": "Puducherry", "capital": "Puducherry" , isState: false}
