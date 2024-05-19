@@ -35,7 +35,7 @@ if (isLargeImage) {
   FONT_SIZE = "5rem";
 }
 
-const CUSTOM_FONT = "atkinson-hyperlegible-regular-102-webfont.woff";
+const CUSTOM_FONT = "Roboto-Black.ttf";
 
 const getInitials = (text = []) =>
   text

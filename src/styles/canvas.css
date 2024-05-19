@@ -3,12 +3,22 @@
   --small: 200px;
 }
 
+nav  {
+  border: 1px solid grey;
+  padding: 0;
+  display: grid;
+  width: 100%;
+  list-style-type: none;
+  place-items: center;
+  grid-template-columns: 8% 1fr 20%;
+}
+
 .canvas__header {
   height: 2rem;
   padding: 1rem;
   color: black;
   display: flex;
-  justify-content: start;
+  justify-content: center;
   flex-direction: row;
   border: 1px solid grey;
   border-radius: 4px;
@@ -27,11 +37,21 @@
   padding: 0.5rem;
 }
 
-input {
-  margin-inline-end: 4px;
+input[type=button]{
+  height: 2rem;
+  padding: 4px;
+  width: 5rem;
+  color: white;
+  background-color: mediumblue;
+  border: 0;
+  border-radius: 4px;
+  margin-inline: 0.5rem;
+  cursor: pointer;
 }
 
-input[type="text"] {
+#name {
   padding-inline: 10px;
-  font-size: 1rem;
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  letter-spacing: 2px;
 }
