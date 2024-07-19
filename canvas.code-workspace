@@ -5,7 +5,11 @@
     }
   ],
   "settings": {
-    "cSpell.words": ["abcdkbd", "varnmala"],
+    "cSpell.words": [
+      "abcdkbd",
+      "sportrop",
+      "varnmala"
+    ],
     "editor.formatOnSave": true,
     "editor.codeActionsOnSave": {
       "source.fixAll": "explicit",

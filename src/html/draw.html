@@ -9,7 +9,9 @@
 <body class="container">
 	<header class="header">
 		<div class="action"> <a href="/" title="go back">Back</a></div>
-		<div class="caption">	<h1 class="info">Press any key</h1></div>
+		<div class="caption">
+			<h1 class="info">Press any key</h1>
+		</div>
 		<div class="option">
 			<label for="toggleCase">
 				<input type="checkbox" name="change_case" id="toggleCase">
@@ -17,12 +19,16 @@
 			</label>
 			<label for="toggleFont">
 				<input type="checkbox" name="change_font" id="toggleFont">
-				<span id="font" class="switch" style="--content: 'T'" title="click to change font."></span>
+				<span id="font" class="switch" title="click to change font.">T</span>
+			</label>
+			<label for="toggleBg">
+				<input type="checkbox" name="change_bg" id="toggleBg">
+				<span id="text" class="switch" style="--mode: 'soft-light'" title="click to toggle background.">🟣</span>
 			</label>
 		</div>
 	</header>
 	<main class="main">
-		<section class="board" >
+		<section class="board">
 			<div class="board__item char" id="char"></div>
 		</section>
 	</main>

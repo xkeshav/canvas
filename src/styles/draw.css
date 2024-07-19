@@ -3,6 +3,8 @@
 :root {
   --custom-font: "MudraMohta";
   --default-font: monospace;
+  --mode: inherit;
+  --opc: 1;
 }
 
 .container {
@@ -35,7 +37,7 @@
 header {
   grid-area: header;
   justify-self: stretch;
-  opacity: 1;
+  opacity: var(--opc,1);
   transition: height 0ms 400ms, opacity 400ms 0ms;
   display: grid;
   background-image: linear-gradient(90deg, #779dad, #ebf8e1 30%, #cfb3ae);
@@ -52,7 +54,7 @@ main {
   background-repeat: no-repeat;
   background-blend-mode: initial;
   background-color: blue;
-  overflow: hidden;
+  background-blend-mode: var(--mode);
 }
 
 .info {
@@ -66,7 +68,15 @@ main {
 
 .option {
   padding: 4px;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  height: 3rem;
+  border: 2px dashed #dcf128;
+  align-content: center;
+  align-items: center;
 }
+
 .option:hover {
   border: 1px solid grey;
 }
@@ -88,6 +98,11 @@ footer {
 label {
   cursor: pointer;
   width: auto;
+  border: 2px solid rgb(114, 165, 42);
+  width: 2rem;
+  font-size: large;
+  margin-inline: 4px;
+  text-align: center;
 }
 
 #kbd {
@@ -101,17 +116,15 @@ input[type="checkbox"] {
 .switch {
   border-radius: 36px;
   box-shadow: 17px 17px 40px #bababa, -17px -17px 40px #ffffff;
+  border-radius: 4px;
 }
 
 .switch::after {
   content: var(--content);
-  height: 1.5rem;
+  height: auto;
   position: relative;
   display: inline-block;
   text-align: center;
-  width: 1.5rem;
-  background-color: cornsilk;
-  border-radius: 4px;
 }
 
 .board {
@@ -132,7 +145,7 @@ input[type="checkbox"] {
   background-clip: text;
   color: #faf5f5;
   font-weight: 900;
-  font-size: 85ch;
+  font-size: clamp(100ch , 80vw , 120ch);
   font-variant: common-ligatures tabular-nums;
   font-family: var(--custom-font, auto);
   mix-blend-mode: unset;

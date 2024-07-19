@@ -1,7 +1,9 @@
 {
   "name": "canvas",
-  "version": "1.1.1",
-  "description": "An interactive website designed to engage and educate young children who are beginning their journey of learning the alphabet.",
+  "version": "1.2.0",
+  "displayName": "Kidz",
+  "description": "An interactive website designed to engage and educate children who are beginning their journey of learning the alphabet.",
+  "publisher": "@xkeshav",
   "scripts": {
     "build": "webpack --config webpack.prod.config.js --mode production",
     "clean": "rd /s /q dist build >nul 2>&1|echo.>null",
@@ -9,6 +11,7 @@
     "dev": "webpack --config webpack.dev.config.js --mode development --watch",
     "test": "jest"
   },
+  
   "repository": {
     "type": "git",
     "url": "https://github.com/xkeshav/canvas.git"
@@ -21,8 +24,12 @@
     "abcd",
     "kbd"
   ],
-  "author": "Keshav Mohta<xkeshav@gmail.com>",
-  "license": "see LICENSE in LICENSE",
+  "author": {
+    "name": "Keshav Mohta",
+    "email": "xkeshav@gmail.com"
+  },
+  "contributors": [],
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/xkeshav/canvas/issues"
   },

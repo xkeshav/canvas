@@ -1,3 +1,8 @@
+:root {
+  --num:4;
+  --p: 20%;
+}
+
 header {
   display: flex;
   justify-content: space-between;
@@ -19,11 +24,12 @@ main {
   color: #d2d2b2;
   height: 90vh;
   padding: 1rem;
+  container: base /inline-size;
 }
 
 .grid-container {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(var(--num), 1fr);
   grid-auto-flow: row;
   gap: 5px;
 
@@ -50,11 +56,16 @@ main {
     }
 
     &:nth-child(2n + 1) {
-      background-color: #1e3250;
+      background-color: color-mix(in hsl longer hue, #0f0 var(--p), #551b1b)
     }
 
     &:nth-child(2n + 2) {
-      background-color: lightgreen;
+      background-color: color-mix(in hsl longer hue, #0f0, #551b1b var(--p))
     }
+  }
+}
+@container base (width < 800px) {
+  .grid-container {
+    --num:2;
   }
 }

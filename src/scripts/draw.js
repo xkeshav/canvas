@@ -8,12 +8,13 @@ const boardDiv = document.querySelector(".board");
 const charDiv = document.getElementById("char");
 const toggleCaseSwitch = document.getElementById("toggleCase");
 const toggleFontSwitch = document.getElementById("toggleFont");
+const toggleBackgroundSwitch = document.getElementById("toggleBg");
 const info = document.querySelector(".info");
 const textSpan = document.getElementById("text");
 
 const init = () => {
   console.log("welcome to abcdkbd.com");
-  console.log({boardDiv, charDiv});
+  console.log({ boardDiv, charDiv });
 };
 
 if (document.readyState !== "loading") {
@@ -23,8 +24,8 @@ if (document.readyState !== "loading") {
 }
 
 // change case of character
-toggleCaseSwitch.addEventListener("change", (e) => {
-  charDiv.style.textTransform = !e.target.checked ? "uppercase" : "lowercase";
+toggleCaseSwitch?.addEventListener("change", (e) => {
+  charDiv.style.textTransform = e.target.checked ? "lowercase" : "uppercase";
   const after = window.getComputedStyle(textSpan, "::after");
   const { content } = after;
   textSpan.style.setProperty("--content", e.target.checked ? `${content.toLowerCase()}` : `${content.toUpperCase()}`);
@@ -32,13 +33,17 @@ toggleCaseSwitch.addEventListener("change", (e) => {
 
 let c = 0;
 
-toggleFontSwitch.addEventListener("change", (e) => {
-  console.log(e.target.checked);
-  c++;
-  const num = c % fontBox.length;
+toggleFontSwitch?.addEventListener("change", () => {
+  //c++;
+  const num = (c + 1) % fontBox.length;
   const fontFamily = fontBox[num];
   console.log({ fontFamily });
+  c++;
   charDiv.style.fontFamily = fontFamily;
+});
+
+toggleBackgroundSwitch?.addEventListener("change", (e) => {
+  main.style.setProperty("--mode", e?.target.checked ? "inherit" : "soft-light");
 });
 
 const drawNumber = (key = 0) => {
