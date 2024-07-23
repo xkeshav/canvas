@@ -25,6 +25,7 @@ main {
   height: 90vh;
   padding: 1rem;
   container: base /inline-size;
+  overflow: scroll;
 }
 
 .grid-container {
