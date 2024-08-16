@@ -22,34 +22,35 @@ A learning website for kids who started their journey to learn alphabets, you ca
 
 ### Main page
 
-![Landing Page](https://github.com/xkeshav/canvas/blob/c7f21a1b9782b5de7a4691d022cc0e9aa7397ab6/src/assets/screenshots/index.png)
+
+![Landing Page](https://github.com/xkeshav/canvas/blob/master/src/assets/screenshots/index.png)
 
 ### Draw
 
-![Draw](https://github.com/xkeshav/canvas/blob/c7f21a1b9782b5de7a4691d022cc0e9aa7397ab6/src/assets/screenshots/Draw.png)
+![Draw](https://github.com/xkeshav/canvas/blob/master/src/assets/screenshots/Draw.png)
 
 ### Hide N Seek
 
-![Hide And Seek](https://github.com/xkeshav/canvas/blob/c7f21a1b9782b5de7a4691d022cc0e9aa7397ab6/src/assets/screenshots/Hide-n-Seek.png)
+![Hide And Seek](https://github.com/xkeshav/canvas/blob/master/src/assets/screenshots/Hide-n-Seek.png)
 
 
 ### Mathematics
 
-![Mathematics](https://github.com/xkeshav/canvas/blob/c7f21a1b9782b5de7a4691d022cc0e9aa7397ab6/src/assets/screenshots/Maths.png)
+![Mathematics](https://github.com/xkeshav/canvas/blobmaster/src/assets/screenshots/Maths.png)
 
 ### Kannada
 
-![Kannada](https://github.com/xkeshav/canvas/blob/c7f21a1b9782b5de7a4691d022cc0e9aa7397ab6/src/assets/screenshots/Kannada.png)
+![Kannada](https://github.com/xkeshav/canvas/blob/master/src/assets/screenshots/Kannada.png)
 
 
 ### Canvas
 
-![Canvas](https://github.com/xkeshav/canvas/blob/c7f21a1b9782b5de7a4691d022cc0e9aa7397ab6/src/assets/screenshots/Canvas.png)
+![Canvas](https://github.com/xkeshav/canvas/blob/master/src/assets/screenshots/Canvas.png)
 
 
 ### Capital
 
-![Capital](https://github.com/xkeshav/canvas/blob/c7f21a1b9782b5de7a4691d022cc0e9aa7397ab6/src/assets/screenshots/Capital.png)
+![Capital](https://github.com/xkeshav/canvas/blob/master/src/assets/screenshots/Capital.png)
 
 
 ## How it works
