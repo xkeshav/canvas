@@ -11,9 +11,20 @@
 		<nav>
 			<a href="/">Back</a>
 			<h1>Generate image with text</h1>
-			<modal>?</modal>
+			<div class="hint" id="tip">
+				?
+			</div>
 		</nav>
 	</header>
+	<dialog>
+		<button autofocus>Close</button>
+		<p>This is to generate image.</p>
+		<ul>
+			<li> Generate Full Name or Initials </li>
+			<li> Click on Time will generate Time image in Hh:MM:SS format </li>
+		</ul>
+		<p>To save image : right click on generated card and save. </p>
+	</dialog>
 	<main class="canvas__header">
 		<input type="text" placeholder="type here" id="name" value="">
 		<input type="button" id="text" data-variant="text" value="Draw">

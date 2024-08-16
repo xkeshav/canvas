@@ -1,9 +1,11 @@
 header {
   grid-area: header;
-  grid-template-columns: minmax(1%, 10%) auto 1fr;
+  grid-template-columns: minmax(1%, 10%) 1fr auto;
   padding:0.5rem;
   display: grid;
   align-content: center;
+  align-items: center;
+  border-bottom: 1px solid grey;
   > .action {
     display: flex;
     align-items: center;
@@ -12,35 +14,69 @@ header {
     text-align: center;
     font-size: large;
   }
+  > .option {
+    text-align: center;
+    border: 1px solid grey;
+    width: 1em;
+    display: b;
+    height: auto;
+    padding: 0.5rem;
+    font-size: x-large;
+    cursor: help;
+  }
 }
 
-.action--block {
+dialog {
+  border: 1px solid #171208;
+  background: #140707;
+  color: white;
+  font-size: large;
+  &[open] {
+    border-radius: 4px;
+  }
+  button {
+    float: right;
+    padding: 0.5rem;
+    margin: 0.5rem;
+    cursor: pointer;
+  }
+}
+
+::backdrop {
+  background-image: linear-gradient(295deg, #df65df, #dd775f, #aac0d5, #ade800);
+  opacity: 0.75;
+}
+
+.operator__container {
   align-content: center;
-  height: 100%;
   align-items: center;
   display: grid;
   grid-auto-flow: column;
   justify-content: space-evenly;
-  background: cornsilk;
+  background-color: cornsilk;
+  padding:0.5rem;
 }
 
 form {
   padding-inline: 0.5rem;
 }
 
-.action--btn {
+.btn__operator {
   display: inline-block;
   font-size: 2rem;
-  color: indianred;
+  color: rgb(48, 188, 48);
   cursor: pointer;
   margin-inline: 1rem;
-  border: 1px solid red;
+  border: 1px solid rgb(28, 12, 12);
   height: 3rem;
   width: 3rem;
+  background-color: black;
+  border-radius: 1rem;
 }
 
 .operator {
   font-size: 15dvmin;
+  color: rebeccapurple;
 }
 
 input::-webkit-outer-spin-button,
@@ -109,3 +145,4 @@ input:focus-within:is(:valid) + span::before {
   background-color: aliceblue;
   color: #9c32d2;
 }
+

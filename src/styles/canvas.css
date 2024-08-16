@@ -25,7 +25,7 @@ nav  {
 .canvas__div {
   display: grid;
   container-name: canvas;
-  grid-template-columns: repeat(4, minmax(30%, 1fr));
+  grid-template-columns: repeat(4, minmax(20%, 1fr));
   grid-gap: 1rem;
 }
 
@@ -37,6 +37,14 @@ nav  {
 
 .canvas__container {
   padding: 0.5rem;
+}
+
+#name {
+  width: 50vw;
+  padding-inline: 10px;
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  letter-spacing: 2px;
 }
 
 input[type=button]{
@@ -51,9 +59,34 @@ input[type=button]{
   cursor: pointer;
 }
 
-#name {
-  padding-inline: 10px;
-  font-size: 1.5rem;
+.hint {
+  text-align: center;
+  border: 1px solid grey;
+  width: 1em;
+  display: b;
+  height: auto;
   padding: 0.5rem;
-  letter-spacing: 2px;
+  font-size: x-large;
+  cursor: help;
+}
+
+dialog {
+  border: 1px solid #171208;
+  background: #140707;
+  color: white;
+  font-size: large;
+  &[open] {
+    border-radius: 4px;
+  }
+  button {
+    float: right;
+    padding: 0.5rem;
+    margin: 0.5rem;
+    cursor: pointer;
+  }
+}
+
+::backdrop {
+  background-image: linear-gradient(295deg, #df65df, #dd775f, #aac0d5, #ade800);
+  opacity: 0.75;
 }

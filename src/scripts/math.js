@@ -1,6 +1,7 @@
 const MIN = 1;
 const MAX = 90;
 let currentOperator = "add";
+
 const randomIntegerInRange = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
 
 const refreshBtn = document.getElementById("refresh");
@@ -14,13 +15,28 @@ const secondOperand = document.getElementById("second");
 const userOutput = document.getElementById("output");
 const resultBox = document.getElementById("result");
 
+// dialog box
+const dialog = document.querySelector("dialog");
+const showButton = document.querySelector("#tip");
+const closeButton = document.querySelector("dialog button");
+
+showButton.addEventListener("click", () => {
+  dialog.showModal();
+});
+
+// "Close" button closes the dialog
+closeButton.addEventListener("click", () => {
+  dialog.close();
+});
+
+
 export const add = (a, b) => parseInt(a, 10) + parseInt(b, 10);
 export const subtract = (a, b) => parseInt(a, 10) - parseInt(b, 10);
 export const multiply = (a, b) => a * b;
 
 const clearOutput = () => {
   userOutput.value = "";
-  userOutput.setCustomValidity("empty");
+  userOutput.setCustomValidity("");
   userOutput.focus();
 };
 
@@ -77,7 +93,7 @@ const invokeMultiply = () => {
 
 refreshBtn.addEventListener("click", () => {
   console.log({ currentOperator });
-  //const output = currentOperator.apply('add', [firstRandom, secondRandom])
+  //const output = currentOperator.apply("add", [firstRandom, secondRandom])
   clearOutput();
   if (currentOperator === "add") {
     invokeSum();
@@ -93,8 +109,9 @@ refreshBtn.addEventListener("click", () => {
 userOutput.addEventListener("keyup", (e) => {
   const value = e.target.value;
   const correctResult = resultBox.value;
-  console.log({ value, correctResult });
-  if (value !== correctResult) {
+  //console.log(firstOperand.value, secondOperand.value, value, { correctResult });
+  //console.log(currentOperator, { value }, Number(correctResult), Number(value) === Number(correctResult));
+  if (Number(value) !== Number(correctResult)) {
     userOutput.setCustomValidity("You gotta fill this out.");
   } else {
     userOutput.setCustomValidity("");
