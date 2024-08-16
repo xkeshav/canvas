@@ -2,6 +2,11 @@
 
 A learning website for kids who started their journey to learn alphabets, you can play on on desktop/laptop on the
 
+# Live Website 
+
+> [!NOTE]  
+> website is live at [*abcd kbd.com*](https://abcdkbd.com)
+
 ## How to run
 
 - clone this repo and navigate to folder and run
@@ -23,34 +28,34 @@ A learning website for kids who started their journey to learn alphabets, you ca
 ### Main page
 
 
-[![Landing Page](./src/assets/screenshots/index.png)](https://www.abcdkbd.com)
+[![Landing Page](./src/assets/screenshots/index.png)](https://abcdkbd.com)
 
 ### Draw
 
-[![Draw](./src/assets/screenshots/Draw.png)](https://www.abcdkbd.com/draw)
+[![Draw](./src/assets/screenshots/Draw.png)](https://abcdkbd.com/draw)
 
 ### Hide N Seek
 
-[![Hide And Seek](./src/assets/screenshots/Hide-n-Seek.png)](https://www.abcdkbd.com/hide-n-seek)
+[![Hide And Seek](./src/assets/screenshots/Hide-n-Seek.png)](https://abcdkbd.com/hide-n-seek)
 
 
 ### Mathematics
 
-[![Mathematics](./src/assets/screenshots/Maths.png)](https://www.abcdkbd.com/math)
+[![Mathematics](./src/assets/screenshots/Maths.png)](https://abcdkbd.com/math)
 
 ### Kannada
 
-[![Kannada](./src/assets/screenshots/Kannada.png)](https://www.abcdkbd.com/kannada)
+[![Kannada](./src/assets/screenshots/Kannada.png)](https://abcdkbd.com/kannada)
 
 
 ### Canvas
 
-[![Canvas](./src/assets/screenshots/Canvas.png)](https://www.abcdkbd.com/canvas)
+[![Canvas](./src/assets/screenshots/Canvas.png)](https://abcdkbd.com/canvas)
 
 
 ### Capital
 
-[![Capital](./src/assets/screenshots/Capital.png)](https://www.abcdkbd.com/capital)
+[![Capital](./src/assets/screenshots/Capital.png)](https://abcdkbd.com/capital)
 
 
 ## How it works
