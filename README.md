@@ -36,7 +36,7 @@ A learning website for kids who started their journey to learn alphabets, you ca
 
 ### Mathematics
 
-![Mathematics](https://github.com/xkeshav/canvas/blobmaster/src/assets/screenshots/Maths.png)
+![Mathematics](https://github.com/xkeshav/canvas/blob/master/src/assets/screenshots/Maths.png)
 
 ### Kannada
 
