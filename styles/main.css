@@ -8,6 +8,7 @@ body {
   grid-template-rows: 3rem 1fr 3rem;
   grid-template-areas: "header" "main" "footer";
   grid-gap: 4px;
+  overflow: auto;
 }
 
 header {

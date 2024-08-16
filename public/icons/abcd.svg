@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50">
+	<path fill="#000000" d="M25,5C36.85,5 46,14.15 46,25S36.85,45 25,45C13.15,45 5,36.85 5,25S13.15,5 25,5z" />
+	<text x="25" y="20" font-size="16" text-anchor="middle" alignment-baseline="middle" fill="#FFFFFF">AB</text>
+	<text x="25" y="34" font-size="16" text-anchor="middle" alignment-baseline="middle" fill="#FFFFFF">CD</text>
+</svg>

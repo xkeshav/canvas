@@ -25,7 +25,7 @@ nav  {
 .canvas__div {
   display: grid;
   container-name: canvas;
-  grid-template-columns: repeat(4, minmax(200px, 1fr));
+  grid-template-columns: repeat(4, minmax(30%, 1fr));
   grid-gap: 1rem;
 }
 

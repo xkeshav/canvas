@@ -145,9 +145,9 @@ input[type="checkbox"] {
   background-clip: text;
   color: #faf5f5;
   font-weight: 900;
-  font-size: clamp(100ch , 80vw , 120ch);
+  font-size: clamp(50ch, 100vmin, 70ch);
   font-variant: common-ligatures tabular-nums;
-  font-family: var(--custom-font, auto);
+  font-family: var(--default-font, auto);
   mix-blend-mode: unset;
   filter: opacity(0.9);
   text-transform: uppercase;

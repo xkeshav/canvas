@@ -57,11 +57,11 @@ main {
     }
 
     &:nth-child(2n + 1) {
-      background-color: color-mix(in hsl longer hue, #0f0 var(--p), #551b1b)
+      background-color: color-mix(in hsl longer hue, #121d12 var(--p), #551b1b)
     }
 
     &:nth-child(2n + 2) {
-      background-color: color-mix(in hsl longer hue, #0f0, #551b1b var(--p))
+      background-color: color-mix(in hsl longer hue, #121d12, #551b1b var(--p))
     }
   }
 }

@@ -37,7 +37,7 @@
       "titleBar.inactiveForeground": "#e7e7e799"
     },
     "peacock.color": "#4460fc",
-    "workbench.preferredDarkColorTheme": "Darcula",
+    "workbench.preferredDarkColorTheme": "Firefox Dark",
     "window.autoDetectColorScheme": true
   }
 }

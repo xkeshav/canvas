@@ -40,7 +40,7 @@ form {
 }
 
 .operator {
-  font-size: 30dvmin;
+  font-size: 15dvmin;
 }
 
 input::-webkit-outer-spin-button,
@@ -55,7 +55,7 @@ input[type="number"] {
 }
 
 .number {
-  font-size: clamp(20ex, -0.75rem + 20dvw, 60ex);
+  font-size: clamp(15ex,-.75rem + 20dvw, 51ex);
   color: #25280d;
   padding: 0.5rem;
   width: max(30dvh, 30dvw);
@@ -74,7 +74,7 @@ input[type="number"] {
 }
 
 .three {
-  width: 3ch;
+  width: 4ch;
   box-shadow: 0px 80px 50px -30px rgba(0, 0, 0, 0.15);
 }
 
