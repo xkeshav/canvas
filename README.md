@@ -23,34 +23,34 @@ A learning website for kids who started their journey to learn alphabets, you ca
 ### Main page
 
 
-![Landing Page](https://github.com/xkeshav/canvas/blob/master/src/assets/screenshots/index.png)
+[![Landing Page](./src/assets/screenshots/index.png)](https://www.abcdkbd.com)
 
 ### Draw
 
-![Draw](https://github.com/xkeshav/canvas/blob/master/src/assets/screenshots/Draw.png)
+[![Draw](./src/assets/screenshots/Draw.png)](https://www.abcdkbd.com/draw)
 
 ### Hide N Seek
 
-![Hide And Seek](https://github.com/xkeshav/canvas/blob/master/src/assets/screenshots/Hide-n-Seek.png)
+[![Hide And Seek](./src/assets/screenshots/Hide-n-Seek.png)](https://www.abcdkbd.com/hide-n-seek)
 
 
 ### Mathematics
 
-![Mathematics](https://github.com/xkeshav/canvas/blob/master/src/assets/screenshots/Maths.png)
+[![Mathematics](./src/assets/screenshots/Maths.png)](https://www.abcdkbd.com/math)
 
 ### Kannada
 
-![Kannada](https://github.com/xkeshav/canvas/blob/master/src/assets/screenshots/Kannada.png)
+[![Kannada](./src/assets/screenshots/Kannada.png)](https://www.abcdkbd.com/kannada)
 
 
 ### Canvas
 
-![Canvas](https://github.com/xkeshav/canvas/blob/master/src/assets/screenshots/Canvas.png)
+[![Canvas](./src/assets/screenshots/Canvas.png)](https://www.abcdkbd.com/canvas)
 
 
 ### Capital
 
-![Capital](https://github.com/xkeshav/canvas/blob/master/src/assets/screenshots/Capital.png)
+[![Capital](./src/assets/screenshots/Capital.png)](https://www.abcdkbd.com/capital)
 
 
 ## How it works
