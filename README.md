@@ -11,17 +11,23 @@ A learning website for kids who started their journey to learn alphabets, you ca
 
 - clone this repo and navigate to folder and run
 
-  `npm install`
+```sh
+> npm install
+```
 
 - build client and server using webpack by running
 
-  `npm run build`
+```sh
+> npm run build
+```
 
 - start the app
 
-  `npm run start`
+```sh
+  > npm run start
+```
 
-> open [localhost:3003](http://localhost:3003) to see the main page in browser
+open [localhost:3003](http://localhost:3003) to see the main page in browser
 
 ## screenshot
 
@@ -99,4 +105,5 @@ we can save the image via right click of generated image
 India's All State and UT Capital mentioned. when click on any State/ its capital display below that.
 
 
-Thanks.
+> [!CAUTION]
+> changes in CSS and JS are hot reloaded but not HTML; for that build and run again
