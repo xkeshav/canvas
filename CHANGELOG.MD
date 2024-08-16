@@ -11,3 +11,9 @@ All notable changes to kidz repository will be documented in this file.
 ## [1.2.0]
 
 - css issue fixed for draw page
+
+## [1.3.0]
+
+- added hint dialog
+- fixed readonly pages for mobile view
+- screenshot updated in readme

@@ -1,6 +1,6 @@
 {
   "name": "canvas",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "displayName": "Kidz",
   "description": "An interactive website designed to engage and educate children who are beginning their journey of learning the alphabet.",
   "publisher": "@xkeshav",
@@ -11,7 +11,6 @@
     "dev": "webpack --config webpack.dev.config.js --mode development --watch",
     "test": "jest"
   },
-  
   "repository": {
     "type": "git",
     "url": "https://github.com/xkeshav/canvas.git"
@@ -19,7 +18,10 @@
   "keywords": [
     "canvas",
     "varnmala",
-    "kid learn",
+    "maths",
+    "kannada",
+    "hindi",
+    "kids",
     "abcdkbd",
     "abcd",
     "kbd"
@@ -31,6 +33,7 @@
   "contributors": [],
   "license": "MIT",
   "bugs": {
+    "type": "git",
     "url": "https://github.com/xkeshav/canvas/issues"
   },
   "homepage": "https://www.abcdkbd.com",
