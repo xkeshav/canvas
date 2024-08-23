@@ -1,8 +1,8 @@
 name: Bug Report
 description: File a bug report to help us improve.
-title: "[DATE]: [🐛]"
-labels: ["bug", "triage"]
-projects: ["template"]
+title: "[🐛]"
+labels: ["bug", "invalid"]
+projects: ["abcdkbd"]
 assignees:
   - "xkeshav"
 
