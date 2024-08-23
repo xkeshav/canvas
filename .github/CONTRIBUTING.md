@@ -10,10 +10,9 @@ Write something nice and instructive as an intro. Talk about what kind of contri
 
 This document describes our development process. Following these guidelines shows that you respect the time and effort of the developers managing this project. In return, you will be shown respect in addressing your issue, reviewing your changes, and incorporating your contributions.
 
-> 👉 **Note**: before participating in our community, please read our
-> [code of conduct][coc].
-> By interacting with this repository, organization, or community you agree to
-> abide by its terms.
+> [!Note] 
+> before participating in our community, please read our [code of conduct][coc].
+> By interacting with this repository, organization, or community you agree to abide by its terms.
 
 ## Contributions
 
@@ -61,13 +60,14 @@ If you add code you need to add tests! We’ve learned the hard way that code wi
 
 Provide instructions for adding new tests. Provide instructions for running tests.
 
+usually the command will be 
 ```sh
 npm run test
 ```
 
 ### Style Guidelines
 
-run below command
+run below command to format your code
 
 ```sh
 npm run lint
@@ -117,7 +117,7 @@ Once you've committed and pushed all of your changes to GitHub, go to the page f
 
 Who reviews it? Who needs to sign off before it’s accepted? When should a contributor expect to hear from you? How can contributors get commit access, if at all?
 
-> The core team looks at Pull Requests on a regular basis in a weekly triage meeting that we hold in a public Google Hangout. The hangout is announced in the weekly status updates that are sent to the puppet-dev list. Notes are posted to the Puppet Community community-triage repo and include a link to a YouTube recording of the hangout. After feedback has been given we expect responses within two weeks. After two weeks we may close the pull request if it isn't showing any activity.
+> The core team looks at Pull Requests on a regular basis in a weekly triage meeting that we hold in a public Hangout and discuss and add reviewer. Reviewer will review the code and give Review Comments (RC) ; Pull Requester have to address every RC appropriately. After RC has been given we expect responses within two weeks. After two weeks we may close the pull request if it isn't showing any activity.
 
 > Except for critical, urgent or very small fixes, we try to leave pull requests open for most of the day or overnight if something comes in late in the day, so that multiple people have the chance to review/comment.  Anyone who reviews a pull request should leave a note to let others know that someone has looked at it.  For larger commits, we like to have a +1 from someone else on the core team and/or from other contributor(s).  Please note if you reviewed the code or tested locally -- a +1 by itself will typically be interpreted as your thinking its a good idea, but not having reviewed in detail.
 

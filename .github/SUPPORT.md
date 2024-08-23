@@ -3,23 +3,22 @@
 This article explains where to get help with remark.
 Please read through the following guidelines.
 
-> 👉 **Note**: before participating in our community, please read our
-> [code of conduct][coc].
-> By interacting with this repository, organization, or community you agree to
-> abide by its terms.
+> 👉 **Note**: before participating in our community, please read our [code of conduct][coc].
+> By interacting with this repository, organization, or community you agree to abide by its terms.
 
 ## Asking quality questions
 
-Questions can go to [GitHub discussions][chat].
+Questions can asked on [New Issue > Questions][question]
 
-Help us help you!  
+Help us to help you!  
 
 Spend time framing questions and add links and resources.  
+
 Spending the extra time up front can help save everyone time in the long run.
 
 Here are some tips:
 
-* [Talk to us][chat]!
+* [Discuss to us][dicussion]
 * Don’t fall for the [XY problem][xy]
 * Search to find out if a similar question has been asked
 * Try to define what you need help with:
@@ -36,17 +35,23 @@ See [`contributing.md`][contributing] on how to contribute.
 
 ## License
 
+MIT License
+
+## Owner
+
 © [Keshav Mohta][author]
 
 <!-- Definitions -->
 
 [author]: https://xkeshav.com
 
+[question]: https://github.com/xkeshav/template/issues/new?assignees=xkeshav&labels=question&projects=&template=QUESTION.md&title=%E2%9D%93
+
 [xy]: https://meta.stackexchange.com/questions/66377/what-is-the-xy-problem/66378#66378
 
 [coc]: https://github.com/xkeshav/template/blob/main/.github/CODE_OF_CONDUCT.md
 
-[chat]: https://github.com/xkeshav/xkeshav/discussions
+[dicussion]: https://github.com/xkeshav/xkeshav/discussions
 
 [cs]: https://codesandbox.io  
 

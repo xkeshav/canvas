@@ -26,7 +26,7 @@ Communication regarding the projects through any channel must be constructive an
 
 We expect all contributors to uphold our standards of conduct. If any member of the community violates this code of conduct, the Embedded Artistry team and project maintainers will take action. We reserve the right to remove issues, comments, and PRs that do not comply with our conduct standards. Repeated or significant offenses will result in blocked accounts and disassociation with our projects and the Embedded Artistry community.
 
-If you are subject to or witness unacceptable behavior, or have any other concerns, please email us at [`xkeshav@gmail.com`][contact].
+If you are subject to or witness unacceptable behavior, or have any other concerns, please email us on [_xkeshav@gmail.com_][contact].
 
 ## Our Pledge
 
@@ -81,8 +81,8 @@ representative at an online or offline event.
 ## Enforcement
 
 Instances of abusive, harassing, or otherwise unacceptable behavior may be
-reported to the community leaders responsible for enforcement at
-[*this email*](mailto:xkeshav@gmail.com).
+reported to the community leaders responsible for enforcement at our [*official email*][contact]. 
+
 All complaints will be reviewed and investigated promptly and fairly.
 
 All community leaders are obligated to respect the privacy and security of the

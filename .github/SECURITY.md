@@ -11,7 +11,8 @@ When in doubt, please do send us a report.
 
 ## How to submit a report
 
-Security issues can be reported by sending an email to [`xkeshav@gmail.com`](mailto:xkeshav@gmail.com).
+Security issues can be reported by sending an [email to us][contact]. 
+
 The team will acknowledge your email within 48 hours. You will receive a more detailed response within 96 hours.
 
 We will create a maintainer security advisory on GitHub to discuss internally, and when needed, invite you to the advisory.
@@ -31,3 +32,5 @@ Please submit a report to us before engaging in conduct that may be inconsistent
 * Please provide detailed reports with reproducible steps and a clearly defined impact
 * Submit one vulnerability per report
 * Social engineering (such as phishing, vishing, smishing) is prohibited
+
+[contact]: mailto:xkeshav@gmail.com
