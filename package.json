@@ -1,12 +1,13 @@
 {
   "name": "canvas",
-  "version": "1.3.0",
-  "displayName": "Kidz",
+  "version": "1.3.1",
+  "displayName": "Canvas",
   "description": "An interactive website designed to engage and educate children who are beginning their journey of learning the alphabet.",
   "publisher": "@xkeshav",
   "scripts": {
     "build": "webpack --config webpack.prod.config.js --mode production",
-    "clean": "rd /s /q dist build >nul 2>&1|echo.>null",
+    "clean": "rm -rf dist rm -rf build",
+    "nuke": "rm -rf node_modules && rm package-lock.json && npm run clean",
     "start": "nodemon ./dist/scripts/server.js",
     "dev": "webpack --config webpack.dev.config.js --mode development --watch",
     "test": "jest"
