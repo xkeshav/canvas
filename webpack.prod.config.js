@@ -10,7 +10,7 @@ const DIST_DIR = path.join(__dirname, "dist");
 
 const isProd = process.env.MODE === "production";
 
-const pages = ["draw", "hide-n-seek", "canvas", "about", "math", "kannada", "capital"];
+const pages = ["draw", "hide-n-seek", "canvas", "about", "math", "kannada", "capital", "theme"];
 
 const entryObject = pages.reduce((p, n) => Object.assign(p, { [n]: [`./src/scripts/${n}.js`, `./src/styles/${n}.css`] }), {});
 

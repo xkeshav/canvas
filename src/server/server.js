@@ -81,6 +81,10 @@ app.get("/bg/:key", (req, res) => {
   res.json({ success: "canvas bg called", url: req.url, output });
 });
 
+app.get("/theme", (_, res) => {
+  res.sendFile(path.join(HTML_DIR, "theme.html"));
+});
+
 app.use("/", router);
 
 const PORT = process.env.PORT || 3003;

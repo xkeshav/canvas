@@ -11,7 +11,7 @@ const CopyPlugin = require("copy-webpack-plugin");
 const DIST_DIR = path.join(__dirname, "dist");
 const HTML_DIR = path.join(DIST_DIR, "html");
 
-const htmlPageNames = ["about", "canvas", "draw", "hide-n-seek", "math", "kannada", "capital"];
+const htmlPageNames = ["about", "canvas", "draw", "hide-n-seek", "math", "kannada", "capital", "theme"];
 
 const multipleHtmlPlugins = htmlPageNames.map(
   (name) =>
