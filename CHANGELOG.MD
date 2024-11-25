@@ -17,3 +17,7 @@ All notable changes to kidz repository will be documented in this file.
 - added hint dialog
 - fixed readonly pages for mobile view
 - screenshot updated in readme
+
+## [1.3.1]
+
+- added Theme page
