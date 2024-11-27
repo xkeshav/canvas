@@ -32,6 +32,11 @@
     display: block;
   }
 
+  header {
+    height: var(--header-height, 1rem);
+    outline: 2px solid grey;
+  }
+
   a {
     display: inline-block;
     width: 100%;

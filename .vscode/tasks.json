@@ -12,6 +12,11 @@
         "kind": "build",
         "isDefault": true
       },
+      "presentation": {
+        "reveal": "never",
+        "revealProblems": "onProblem",
+        "panel": "new"
+      }
     }
   ]
 }
