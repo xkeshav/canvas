@@ -34,7 +34,8 @@
       "titleBar.activeBackground": "#4460fc",
       "titleBar.activeForeground": "#e7e7e7",
       "titleBar.inactiveBackground": "#4460fc99",
-      "titleBar.inactiveForeground": "#e7e7e799"
+      "titleBar.inactiveForeground": "#e7e7e799",
+      "git.blame.editorDecorationForeground": "#b3e3aa"
     },
     "peacock.color": "#4460fc",
     "workbench.preferredDarkColorTheme": "Firefox Dark",
